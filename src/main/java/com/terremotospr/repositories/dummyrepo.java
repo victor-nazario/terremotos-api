@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author Victor Nazario
  */
-public interface dummyrepo extends JpaRepository<Long, dummy> {
+public interface dummyrepo extends JpaRepository<String, dummy> {
 
 }
