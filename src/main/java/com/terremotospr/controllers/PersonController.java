@@ -1,7 +1,6 @@
 package com.terremotospr.controllers;
 
-import com.terremotospr.entities.Person;
-import com.terremotospr.repositories.PersonRepository;
+import com.terremotospr.beans.PersonBean;
 import com.terremotospr.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Optional;
+import java.util.List;
 
 /**
- * Created on  -
+ * Created on  3 March, 2020
  *
  * @author Victor Nazario
  */
@@ -23,8 +22,13 @@ public class PersonController {
     @Autowired
     PersonService personService;
 
+    @GetMapping(value = "/fetchAll")
+    public List<PersonBean> fetchAll(){
+        return personService.fetchAllPerson();
+    }
+
     @GetMapping(value = "/fetchById")
-    public Optional<Person> fetchById(@RequestParam(value = "id") Long id){
-        return personService.findById(id);
+    public PersonBean fetchById(@RequestParam(value = "id") Long id){
+        return personService.fetchById(id);
     }
 }

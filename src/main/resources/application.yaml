@@ -1,5 +1,5 @@
 server:
-  port: 2024
+  port: 8085
   servlet:
     context-path: /terremotos/api
     session:
@@ -22,7 +22,7 @@ spring:
 
     type: com.zaxxer.hikari.HikariDataSource
     platform: mysql
-    url: jdbc:mysql://localhost:3306
+    url: jdbc:mysql://localhost:3306/terremotos
     username: root
     password: root
 
