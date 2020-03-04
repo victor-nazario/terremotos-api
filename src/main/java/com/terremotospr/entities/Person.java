@@ -16,16 +16,17 @@ public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    String name;
+
+    String firstName;
     String lastName;
 
     public Long getId() { return id; }
 
     public void setId(Long id) { this.id = id; }
 
-    public String getName() { return name; }
+    public String getFirstName() { return firstName; }
 
-    public void setName(String name) { this.name = name; }
+    public void setFirstName(String name) { this.firstName = name; }
 
     public String getLastName() { return lastName; }
 
