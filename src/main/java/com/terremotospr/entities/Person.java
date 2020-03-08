@@ -19,6 +19,8 @@ public class Person {
 
     String firstName;
     String lastName;
+    private String address;
+    private String region;
 
     public Long getId() { return id; }
 
@@ -31,6 +33,14 @@ public class Person {
     public String getLastName() { return lastName; }
 
     public void setLastName(String lastName) { this.lastName = lastName; }
+
+    public String getAddress() { return address; }
+
+    public void setAddress(String address) { this.address = address; }
+
+    public String getRegion() { return region; }
+
+    public void setRegion(String region) { this.region = region; }
 
 
 }

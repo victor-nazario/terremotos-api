@@ -6,9 +6,12 @@ package com.terremotospr.beans;
  * @author Victor Nazario
  */
 public class PersonBean {
-    Long id;
-    String firstName;
-    String lastName;
+    private Long id;
+    private String firstName;
+    private String lastName;
+    private String address;
+    private String region;
+
 
     public Long getId() { return id; }
 
@@ -21,4 +24,13 @@ public class PersonBean {
     public String getLastName() { return lastName; }
 
     public void setLastName(String lastName) { this.lastName = lastName; }
+
+    public String getAddress() { return address; }
+
+    public void setAddress(String address) { this.address = address; }
+
+    public String getRegion() { return region; }
+
+    public void setRegion(String region) { this.region = region; }
 }
+
