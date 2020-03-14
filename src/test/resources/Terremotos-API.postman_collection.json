@@ -54,6 +54,28 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Fetch water",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/terremotos/api/water/available",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"terremotos",
+						"api",
+						"water",
+						"available"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}

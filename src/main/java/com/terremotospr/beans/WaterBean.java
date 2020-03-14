@@ -7,11 +7,19 @@ package com.terremotospr.beans;
  */
 public class WaterBean{
 
-
+    private Long id;
     private typeOfWater type;
     private boolean potable;
     private int packagedQuantity;
     private String brand;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public typeOfWater getType() {
         return type;
