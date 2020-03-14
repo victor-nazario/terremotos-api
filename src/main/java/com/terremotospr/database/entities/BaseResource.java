@@ -15,66 +15,42 @@ public class BaseResource {
     private Long id;
 
     private String name;
-    private Double longitude;
-    private Double latitude;
+    private String resourceType;
+    private String description;
     private boolean available;
     private Double price;
-    private String resourceType;
+    private Double longitude;
+    private Double latitude;
 
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public void setId(Long id) { this.id = id; }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) { this.name = name; }
 
+    public String getResourceType() { return resourceType; }
 
-    public Double getLongitude() {
-        return longitude;
-    }
+    public void setResourceType(String resourceType) { this.resourceType = resourceType; }
 
-    public void setLongitude(Double longitude) {
-        this.longitude = longitude;
-    }
+    public String getDescription() { return description; }
 
-    public Double getLatitude() {
-        return latitude;
-    }
+    public void setDescription(String description) { this.description = description; }
 
-    public void setLatitude(Double latitude) {
-        this.latitude = latitude;
-    }
+    public boolean isAvailable() { return available; }
 
-    public boolean isAvailable() {
-        return available;
-    }
+    public void setAvailable(boolean available) { this.available = available; }
 
-    public void setAvailable(boolean available) {
-        this.available = available;
-    }
+    public Double getPrice() { return price; }
 
-    public Double getPrice() {
-        return price;
-    }
+    public void setPrice(Double price) { this.price = price; }
 
-    public void setPrice(Double price) {
-        this.price = price;
-    }
+    public Double getLongitude() { return longitude; }
 
-    public String getResourceType() {
-        return resourceType;
-    }
+    public void setLongitude(Double longitude) { this.longitude = longitude; }
 
-    public void setResourceType(String resourceType) {
-        this.resourceType = resourceType;
-    }
+    public Double getLatitude() { return latitude; }
+
+    public void setLatitude(Double latitude) { this.latitude = latitude; }
 }
