@@ -1,4 +1,4 @@
-package com.terremotospr.entities;
+package com.terremotospr.database.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

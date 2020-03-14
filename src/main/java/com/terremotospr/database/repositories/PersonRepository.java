@@ -1,6 +1,6 @@
-package com.terremotospr.repositories;
+package com.terremotospr.database.repositories;
 
-import com.terremotospr.entities.Person;
+import com.terremotospr.database.entities.Person;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
