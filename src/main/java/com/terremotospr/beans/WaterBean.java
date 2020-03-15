@@ -5,7 +5,7 @@ package com.terremotospr.beans;
  *
  * @author Victor Nazario
  */
-public class WaterBean{
+public class WaterBean extends BaseResourceBean{
 
     private Long id;
     private typeOfWater type;

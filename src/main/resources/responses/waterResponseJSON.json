@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "type": "BOTTLE",
+    "potable": true,
+    "packagedQuantity": 4,
+    "brand": "Cristalia"
+  },
+  {
+    "id": 2,
+    "type": "BOTTLE",
+    "potable": true,
+    "packagedQuantity": 4,
+    "brand": "Lugo"
+  },
+  {
+    "id": 3,
+    "type": "BOTTLE",
+    "potable": true,
+    "packagedQuantity": 4,
+    "brand": "Dasani"
+  },
+  {
+    "id": 4,
+    "type": "GALLON",
+    "potable": true,
+    "packagedQuantity": 4,
+    "brand": "Torres"
+  }
+]

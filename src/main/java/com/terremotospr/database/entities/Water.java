@@ -16,7 +16,6 @@ public class Water extends BaseResource{
     private typeOfWater type;
     private boolean potable;
     private int packagedQuantity;
-    private String brand;
 
     public typeOfWater getType() {
         return type;
@@ -42,12 +41,4 @@ public class Water extends BaseResource{
         this.packagedQuantity = packagedQuantity;
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
 }
