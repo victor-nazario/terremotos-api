@@ -1,0 +1,72 @@
+[
+  {
+    "name": null,
+    "brand": null,
+    "category": null,
+    "description": null,
+    "available": false,
+    "price": null,
+    "longitude": null,
+    "latitude": null,
+    "id": 1,
+    "medType": null,
+    "size": null,
+    "dosageForm": null
+  },
+  {
+    "name": "Beng",
+    "brand": "Bengay",
+    "category": "medication",
+    "description": "To aleviate muscle pain",
+    "available": true,
+    "price": 6.0,
+    "longitude": 58.8,
+    "latitude": 68.1,
+    "id": 2,
+    "medType": "Pain Relief",
+    "size": 3.0,
+    "dosageForm": "Cream"
+  },
+  {
+    "name": "Giltus",
+    "brand": "Giltus",
+    "category": "medication",
+    "description": "Aleviate cough",
+    "available": false,
+    "price": 1.0,
+    "longitude": 57.8,
+    "latitude": 58.1,
+    "id": 3,
+    "medType": "Cough Syrup",
+    "size": 11.0,
+    "dosageForm": "Liquid"
+  },
+  {
+    "name": "Muccinex",
+    "brand": "Muccinex",
+    "category": "medication",
+    "description": "Aleviate cough symptoms",
+    "available": true,
+    "price": 30.0,
+    "longitude": 57.8,
+    "latitude": 58.1,
+    "id": 4,
+    "medType": "Cough Pills",
+    "size": 25.0,
+    "dosageForm": "Tablets"
+  },
+  {
+    "name": "Plan-B",
+    "brand": "Plan-B",
+    "category": "medication",
+    "description": "Aleviate stress symptoms",
+    "available": true,
+    "price": 50.0,
+    "longitude": 59.8,
+    "latitude": 58.1,
+    "id": 5,
+    "medType": "Emotional Pills",
+    "size": 1.0,
+    "dosageForm": "Tablets"
+  }
+]

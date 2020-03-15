@@ -13,7 +13,7 @@ public class Medication extends BaseResource {
 
 //    private Long id;
     private String medType;
-    private Long size;
+    private Double size;
     private String dosageForm;
 
 //    public Long getId() { return id; }
@@ -24,9 +24,9 @@ public class Medication extends BaseResource {
 
     public void setMedType(String medType) { this.medType = medType; }
 
-    public Long getSize() { return size; }
+    public Double getSize() { return size; }
 
-    public void setSize(Long size) { this.size = size; }
+    public void setSize(Double size) { this.size = size; }
 
     public String getDosageForm() { return dosageForm; }
 
