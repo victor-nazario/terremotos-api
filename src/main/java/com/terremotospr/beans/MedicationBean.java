@@ -4,7 +4,7 @@ package com.terremotospr.beans;
  * @author Wilfredo Aponte
 */
 
-public class MedicationBean {
+public class MedicationBean extends BaseResourceBean {
 
     private Long id;
     private String medType;
