@@ -1,5 +1,8 @@
 package com.terremotospr.beans;
 
+
+import java.util.Date;
+
 /**
  * Created on  -
  *
@@ -15,6 +18,8 @@ public class BaseResourceBean {
     private Double price;
     private Double longitude;
     private Double latitude;
+
+    private Date expirationDate;
 
     public String getName() {
         return name;
@@ -78,5 +83,13 @@ public class BaseResourceBean {
 
     public void setLatitude(Double latitude) {
         this.latitude = latitude;
+    }
+
+    public Date getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(Date expirationDate) {
+        this.expirationDate = expirationDate;
     }
 }
