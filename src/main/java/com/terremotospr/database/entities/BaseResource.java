@@ -15,7 +15,8 @@ public class BaseResource {
     private Long id;
 
     private String name;
-    private String resourceType;
+    private String brand;
+    private String category;
     private String description;
     private boolean available;
     private Double price;
@@ -30,9 +31,13 @@ public class BaseResource {
 
     public void setName(String name) { this.name = name; }
 
-    public String getResourceType() { return resourceType; }
+    public String getBrand() { return brand; }
 
-    public void setResourceType(String resourceType) { this.resourceType = resourceType; }
+    public void setBrand(String brand) { this.brand = brand; }
+
+    public String getCategory() { return category; }
+
+    public void setCategory(String resourceType) { this.category = resourceType; }
 
     public String getDescription() { return description; }
 
