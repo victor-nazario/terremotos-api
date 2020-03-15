@@ -1,6 +1,9 @@
 package com.terremotospr.database.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created on March 13, 2020 - 9:43 PM
@@ -22,6 +25,9 @@ public class BaseResource {
     private Double price;
     private Double longitude;
     private Double latitude;
+
+    @JsonFormat(pattern="yyyy-MM-dd")
+    private Date expirationDate;
 
     public Long getId() { return id; }
 
@@ -58,4 +64,8 @@ public class BaseResource {
     public Double getLatitude() { return latitude; }
 
     public void setLatitude(Double latitude) { this.latitude = latitude; }
+
+    public Date getExpirationDate() { return expirationDate; }
+
+    public void setExpirationDate(Date expirationDate) { this.expirationDate = expirationDate; }
 }
