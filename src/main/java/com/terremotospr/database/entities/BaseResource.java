@@ -15,6 +15,9 @@ public class BaseResource {
     private Long id;
 
     private String name;
+
+
+    private String brand;
     private String resourceType;
     private String description;
     private boolean available;
@@ -53,4 +56,8 @@ public class BaseResource {
     public Double getLatitude() { return latitude; }
 
     public void setLatitude(Double latitude) { this.latitude = latitude; }
+
+    public String getBrand() { return brand; }
+
+    public void setBrand(String brand) { this.brand = brand; }
 }
