@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Beef Jerky",
+    "brand": "JACK LINKS",
+    "category": "Dry Food",
+    "description": "Beef Jerky, perfect for snacks",
+    "available": true,
+    "price": 6.0,
+    "longitude": 67.0,
+    "latitude": 66.0,
+    "id": 1,
+    "size": "8 OZ",
+    "dateFormat": "MM/yyyy",
+    "medType": null
+  },
+  {
+    "name": "Trail Mix",
+    "brand": "GraNuts",
+    "category": "Dry Food",
+    "description": "Cranberry Trail Mix",
+    "available": true,
+    "price": 7.0,
+    "longitude": 66.0,
+    "latitude": 69.0,
+    "id": 2,
+    "size": "200g",
+    "dateFormat": "MM/yyyy",
+    "medType": null
+  },
+  {
+    "name": "Party Mix",
+    "brand": "GraNuts",
+    "category": "Dry Food",
+    "description": "Party Mix",
+    "available": true,
+    "price": 7.0,
+    "longitude": 66.0,
+    "latitude": 69.0,
+    "id": 3,
+    "size": "200g",
+    "dateFormat": "MM/yyyy",
+    "medType": null
+  }
+]
