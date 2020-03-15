@@ -6,12 +6,9 @@ import com.terremotospr.services.WaterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Created on March 12, 2020 - 9:30 PM
@@ -32,5 +29,10 @@ public class WaterController {
         Resource resource = new ClassPathResource("responses/waterResponseJSON.json");
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(resource.getInputStream(), Object.class);
+    }
+
+    @PostMapping(value = "/add")
+    public boolean addWater(@RequestBody WaterBean bean){
+        return waterService.addWater(bean);
     }
 }
