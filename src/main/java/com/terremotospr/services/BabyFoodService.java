@@ -27,15 +27,15 @@ public class BabyFoodService {
     }
 
     public List<BabyFoodBean> fetchAllBabyFood(){
-        List<BabyFoodBean> clothing;
+        List<BabyFoodBean> babyFood;
 
         Iterable<BabyFood> iter = babyFoodRepository.findAll();
 
-        clothing = StreamSupport.stream(iter.spliterator(), false)
+        babyFood = StreamSupport.stream(iter.spliterator(), false)
                 .map(this::copyProperties)
                 .collect(Collectors.toList());
 
-        return clothing;
+        return babyFood;
     }
 
     private BabyFoodBean copyProperties(BabyFood entity){

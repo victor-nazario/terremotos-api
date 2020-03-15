@@ -1,17 +1,17 @@
 [
   {
-    "name": "Beef Jerky",
-    "brand": "JACK LINKS",
+    "name": "Party Mix",
+    "brand": "GraNuts",
     "category": "Dry Food",
-    "description": "Beef Jerky, perfect for snacks",
+    "description": "Party Mix",
     "available": true,
-    "price": 6.0,
-    "longitude": 67.0,
-    "latitude": 66.0,
+    "price": 7.0,
+    "longitude": 66.0,
+    "latitude": 69.0,
+    "expirationDate": "2020-03-15T00:00:00.000+0000",
     "id": 1,
-    "size": "8 OZ",
-    "dateFormat": "MM/yyyy",
-    "medType": null
+    "size": "200g",
+    "type": "NUTS"
   },
   {
     "name": "Trail Mix",
@@ -22,23 +22,23 @@
     "price": 7.0,
     "longitude": 66.0,
     "latitude": 69.0,
+    "expirationDate": "2020-03-15T00:00:00.000+0000",
     "id": 2,
     "size": "200g",
-    "dateFormat": "MM/yyyy",
-    "medType": null
+    "type": "NUTS"
   },
   {
-    "name": "Party Mix",
-    "brand": "GraNuts",
+    "name": "Beef Jerky",
+    "brand": "JACK LINKS",
     "category": "Dry Food",
-    "description": "Party Mix",
+    "description": "Beef Jerky, perfect for snacks",
     "available": true,
-    "price": 7.0,
-    "longitude": 66.0,
-    "latitude": 69.0,
+    "price": 6.0,
+    "longitude": 67.0,
+    "latitude": 66.0,
+    "expirationDate": "2020-03-15T00:00:00.000+0000",
     "id": 3,
-    "size": "200g",
-    "dateFormat": "MM/yyyy",
-    "medType": null
+    "size": "8oz",
+    "type": "MEAT"
   }
 ]
