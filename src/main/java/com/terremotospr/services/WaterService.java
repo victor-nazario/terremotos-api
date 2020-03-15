@@ -41,4 +41,12 @@ public class WaterService {
         return bean;
     }
 
+    public boolean addWater(WaterBean bean) {
+        if(bean == null) return false;
+
+        Water entity = new Water();
+        BeanUtils.copyProperties(bean, entity);
+        waterRepository.save(entity);
+        return true;
+    }
 }
