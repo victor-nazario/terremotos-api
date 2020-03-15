@@ -1,10 +1,8 @@
 package com.terremotospr.database.entities;
 
-import com.terremotospr.beans.GasolineBean;
 import com.terremotospr.beans.typeOfGasoline;
-import com.terremotospr.beans.typeOfWater;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
 
 /**
  * @author Kiara Rodriguez Rojas
@@ -15,18 +13,18 @@ import javax.persistence.*;
 public class Gasoline extends BaseResource{
 
     private typeOfGasoline type;
-    private int octane;
-    private int size;
+    private Double octane;
+    private Double size;
 
     public typeOfGasoline getType() { return type; }
 
     public void setType(typeOfGasoline type) { this.type = type; }
 
-    public int getOctane() { return octane; }
+    public Double getOctane() { return octane; }
 
-    public void setOctane(int octane) { this.octane = octane; }
+    public void setOctane(Double octane) { this.octane = octane; }
 
-    public int getSize() { return size; }
+    public Double getSize() { return size; }
 
-    public void setSize(int size) { this.size = size; }
+    public void setSize(Double size) { this.size = size; }
 }

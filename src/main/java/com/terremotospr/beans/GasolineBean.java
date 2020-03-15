@@ -4,7 +4,7 @@ package com.terremotospr.beans;
  * @author Kiara Rodriguez Rojas
  * @date 03/14/2020
  */
-public class GasolineBean{
+public class GasolineBean extends BaseResourceBean{
 
     private typeOfGasoline type;
     private Double octane;
