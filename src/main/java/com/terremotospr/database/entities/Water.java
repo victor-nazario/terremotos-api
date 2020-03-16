@@ -2,7 +2,7 @@ package com.terremotospr.database.entities;
 
 import com.terremotospr.beans.typeOfWater;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
 
 /**
  * Created on March - -
@@ -13,17 +13,10 @@ import javax.persistence.*;
 @Entity(name = "Water")
 public class Water extends BaseResource{
 
-    private typeOfWater type;
     private boolean potable;
     private int packagedQuantity;
-
-    public typeOfWater getType() {
-        return type;
-    }
-
-    public void setType(typeOfWater type) {
-        this.type = type;
-    }
+    private String brand;
+    private typeOfWater type;
 
     public boolean isPotable() {
         return potable;
@@ -41,4 +34,15 @@ public class Water extends BaseResource{
         this.packagedQuantity = packagedQuantity;
     }
 
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public typeOfWater getType() { return type; }
+
+    public void setType(typeOfWater type) { this.type = type; }
 }

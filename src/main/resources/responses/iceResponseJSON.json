@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Ice",
+    "brand": "Ready Ice",
+    "category": "ice",
+    "description": "Ice for preserving meats",
+    "available": true,
+    "price": 3.0,
+    "longitude": 17.5,
+    "latitude": -66.7,
+    "size": 1.0
+  },
+  {
+    "name": "Ice",
+    "brand": "Yeti Ice",
+    "category": "ice",
+    "description": "Ice for cooling drinks",
+    "available": false,
+    "price": 2.5,
+    "longitude": 18.13,
+    "latitude": -65.8,
+    "size": 1.0
+  },
+  {
+    "name": "Ice",
+    "brand": "Emergency Ice",
+    "category": "ice",
+    "description": "Ice used for first aid",
+    "available": true,
+    "price": 2.0,
+    "longitude": 17.3,
+    "latitude": -66.6,
+    "size": 1.0
+  }
+]
