@@ -3,7 +3,9 @@ package com.terremotospr.database.entities;
 import com.terremotospr.beans.babyFoodFlavor;
 
 import javax.persistence.Entity;
-
+/*
+ * @author Wilfredo Aponte Pomales
+ */
 @Entity
 public class BabyFood extends BaseResource {
 

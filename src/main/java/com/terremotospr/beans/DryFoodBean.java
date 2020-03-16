@@ -1,5 +1,7 @@
 package com.terremotospr.beans;
-
+/*
+ * @author Wilfredo Aponte Pomales
+ */
 public class DryFoodBean extends BaseResourceBean {
 
     private Long id;

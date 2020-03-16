@@ -1,5 +1,8 @@
 package com.terremotospr.beans;
 
+/*
+ * @author Wilfredo Aponte Pomales
+ */
 public class BabyFoodBean extends BaseResourceBean {
 
     private Long id;

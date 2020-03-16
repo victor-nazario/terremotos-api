@@ -4,7 +4,9 @@ import com.terremotospr.beans.fuelTypeGenerator;
 import com.terremotospr.beans.generatorType;
 
 import javax.persistence.Entity;
-
+/*
+ * @author Wilfredo Aponte Pomales
+ */
 @Entity
 public class PowerGen extends BaseResource {
 

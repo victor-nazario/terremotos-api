@@ -1,7 +1,7 @@
 package com.terremotospr.beans;
 
 /*
- * @author Wilfredo Aponte
+ * @author Wilfredo Aponte Pomales
  */
 public class ClothingBean extends BaseResourceBean {
 

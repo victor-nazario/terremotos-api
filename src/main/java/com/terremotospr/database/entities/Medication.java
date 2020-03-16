@@ -6,8 +6,6 @@ import javax.persistence.Entity;
  * @author Wilfredo Aponte
  */
 
-
-
 @Entity(name = "Medication")
 public class Medication extends BaseResource {
 

@@ -3,7 +3,9 @@ package com.terremotospr.database.entities;
 import com.terremotospr.beans.medicalDeviceType;
 
 import javax.persistence.Entity;
-
+/*
+ * @author Wilfredo Aponte Pomales
+ */
 @Entity
 public class MedicalDevices extends BaseResource {
 

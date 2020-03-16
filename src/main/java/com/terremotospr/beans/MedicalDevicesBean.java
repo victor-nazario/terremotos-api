@@ -1,5 +1,8 @@
 package com.terremotospr.beans;
 
+/*
+ * @author Wilfredo Aponte Pomales
+ */
 public class MedicalDevicesBean extends  BaseResourceBean {
 
     private Long id;

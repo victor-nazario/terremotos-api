@@ -3,7 +3,9 @@ package com.terremotospr.database.entities;
 import com.terremotospr.beans.dFoodType;
 
 import javax.persistence.Entity;
-
+/*
+ * @author Wilfredo Aponte Pomales
+ */
 @Entity
 public class DryFood extends BaseResource {
 
