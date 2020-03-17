@@ -14,7 +14,6 @@ public class Supplier extends User {
     private Company company;
 
     private String position;
-
     public Company getCompany() {
         return company;
     }
