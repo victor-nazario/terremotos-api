@@ -1,7 +1,9 @@
 package com.terremotospr.services;
 
+import com.terremotospr.beans.CompanyBean;
 import com.terremotospr.beans.ConsumerBean;
 import com.terremotospr.beans.SupplierBean;
+import com.terremotospr.database.entities.Company;
 import com.terremotospr.database.entities.Consumer;
 import com.terremotospr.database.entities.Supplier;
 import com.terremotospr.database.repositories.ConsumerRepository;
@@ -23,7 +25,8 @@ public class SupplierService {
         if(bean == null) return false;
 
         Supplier entity = new Supplier();
-        BeanUtils.copyProperties(bean, entity);
+        BeanUtils.copyProperties(bean, entity, "company");
+        entity.setCompany(companyConverter(bean.getCompany()));
         supplierRepository.save(entity);
         return true;
     }
@@ -32,6 +35,12 @@ public class SupplierService {
         SupplierBean bean = new SupplierBean();
         BeanUtils.copyProperties(entity, bean);
         return bean;
+    }
+
+    private Company companyConverter(CompanyBean bean){
+        Company entity = new Company();
+        BeanUtils.copyProperties(bean,entity);
+        return entity;
     }
 
     public List<SupplierBean> fetchAllSupplier(){
@@ -44,4 +53,8 @@ public class SupplierService {
 
         return supplier;
     }
+
+    /*  private Long comp_id;
+    private String cName;
+    private String cLocation;*/
 }

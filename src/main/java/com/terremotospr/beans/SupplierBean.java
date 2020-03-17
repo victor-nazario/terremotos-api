@@ -1,18 +1,10 @@
 package com.terremotospr.beans;
-import com.terremotospr.beans.CompanyBean;
+
 import com.terremotospr.database.entities.User;
 
 public class SupplierBean extends User {
-    private String position;
     private CompanyBean company;
-
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
-    }
+    private String position;
 
     public CompanyBean getCompany() {
         return company;
@@ -20,5 +12,13 @@ public class SupplierBean extends User {
 
     public void setCompany(CompanyBean company) {
         this.company = company;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 }
