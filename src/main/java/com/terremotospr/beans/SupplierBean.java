@@ -5,7 +5,7 @@ import com.terremotospr.database.entities.User;
 
 public class SupplierBean extends User {
     private String position;
-    private Long comp_id;
+    private Company company;
 
     public String getPosition() {
         return position;
@@ -15,11 +15,11 @@ public class SupplierBean extends User {
         this.position = position;
     }
 
-    public Long getComp_id() {
-        return comp_id;
+    public Company getCompany() {
+        return company;
     }
 
-    public void setComp_id(Long comp_id) {
-        this.comp_id = comp_id;
+    public void setCompany(Company company) {
+        this.company = company;
     }
 }

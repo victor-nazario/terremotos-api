@@ -12,17 +12,15 @@ public class Supplier extends User {
 //uid, comp-id, position
 
     @ManyToOne(fetch= FetchType.LAZY)
-    @JoinColumn(columnDefinition = "comp_id")
-    private Company comp_id;
+    @JoinColumn(name = "comp_id")
+    private Company company;
     private String position;
 
-    public Company getComp_id() {
-        return comp_id;
+    public Company getCompany() {
+        return company;
     }
 
-    public void setComp_id(Company comp_id) {
-        this.comp_id = comp_id;
-    }
+    public void setCompany(Company company) { this.company = company; }
 
     public String getPosition() {
         return position;

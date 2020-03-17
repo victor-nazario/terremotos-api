@@ -20,7 +20,7 @@ public class Company {
     private String cLocation;
 
 
-    @OneToMany(mappedBy="comp_id")
+    @OneToMany(mappedBy="company")
     private List<Supplier> suppliers;
 
     public Long getComp_id() { return comp_id; }
@@ -45,6 +45,6 @@ public class Company {
 
     public void addSupplier(Supplier supplier) {
         suppliers.add(supplier);
-        supplier.setComp_id(this);
+        supplier.setCompany(this);
     }
 }
