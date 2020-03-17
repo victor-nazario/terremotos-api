@@ -2,17 +2,14 @@ package com.terremotospr.database.entities;
 
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Supplier extends User {
 //uid, comp-id, position
 
-    @ManyToOne(fetch= FetchType.LAZY)
-    @JoinColumn(name = "comp_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="comp_id", referencedColumnName = "comp_id")
     private Company company;
     private String position;
 

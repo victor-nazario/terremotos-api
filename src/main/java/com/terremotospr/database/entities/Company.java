@@ -1,10 +1,8 @@
 package com.terremotospr.database.entities;
 
-import org.hibernate.annotations.CascadeType;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,13 +13,15 @@ import java.util.List;
 @Entity(name = "Company")
 public class Company {
     @Id
+    @Column(name = "comp_id")
     private Long comp_id;
     private String cName;
     private String cLocation;
 
 
-    @OneToMany(mappedBy="company")
-    private List<Supplier> suppliers;
+//    @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+//    @JoinColumn(name = "comp_id")
+//    private List<Supplier> suppliers;
 
     public Long getComp_id() { return comp_id; }
 
@@ -35,16 +35,21 @@ public class Company {
 
     public void setcLocation(String cLocation) { this.cLocation = cLocation; }
 
-    public List<Supplier> getSupplier() {
-        return suppliers;
-    }
-
-    public void setSupplier(List<Supplier> suppliers) {
-        this.suppliers = suppliers;
-    }
-
-    public void addSupplier(Supplier supplier) {
-        suppliers.add(supplier);
-        supplier.setCompany(this);
-    }
+//    public List<Supplier> getSupplier() {
+//        return suppliers;
+//    }
+//
+//    public void setSupplier(List<Supplier> suppliers) {
+//        this.suppliers = suppliers;
+//    }
+//
+//    public void addSupplier(Supplier supplier) {
+//        if (supplier != null) {
+//            if (suppliers == null) {
+//                suppliers = new ArrayList<>();
+//            }
+//        }
+//        suppliers.add(supplier);
+//        supplier.setCompany(this);
+//    }
 }
