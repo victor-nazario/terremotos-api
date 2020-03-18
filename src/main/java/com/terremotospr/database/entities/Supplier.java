@@ -1,9 +1,8 @@
 package com.terremotospr.database.entities;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Supplier extends User {
@@ -12,6 +11,9 @@ public class Supplier extends User {
     @ManyToOne(targetEntity = Company.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "comp_id")
     private Company company;
+
+    @OneToMany(targetEntity=Supplies.class, mappedBy="supplier", cascade={CascadeType.ALL}, orphanRemoval=true)
+    private Set<Supplies> supplies = new HashSet<>();
 
     private String position;
     public Company getCompany() {

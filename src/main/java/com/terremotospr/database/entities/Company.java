@@ -20,7 +20,7 @@ public class Company {
     private String cLocation;
 
 
-    @OneToMany(targetEntity=Supplier.class, mappedBy="company", cascade={CascadeType.ALL}, orphanRemoval=true)
+    @OneToMany(targetEntity=Supplier.class, mappedBy="company", cascade=CascadeType.ALL, orphanRemoval=true)
     private Set<Supplier> suppliers = new HashSet<>();
 
     public Long getCid() {
