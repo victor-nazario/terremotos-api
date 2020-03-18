@@ -25,17 +25,17 @@ public class BabyFoodController {
         return babyFoodService.addBabyFood(bean);
     }
 
-//    @GetMapping(value = "/fetch")
-//    public List<BabyFoodBean> fetchAll(){
-//        return babyFoodService.fetchAllBabyFood();
-//    }
-
     @GetMapping(value = "/fetch")
-    public Object fetchAll() throws IOException {
-        //To obtain the path, in IDEA right click and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/babyFoodResponseJSON.json");
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(resource.getInputStream(), Object.class);
+    public List<BabyFoodBean> fetchAll(){
+        return babyFoodService.fetchAllBabyFood();
     }
+
+//    @GetMapping(value = "/fetch")
+//    public Object fetchAll() throws IOException {
+//        //To obtain the path, in IDEA right click and when the dialog shows up, select copy path -> path from source root
+//        Resource resource = new ClassPathResource("responses/babyFoodResponseJSON.json");
+//        ObjectMapper mapper = new ObjectMapper();
+//        return mapper.readValue(resource.getInputStream(), Object.class);
+//    }
 
 }

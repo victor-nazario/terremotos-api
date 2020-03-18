@@ -13,7 +13,7 @@ import java.util.Set;
  * @author Victor Nazario
  */
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.JOINED)
 public class BaseResource {
 
     @Id
