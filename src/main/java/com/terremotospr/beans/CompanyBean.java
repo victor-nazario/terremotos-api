@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * @author Kiara Rodriguez Rojas
- * @date 03/15/2020
+ * date 03/15/2020
  */
 public class CompanyBean{
 
@@ -26,13 +26,13 @@ public class CompanyBean{
 
     public void setcLocation(String cLocation) { this.cLocation = cLocation; }
 
-    public List<SupplierBean> getSuppliers() {
-        return suppliers;
-    }
-
-    public void setSuppliers(List<SupplierBean> suppliers) {
-        this.suppliers = suppliers;
-    }
-
-    private List<SupplierBean> suppliers;
+//    public List<SupplierBean> getSuppliers() {
+//        return suppliers;
+//    }
+//
+//    public void setSuppliers(List<SupplierBean> suppliers) {
+//        this.suppliers = suppliers;
+//    }
+//
+//    private List<SupplierBean> suppliers;
 }
