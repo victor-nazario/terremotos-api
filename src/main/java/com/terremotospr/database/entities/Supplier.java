@@ -9,8 +9,12 @@ public class Supplier extends User {
 //uid, comp-id, position
 
     @ManyToOne(targetEntity = Company.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "comp_id")
+    @JoinColumn(name = "comp_id", insertable = false, updatable = false)
     private Company company;
+
+
+    @Column(name = "comp_id")
+    private Long compId;
 
     @OneToMany(targetEntity=Supplies.class, mappedBy="supplier", cascade={CascadeType.ALL}, orphanRemoval=true)
     private Set<Supplies> supplies = new HashSet<>();
@@ -30,5 +34,13 @@ public class Supplier extends User {
 
     public void setPosition(String position) {
         this.position = position;
+    }
+
+    public Long getCompId() {
+        return compId;
+    }
+
+    public void setCompId(Long compId) {
+        this.compId = compId;
     }
 }
