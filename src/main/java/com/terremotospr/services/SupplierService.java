@@ -29,7 +29,7 @@ public class SupplierService {
 
         Supplier entity = new Supplier();
         BeanUtils.copyProperties(bean, entity, "company");
-        entity.setCompany(companyConverter(bean.getCompany()));
+        entity.setCompId(bean.getCompId());
         supplierRepository.save(entity);
         return true;
     }

@@ -6,8 +6,8 @@ package com.terremotospr.beans;
 public class SuppliesBean {
     private Long id;
     private Long stock;
-    private SupplierBean supplier;
-    private BaseResourceBean resource;
+    private Long supplierId;
+    private Long resourceId;
 
     public Long getId() {
         return id;
@@ -25,19 +25,11 @@ public class SuppliesBean {
         this.stock = stock;
     }
 
-    public SupplierBean getSupplier() {
-        return supplier;
-    }
+    public Long getSupplierId() { return supplierId; }
 
-    public void setSupplier(SupplierBean supplier) {
-        this.supplier = supplier;
-    }
+    public void setSupplierId(Long supplierId) { this.supplierId = supplierId;}
 
-    public BaseResourceBean getResource() {
-        return resource;
-    }
+    public Long getResourceId() { return resourceId; }
 
-    public void setResource(BaseResourceBean resource) {
-        this.resource = resource;
-    }
+    public void setResourceId(Long resourceId) { this.resourceId = resourceId; }
 }

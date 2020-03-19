@@ -31,15 +31,15 @@ public class DryFoodService {
     }
 
     public List<DryFoodBean> fetchAllDryFood(){
-        List<DryFoodBean> clothing;
+        List<DryFoodBean> dryFood;
 
         Iterable<DryFood> iter = dryFoodRepository.findAll();
 
-        clothing = StreamSupport.stream(iter.spliterator(), false)
+        dryFood = StreamSupport.stream(iter.spliterator(), false)
                 .map(this::copyProperties)
                 .collect(Collectors.toList());
 
-        return clothing;
+        return dryFood;
     }
 
     private DryFoodBean copyProperties(DryFood entity){

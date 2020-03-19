@@ -25,8 +25,8 @@ public class SuppliesService {
 
         Supplies entity = new Supplies();
         BeanUtils.copyProperties(bean, entity, "supplier", "resources");
-        entity.setSupplier(supplierConverter(bean.getSupplier()));
-        entity.setResource(resourceConverter(bean.getResource()));
+        entity.setSupplierId(bean.getSupplierId());
+        entity.setResourceId(bean.getResourceId());
         suppliesRepository.save(entity);
         return true;
     }
