@@ -13,12 +13,18 @@ public class Supplies {
     private Long id;
 
     @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "supplier_id")
+    @JoinColumn(name = "supplier_id", insertable = false, updatable = false)
     Supplier supplier;
 
+    @Column(name = "supplier_id")
+    private Long supplierId;
+
     @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "resource_id")
+    @JoinColumn(name = "resource_id", insertable = false, updatable = false)
     BaseResource resource;
+
+    @Column(name = "resource_id")
+    private Long resourceId;
 
     private Long stock;
 
@@ -53,4 +59,12 @@ public class Supplies {
     public void setStock(Long stock) {
         this.stock = stock;
     }
+
+    public Long getSupplierId() { return supplierId; }
+
+    public void setSupplierId(Long supplierId) { this.supplierId = supplierId; }
+
+    public Long getResourceId() { return resourceId; }
+
+    public void setResourceId(Long resourceId) { this.resourceId = resourceId; }
 }
