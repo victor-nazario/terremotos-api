@@ -1,9 +1,6 @@
 package com.terremotospr.database.entities;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 
 /**
  * Created on March 15, 2020 - 9:50 PM
@@ -11,7 +8,8 @@ import javax.persistence.MappedSuperclass;
  * @author Victor Nazario
  */
 
-@MappedSuperclass
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class PaymentMethod {
 
     @Id
