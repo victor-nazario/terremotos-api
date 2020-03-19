@@ -1,29 +1,57 @@
 package com.terremotospr.database.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author Kiara Rodriguez Rojas
  * @date 03/15/2020
  */
 
-@Entity(name = "Company")
+@Entity
 public class Company {
+
     @Id
-    private Long comp_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long cid;
+
     private String cName;
     private String cLocation;
 
-    public Long getComp_id() { return comp_id; }
 
-    public void setComp_id(Long comp_id) { this.comp_id = comp_id; }
+    @OneToMany(targetEntity=Supplier.class, mappedBy="company", cascade=CascadeType.ALL, orphanRemoval=true)
+    private Set<Supplier> suppliers = new HashSet<>();
 
-    public String getcName() { return cName; }
+    public Long getCid() {
+        return cid;
+    }
 
-    public void setcName(String cName) { this.cName = cName; }
+    public void setCid(Long cid) {
+        this.cid = cid;
+    }
 
-    public String getcLocation() { return cLocation; }
+    public String getcName() {
+        return cName;
+    }
 
-    public void setcLocation(String cLocation) { this.cLocation = cLocation; }
+    public void setcName(String cName) {
+        this.cName = cName;
+    }
+
+    public String getcLocation() {
+        return cLocation;
+    }
+
+    public void setcLocation(String cLocation) {
+        this.cLocation = cLocation;
+    }
+
+    public Set<Supplier> getSuppliers() {
+        return suppliers;
+    }
+
+    public void setSuppliers(Set<Supplier> suppliers) {
+        this.suppliers = suppliers;
+    }
 }
