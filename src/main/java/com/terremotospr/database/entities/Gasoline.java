@@ -11,7 +11,7 @@ import javax.persistence.Entity;
 
 @Entity(name = "Gasoline")
 public class Gasoline extends BaseResource{
-
+    //Should extend Fuel
     private typeOfGasoline type;
     private Double octane;
     private Double size;
