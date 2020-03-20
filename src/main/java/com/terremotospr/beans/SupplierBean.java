@@ -5,7 +5,7 @@ import com.terremotospr.database.entities.User;
 /*
  * @author Wilfredo Aponte Pomales
  */
-public class SupplierBean extends User {
+public class SupplierBean extends UserBean {
     private String position;
     private Long compId;
 
