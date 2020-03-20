@@ -5,7 +5,7 @@ package com.terremotospr.beans;
  * @date 03/14/2020
  */
 public class GasolineBean extends BaseResourceBean{
-
+    //Should extend FuelBean
     private typeOfGasoline type;
     private Double octane;
     private Double size;

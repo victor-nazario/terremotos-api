@@ -3,30 +3,30 @@ package com.terremotospr.database.entities;
 import com.terremotospr.beans.ConsumerType;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 
 /**
  * @author Kiara Rodriguez Rojas
  * @date 03/15/2020
  */
 
+
 @Entity(name = "Consumer")
-public class Consumer{
-    @Id
-    //should extend UserBean and import Phone and PM
+public class Consumer extends User{
+
     private ConsumerType type;
-//    private Phone phone;
-//    private PaymentMethod payment_method;
 
     public ConsumerType getType() { return type; }
 
     public void setType(ConsumerType type) { this.type = type; }
 
-//    public Phone getPhone() { return phone; }
+//    @OneToMany(targetEntity=Payment.class, mappedBy = "consumer", orphanRemoval=true)
+//    private Set<Payment> payments = new HashSet<>();
 //
-//    public void setPhone(Phone phone) { this.phone = phone; }
+//    public Set<Payment> getPayments() { return payments; }
 //
-//    public PaymentMethod getPayment_method() { return payment_method; }
-//
-//    public void setPayment_method(PaymentMethod payment_method) { this.payment_method = payment_method; }
+//    public void setPayments(Set<Payment> payments) { this.payments = payments; }
+
+
+
+
 }

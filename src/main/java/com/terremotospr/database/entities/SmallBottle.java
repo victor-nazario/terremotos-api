@@ -7,7 +7,7 @@ import javax.persistence.Entity;
  * @date 03/15/2020
  */
 @Entity(name = "SmallBottle")
-public class SmallBottle extends Water {
+public class SmallBottle extends Water{
 
     private Double size;
 

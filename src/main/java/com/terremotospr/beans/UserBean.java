@@ -14,8 +14,9 @@ public class UserBean {
     private String line1;
     private String line2;
     private String city;
+    private String country;
     private String region;
-    private int zipCode;
+    private String zipCode;
 
     public Long getId() {
         return id;
@@ -73,6 +74,10 @@ public class UserBean {
         this.city = city;
     }
 
+    public String getCountry() { return country; }
+
+    public void setCountry(String country) { this.country = country; }
+
     public String getRegion() {
         return region;
     }
@@ -81,11 +86,11 @@ public class UserBean {
         this.region = region;
     }
 
-    public int getZipCode() {
+    public String getZipCode() {
         return zipCode;
     }
 
-    public void setZipCode(int zipCode) {
+    public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
 }
