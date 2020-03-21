@@ -5,6 +5,6 @@ package com.terremotospr.beans;
  * @date 03/14/2020
  */
 
-public enum typeOfGasoline{
+public enum TypeOfGasoline {
     REGULAR, PREMIUM
 }

@@ -6,13 +6,13 @@ package com.terremotospr.beans;
  */
 public class GasolineBean extends BaseResourceBean{
 
-    private typeOfGasoline type;
+    private TypeOfGasoline type;
     private Double octane;
     private Double size;
 
-    public typeOfGasoline getType() { return type; }
+    public TypeOfGasoline getType() { return type; }
 
-    public void setType(typeOfGasoline type) { this.type = type; }
+    public void setType(TypeOfGasoline type) { this.type = type; }
 
     public Double getOctane() { return octane; }
 

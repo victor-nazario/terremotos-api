@@ -1,5 +1,5 @@
 package com.terremotospr.beans;
 
-public enum typeofHeavyEquipment {
+public enum TypeofHeavyEquipment {
     KITCHENWARE, FURNITURE, CANOPY, CAMPING_GEAR
 }

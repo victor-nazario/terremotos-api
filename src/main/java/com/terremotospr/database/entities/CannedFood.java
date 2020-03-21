@@ -1,6 +1,6 @@
 package com.terremotospr.database.entities;
 
-import com.terremotospr.beans.typeOfCannedFood;
+import com.terremotospr.beans.TypeOfCannedFood;
 
 import javax.persistence.Entity;
 
@@ -11,12 +11,12 @@ import javax.persistence.Entity;
 @Entity(name = "CannedFood")
 public class CannedFood extends BaseResource{
 
-    private typeOfCannedFood type;
+    private TypeOfCannedFood type;
     private Double size;
 
-    public typeOfCannedFood getType() { return type; }
+    public TypeOfCannedFood getType() { return type; }
 
-    public void setType(typeOfCannedFood type) { this.type = type; }
+    public void setType(TypeOfCannedFood type) { this.type = type; }
 
     public Double getSize() { return size; }
 

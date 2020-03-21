@@ -1,6 +1,6 @@
 package com.terremotospr.database.entities;
 
-import com.terremotospr.beans.dFoodType;
+import com.terremotospr.beans.DFoodType;
 
 import javax.persistence.Entity;
 /*
@@ -10,11 +10,11 @@ import javax.persistence.Entity;
 public class DryFood extends BaseResource {
 
     private String size;
-    private dFoodType type;
+    private DFoodType type;
 
-    public dFoodType getType() { return type; }
+    public DFoodType getType() { return type; }
 
-    public void setType(dFoodType type) { this.type = type; }
+    public void setType(DFoodType type) { this.type = type; }
 
     public String getSize() { return size; }
 
