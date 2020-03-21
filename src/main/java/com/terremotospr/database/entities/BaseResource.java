@@ -4,13 +4,16 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created on March 13, 2020 - 9:43 PM
  *
  * @author Victor Nazario
  */
-@MappedSuperclass
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class BaseResource {
 
     @Id
@@ -25,6 +28,8 @@ public class BaseResource {
     private Double price;
     private Double longitude;
     private Double latitude;
+    @OneToMany(targetEntity=Supplies.class, mappedBy="resource", cascade=CascadeType.ALL, orphanRemoval=true)
+    private Set<Supplies> supplies = new HashSet<>();
 
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date expirationDate;
@@ -68,4 +73,12 @@ public class BaseResource {
     public Date getExpirationDate() { return expirationDate; }
 
     public void setExpirationDate(Date expirationDate) { this.expirationDate = expirationDate; }
+
+    public Set<Supplies> getSupplies() {
+        return supplies;
+    }
+
+    public void setSupplies(Set<Supplies> supplies) {
+        this.supplies = supplies;
+    }
 }

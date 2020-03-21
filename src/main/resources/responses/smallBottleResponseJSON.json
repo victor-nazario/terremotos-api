@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Small bottles of water",
+    "brand": "Nestle",
+    "category": "water",
+    "description": "A package of 32 bottles of water",
+    "available": false,
+    "price": 2.1,
+    "longitude": 18.5,
+    "latitude": -66.4,
+    "potable": true,
+    "packagedQuantity": 32,
+    "type": "PURIFIED",
+    "size": 8.0
+  },
+  {
+    "name": "Small bottles of water",
+    "brand": "Nikini",
+    "category": "water",
+    "description": "A package of 24 bottles of water",
+    "available": true,
+    "price": 3.99,
+    "longitude": -17.6,
+    "latitude": -67.1,
+    "potable": true,
+    "packagedQuantity": 24,
+    "type": "MINERAL",
+    "size": 16.0
+  },
+  {
+    "name": "Small bottles of water",
+    "brand": "Dasani",
+    "category": "water",
+    "description": "A package of 24 bottles of water",
+    "available": false,
+    "price": 3.79,
+    "longitude": 18.0,
+    "latitude": -65.2,
+    "potable": true,
+    "packagedQuantity": 24,
+    "type": "SPRING",
+    "size": 12.0
+  }
+]

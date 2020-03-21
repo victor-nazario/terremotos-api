@@ -6,5 +6,5 @@ package com.terremotospr.beans;
  * @author Victor Nazario
  */
 public enum typeOfWater {
-    BOTTLE, GALLON
+    PURIFIED, ALKALINE, MINERAL, SPRING
 }
