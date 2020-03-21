@@ -31,6 +31,9 @@ public class BaseResource {
     @OneToMany(targetEntity=Supplies.class, mappedBy="resource", cascade=CascadeType.ALL, orphanRemoval=true)
     private Set<Supplies> supplies = new HashSet<>();
 
+    @OneToMany(targetEntity=Reserves.class, mappedBy="resource", cascade=CascadeType.ALL, orphanRemoval=true)
+    private Set<Reserves> reserves = new HashSet<>();
+
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date expirationDate;
 
@@ -81,4 +84,8 @@ public class BaseResource {
     public void setSupplies(Set<Supplies> supplies) {
         this.supplies = supplies;
     }
+
+    public Set<Reserves> getReserves() { return reserves; }
+
+    public void setReserves(Set<Reserves> reserves) { this.reserves = reserves; }
 }
