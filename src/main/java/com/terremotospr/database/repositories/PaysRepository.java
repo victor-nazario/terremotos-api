@@ -1,6 +1,6 @@
 package com.terremotospr.database.repositories;
 
-import com.terremotospr.database.entities.Reserves;
+import com.terremotospr.database.entities.Pays;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
  * @date 03/20/2020
  */
 @Repository
-public interface ReservesRepository extends CrudRepository<Reserves, Long> {
+public interface PaysRepository extends CrudRepository<Pays, Long> {
 }
