@@ -6,7 +6,7 @@ public class PowerGenBean extends BaseResourceBean {
     private Long id;
     private generatorType type;
     private String power;
-    private fuelTypeGenerator fuelType;
+    private FuelTypeGenerator fuelType;
 
     public Long getId() { return id; }
 
@@ -20,7 +20,7 @@ public class PowerGenBean extends BaseResourceBean {
 
     public void setPower(String power) { this.power = power; }
 
-    public fuelTypeGenerator getFuelType() { return fuelType; }
+    public FuelTypeGenerator getFuelType() { return fuelType; }
 
-    public void setFuelType(fuelTypeGenerator fuelType) { this.fuelType = fuelType; }
+    public void setFuelType(FuelTypeGenerator fuelType) { this.fuelType = fuelType; }
 }

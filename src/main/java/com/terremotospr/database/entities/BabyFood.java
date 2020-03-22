@@ -1,6 +1,6 @@
 package com.terremotospr.database.entities;
 
-import com.terremotospr.beans.babyFoodFlavor;
+import com.terremotospr.beans.BabyFoodFlavor;
 
 import javax.persistence.Entity;
 /*
@@ -10,11 +10,11 @@ import javax.persistence.Entity;
 public class BabyFood extends BaseResource {
 
     private String size;
-    private babyFoodFlavor flavor;
+    private BabyFoodFlavor flavor;
 
-    public babyFoodFlavor getMedType() { return flavor; }
+    public BabyFoodFlavor getMedType() { return flavor; }
 
-    public void setMedType(babyFoodFlavor flavor) { this.flavor = flavor; }
+    public void setMedType(BabyFoodFlavor flavor) { this.flavor = flavor; }
 
     public String getSize() { return size; }
 

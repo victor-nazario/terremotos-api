@@ -1,5 +1,5 @@
 package com.terremotospr.beans;
 
-public enum typeOfCannedFood {
+public enum TypeOfCannedFood {
     FRUIT, VEGETABLE, MEAT, SOUP, BEANS, MILK, PASTA
 }

@@ -1,6 +1,6 @@
 package com.terremotospr.database.entities;
 
-import com.terremotospr.beans.fuelTypeGenerator;
+import com.terremotospr.beans.FuelTypeGenerator;
 import com.terremotospr.beans.generatorType;
 
 import javax.persistence.Entity;
@@ -12,7 +12,7 @@ public class PowerGen extends BaseResource {
 
     private generatorType type;
     private String power;
-    private fuelTypeGenerator fuelType;
+    private FuelTypeGenerator fuelType;
 
     public generatorType getType() { return type; }
 
@@ -22,7 +22,7 @@ public class PowerGen extends BaseResource {
 
     public void setPower(String power) { this.power = power; }
 
-    public fuelTypeGenerator getFuelType() { return fuelType; }
+    public FuelTypeGenerator getFuelType() { return fuelType; }
 
-    public void setFuelType(fuelTypeGenerator fuelType) { this.fuelType = fuelType; }
+    public void setFuelType(FuelTypeGenerator fuelType) { this.fuelType = fuelType; }
 }

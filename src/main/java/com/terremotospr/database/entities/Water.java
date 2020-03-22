@@ -1,6 +1,6 @@
 package com.terremotospr.database.entities;
 
-import com.terremotospr.beans.typeOfWater;
+import com.terremotospr.beans.TypeOfWater;
 
 import javax.persistence.Entity;
 
@@ -16,7 +16,7 @@ public class Water extends BaseResource{
     private boolean potable;
     private int packagedQuantity;
     private String brand;
-    private typeOfWater type;
+    private TypeOfWater type;
 
     public boolean isPotable() {
         return potable;
@@ -42,7 +42,7 @@ public class Water extends BaseResource{
         this.brand = brand;
     }
 
-    public typeOfWater getType() { return type; }
+    public TypeOfWater getType() { return type; }
 
-    public void setType(typeOfWater type) { this.type = type; }
+    public void setType(TypeOfWater type) { this.type = type; }
 }

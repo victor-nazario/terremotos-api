@@ -2,6 +2,6 @@ package com.terremotospr.beans;
 /*
  * @author Wilfredo Aponte Pomales
  */
-public enum fuelTypeGenerator {
+public enum FuelTypeGenerator {
     GAS, DUALFUEL, PROPANE, DIESEL
 }

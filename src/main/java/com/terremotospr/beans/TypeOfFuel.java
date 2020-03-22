@@ -5,6 +5,5 @@ package com.terremotospr.beans;
  *
  * @author Victor Nazario
  */
-public enum typeOfWater {
-    PURIFIED, ALKALINE, MINERAL, SPRING
+public enum TypeOfFuel {
 }

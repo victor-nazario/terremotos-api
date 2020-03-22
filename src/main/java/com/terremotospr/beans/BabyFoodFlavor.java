@@ -3,6 +3,6 @@ package com.terremotospr.beans;
 /*
  * @author Wilfredo Aponte Pomales
  */
-public enum babyFoodFlavor {
+public enum BabyFoodFlavor {
     FRUIT, VEGETABLE, VARIETY, OTHER
 }
