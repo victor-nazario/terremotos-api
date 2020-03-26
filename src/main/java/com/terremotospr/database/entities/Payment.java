@@ -1,6 +1,8 @@
 package com.terremotospr.database.entities;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author Kiara Rodriguez Rojas
@@ -40,4 +42,13 @@ public class Payment {
     private Long getConsumerId(){return consumerId;}
 
     public void setConsumerId(Long consumerId) { this.consumerId = consumerId;}
+
+
+
+    @OneToMany(targetEntity=Pays.class, mappedBy="payment", cascade=CascadeType.ALL, orphanRemoval=true)
+    private Set<Pays> pays = new HashSet<>();
+
+    public Set<Pays> getPays() { return pays; }
+
+    public void setPays(Set<Pays> pays) { this.pays = pays; }
 }

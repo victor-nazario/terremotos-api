@@ -3,6 +3,9 @@ package com.terremotospr.database.entities;
 import com.terremotospr.beans.ConsumerType;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author Kiara Rodriguez Rojas
@@ -19,12 +22,12 @@ public class Consumer extends User{
 
     public void setType(ConsumerType type) { this.type = type; }
 
-//    @OneToMany(targetEntity=Payment.class, mappedBy = "consumer", orphanRemoval=true)
-//    private Set<Payment> payments = new HashSet<>();
-//
-//    public Set<Payment> getPayments() { return payments; }
-//
-//    public void setPayments(Set<Payment> payments) { this.payments = payments; }
+    @OneToMany(targetEntity=Payment.class, mappedBy = "consumer", orphanRemoval=true)
+    private Set<Payment> payments = new HashSet<>();
+
+    public Set<Payment> getPayments() { return payments; }
+
+    public void setPayments(Set<Payment> payments) { this.payments = payments; }
 
 
 
