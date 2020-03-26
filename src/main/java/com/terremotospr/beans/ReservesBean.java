@@ -8,7 +8,7 @@ public class ReservesBean {
     private Long id;
     private int rquantity;
     private Long resourceId;
-    //private Long reservationId;
+    private Long reservationId;
 
     public Long getId() { return id; }
 
@@ -21,4 +21,8 @@ public class ReservesBean {
     public Long getResourceId() { return resourceId; }
 
     public void setResourceId(Long resourceId) { this.resourceId = resourceId; }
+
+    public Long getReservationId() { return reservationId; }
+
+    public void setReservationId(Long reservationId) { this.reservationId = reservationId; }
 }

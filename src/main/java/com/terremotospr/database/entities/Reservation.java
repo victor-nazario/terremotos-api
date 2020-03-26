@@ -1,10 +1,10 @@
 package com.terremotospr.database.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.terremotospr.beans.ConsumerBean;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -24,6 +24,9 @@ public class Reservation {
 
     @ManyToOne(targetEntity = Consumer.class, cascade = CascadeType.ALL)
     private Consumer consumer;
+
+    @OneToMany(targetEntity=Reserves.class, mappedBy="resource", cascade=CascadeType.ALL, orphanRemoval=true)
+    private Set<Reserves> reserves = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -48,4 +51,8 @@ public class Reservation {
     public void setConsumer(Consumer consumer) {
         this.consumer = consumer;
     }
+
+    public Set<Reserves> getReserves() { return reserves; }
+
+    public void setReserves(Set<Reserves> reserves) { this.reserves = reserves; }
 }

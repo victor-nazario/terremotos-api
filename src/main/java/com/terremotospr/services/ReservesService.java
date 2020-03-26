@@ -25,7 +25,7 @@ public class ReservesService {
 
         Reserves entity = new Reserves();
         BeanUtils.copyProperties(bean, entity, "reservation", "resources");
-        //entity.setReservationId(bean.getReservationId());
+        entity.setReservationId(bean.getReservationId());
         entity.setResourceId(bean.getResourceId());
         reservesRepository.save(entity);
         return true;

@@ -24,6 +24,7 @@ public class Reserves {
 
     public void setRQuantity(int rquantity) { this.rquantity = rquantity; }
 
+    //Relationships
     @ManyToOne(cascade= CascadeType.ALL)
     @JoinColumn(name = "resource_id", insertable = false, updatable = false)
     BaseResource resource;
@@ -39,16 +40,16 @@ public class Reserves {
 
     public void setResourceId(Long resourceId) { this.resourceId = resourceId; }
 
-//    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "reservation_id", insertable = false, updatable = false)
-//    private Reservation reservation;
-//
-//    @Column(name = "reservation")
-//    private Long reservationId;
-//
-//    public Long getResourceId() { return resourceId; }
-//
-//    public Long getReservationId() { return reservationId; }
-//
-//    public void setReservationId(Long reservationId) { this.reservationId = reservationId; }
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "reservation_id", insertable = false, updatable = false)
+    private Reservation reservation;
+
+    @Column(name = "reservation")
+    private Long reservationId;
+
+    public Long getResourceId() { return resourceId; }
+
+    public Long getReservationId() { return reservationId; }
+
+    public void setReservationId(Long reservationId) { this.reservationId = reservationId; }
 }
