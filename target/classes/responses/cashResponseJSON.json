@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "customerId": null,
+    "amountAvailable": 90
+  },
+  {
+    "id": 2,
+    "customerId": null,
+    "amountAvailable": 300
+  }
+]

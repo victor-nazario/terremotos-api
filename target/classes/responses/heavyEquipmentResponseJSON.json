@@ -1,0 +1,41 @@
+[
+  {
+    "type": "KITCHENWARE",
+    "size": 50.3,
+    "name": "BBQ Grill",
+    "brand": "Costway",
+    "category": "heavyequipment",
+    "description": "A portable BBQ grill that uses charcoal or wood",
+    "available": false,
+    "price": 100.0,
+    "longitude": 17.8,
+    "latitude": -67.0,
+    "expirationDate": "null"
+  },
+  {
+    "type": "FURNITURE",
+    "size": 10.0,
+    "name": "Folding Chair",
+    "brand": "Mainstays",
+    "category": "heavyequipment",
+    "description": "A foldable chair made of steel",
+    "available": true,
+    "price": 10.0,
+    "longitude": 18.1,
+    "latitude": -65.3,
+    "expirationDate": "null"
+  },
+  {
+    "type": "CAMPING_GEAR",
+    "size": 6.0,
+    "name": "Sleeping bag for 2",
+    "brand": "GoPlus",
+    "category": "heavyequipment",
+    "description": "A sleeping bag for two people",
+    "available": false,
+    "price": 40.0,
+    "longitude": 17.5,
+    "latitude": -67.2,
+    "expirationDate": "null"
+  }
+]

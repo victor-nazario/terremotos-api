@@ -1,0 +1,31 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /terremotos/api
+    session:
+      timeout: 10m
+
+
+spring.jpa.properties.hibernate.dialect:  org.hibernate.dialect.MySQL5InnoDBDialect
+
+spring:
+  jpa:
+    show-sql: true
+    database: mysql
+    hibernate:
+      ddl-auto: update
+  datasource:
+    hikari:
+      connection-test-query: select 1 from dual
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+    type: com.zaxxer.hikari.HikariDataSource
+    platform: mysql
+    url: jdbc:mysql://localhost:3306/terremotos
+    username: root
+    password: root
+
+logging:
+  level:
+    ROOT: INFO

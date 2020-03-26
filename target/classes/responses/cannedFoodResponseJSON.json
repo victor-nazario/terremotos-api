@@ -1,0 +1,41 @@
+[
+  {
+    "type": "FRUIT",
+    "size": 12.0,
+    "name": "Fruit Cocktail",
+    "brand": "Del Monte",
+    "category": "cannedfood",
+    "description": "A fruit cocktail of peaches, cherries, pineapple, grapes and pears",
+    "available": true,
+    "price": 2.30,
+    "longitude": 18.4,
+    "latitude": -65.7,
+    "expirationDate": "2020-04-02T00:00:00.000+0000"
+  },
+  {
+    "type": "MEAT",
+    "size": 8.0,
+    "name": "Canned Tuna",
+    "brand": "Chicken Sea",
+    "category": "cannedfood",
+    "description": "A canned of tuna in vegetable oil",
+    "available": false,
+    "price": 1.40,
+    "longitude": 17.9,
+    "latitude": -66.0,
+    "expirationDate": "2022-07-16T00:00:00.000+0000"
+  },
+  {
+    "type": "PASTA",
+    "size": 15.0,
+    "name": "Canned Beef Ravioli",
+    "brand": "Chef Boyardee",
+    "category": "cannedfood",
+    "description": "A canned of beef ravioli in tomate and beef sauce",
+    "available": true,
+    "price": 2.00,
+    "longitude": 18.2,
+    "latitude": -67.1,
+    "expirationDate": "2023-08-22T00:00:00.000+0000"
+  }
+]
