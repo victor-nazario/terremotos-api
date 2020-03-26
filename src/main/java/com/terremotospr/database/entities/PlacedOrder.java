@@ -28,6 +28,9 @@ public class PlacedOrder {
     @OneToMany(targetEntity=Belongs.class, mappedBy="orders", cascade={CascadeType.ALL}, orphanRemoval=true)
     private Set<Belongs> belongs = new HashSet<>();
 
+    @OneToMany(targetEntity=Pays.class, mappedBy="order", cascade=CascadeType.ALL, orphanRemoval=true)
+    private Set<Pays> pays = new HashSet<>();
+
     public Long getId() {
         return id;
     }
@@ -51,4 +54,12 @@ public class PlacedOrder {
     public void setConsumer(Consumer consumer) {
         this.consumer = consumer;
     }
+
+    public Set<Belongs> getBelongs() { return belongs; }
+
+    public void setBelongs(Set<Belongs> belongs) { this.belongs = belongs; }
+
+    public Set<Pays> getPays() { return pays; }
+
+    public void setPays(Set<Pays> pays) { this.pays = pays; }
 }

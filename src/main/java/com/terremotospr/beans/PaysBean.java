@@ -7,14 +7,9 @@ import java.util.Date;
  * @date 03/20/2020
  */
 public class PaysBean {
-    private Long id;
     private Date paymentDate;
     private Long paymentId;
-   // private Long orderId;
-
-    public Long getId() { return id; }
-
-    public void setId(Long id) { this.id = id; }
+    private Long orderId;
 
     public Date getPaymentDate() { return paymentDate; }
 
@@ -23,5 +18,9 @@ public class PaysBean {
     public Long getPaymentId() { return paymentId; }
 
     public void setPaymentId(Long paymentId) { this.paymentId = paymentId; }
+
+    public Long getOrderId() { return orderId; }
+
+    public void setOrderId(Long orderId) { this.orderId = orderId; }
 }
 

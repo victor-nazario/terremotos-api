@@ -24,8 +24,8 @@ public class PaysService {
         if(bean == null) return false;
 
         Pays entity = new Pays();
-        BeanUtils.copyProperties(bean, entity, "payment", "order");
-        //entity.setOrderId(bean.getOrderId());
+        BeanUtils.copyProperties(bean, entity, "payment", "placedOrder");
+        entity.setOrderId(bean.getOrderId());
         entity.setPaymentId(bean.getPaymentId());
         paysRepository.save(entity);
         return true;
