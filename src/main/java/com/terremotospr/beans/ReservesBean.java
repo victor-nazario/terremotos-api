@@ -5,14 +5,9 @@ package com.terremotospr.beans;
  * @date 03/20/2020
  */
 public class ReservesBean {
-    private Long id;
     private int rquantity;
     private Long resourceId;
     private Long reservationId;
-
-    public Long getId() { return id; }
-
-    public void setId(Long id) { this.id = id; }
 
     public int getRQuantity() { return rquantity; }
 

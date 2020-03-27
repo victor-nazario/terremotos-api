@@ -25,7 +25,7 @@ public class Reservation {
     @ManyToOne(targetEntity = Consumer.class, cascade = CascadeType.ALL)
     private Consumer consumer;
 
-    @OneToMany(targetEntity=Reserves.class, mappedBy="resource", cascade=CascadeType.ALL, orphanRemoval=true)
+    @OneToMany(targetEntity=Reserves.class, mappedBy="reservation", cascade=CascadeType.ALL, orphanRemoval=true)
     private Set<Reserves> reserves = new HashSet<>();
 
     public Long getId() {

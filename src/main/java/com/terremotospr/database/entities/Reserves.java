@@ -1,30 +1,23 @@
 package com.terremotospr.database.entities;
 
 import javax.persistence.*;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 /**
  * @author Kiara Rodriguez Rojas
  * @date 03/20/2020
  */
 @Entity
+@IdClass(ReservesId.class)
 public class Reserves {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     private int rquantity;
-
-    public Long getId() { return id; }
-
-    public void setId(Long id) { this.id = id; }
 
     public int getRquantity() { return rquantity; }
 
     public void setRQuantity(int rquantity) { this.rquantity = rquantity; }
 
     //Relationships
+    @Id
     @ManyToOne(cascade= CascadeType.ALL)
     @JoinColumn(name = "resource_id", insertable = false, updatable = false)
     BaseResource resource;
@@ -40,11 +33,12 @@ public class Reserves {
 
     public void setResourceId(Long resourceId) { this.resourceId = resourceId; }
 
+    @Id
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "reservation_id", insertable = false, updatable = false)
     private Reservation reservation;
 
-    @Column(name = "reservation")
+    @Column(name = "reservation_id")
     private Long reservationId;
 
     public Long getResourceId() { return resourceId; }
