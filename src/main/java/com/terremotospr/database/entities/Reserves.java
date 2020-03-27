@@ -1,6 +1,7 @@
 package com.terremotospr.database.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @author Kiara Rodriguez Rojas
@@ -8,7 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 @IdClass(ReservesId.class)
-public class Reserves {
+public class Reserves implements Serializable {
 
     private int rquantity;
 

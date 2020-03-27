@@ -2,6 +2,10 @@ package com.terremotospr.database.entities;
 
 import java.io.Serializable;
 
+/**
+ * @author Kiara Rodriguez Rojas
+ * @date 03/26/2020
+ */
 public class ReservesId implements Serializable {
 
     private Long resourceId;
