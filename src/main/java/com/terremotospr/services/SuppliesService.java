@@ -1,10 +1,6 @@
 package com.terremotospr.services;
 
-import com.terremotospr.beans.BaseResourceBean;
-import com.terremotospr.beans.SupplierBean;
 import com.terremotospr.beans.SuppliesBean;
-import com.terremotospr.database.entities.BaseResource;
-import com.terremotospr.database.entities.Supplier;
 import com.terremotospr.database.entities.Supplies;
 import com.terremotospr.database.repositories.SuppliesRepository;
 import org.springframework.beans.BeanUtils;
@@ -35,18 +31,6 @@ public class SuppliesService {
         SuppliesBean bean = new SuppliesBean();
         BeanUtils.copyProperties(entity, bean);
         return bean;
-    }
-
-    private Supplier supplierConverter(SupplierBean bean){
-        Supplier entity = new Supplier();
-        BeanUtils.copyProperties(bean,entity);
-        return entity;
-    }
-
-    private BaseResource resourceConverter(BaseResourceBean bean){
-        BaseResource entity = new BaseResource();
-        BeanUtils.copyProperties(bean,entity);
-        return entity;
     }
 
     public List<SuppliesBean> fetchAllSupplies(){

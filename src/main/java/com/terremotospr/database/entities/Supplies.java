@@ -7,11 +7,9 @@ import javax.persistence.*;
  * @author Wilfredo Aponte Pomales
  */
 @Entity
+@IdClass(SuppliesId.class)
 public class Supplies {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "supplier_id", insertable = false, updatable = false)
     Supplier supplier;
@@ -19,6 +17,7 @@ public class Supplies {
     @Column(name = "supplier_id")
     private Long supplierId;
 
+    @Id
     @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "resource_id", insertable = false, updatable = false)
     BaseResource resource;
@@ -27,14 +26,6 @@ public class Supplies {
     private Long resourceId;
 
     private Long stock;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Supplier getSupplier() {
         return supplier;
