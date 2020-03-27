@@ -1,6 +1,8 @@
 package com.terremotospr.database.entities;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created on March 15, 2020 - 9:24 PM
@@ -8,7 +10,8 @@ import javax.persistence.*;
  * @author Victor Nazario
  */
 
-@MappedSuperclass
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User{
 
     @Id
@@ -100,4 +103,11 @@ public class User{
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
+
+    @OneToMany(targetEntity=Manages.class, mappedBy="user", cascade=CascadeType.ALL, orphanRemoval=true)
+    private Set<Manages> manages = new HashSet<>();
+
+    public Set<Manages> getManages() { return manages; }
+
+    public void setManages(Set<Manages> manages) { this.manages = manages; }
 }
