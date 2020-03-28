@@ -1,8 +1,8 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.GasolineBean;
-import com.terremotospr.database.entities.Gasoline;
-import com.terremotospr.database.repositories.GasolineRepository;
+import com.terremotospr.database.entities.resourceEntities.Gasoline;
+import com.terremotospr.database.repositories.resourceRepositories.GasolineRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

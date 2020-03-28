@@ -1,9 +1,5 @@
 package com.terremotospr.beans;
 
-import com.terremotospr.database.entities.Supplier;
-
-import java.util.List;
-
 /**
  * @author Kiara Rodriguez Rojas
  * date 03/15/2020

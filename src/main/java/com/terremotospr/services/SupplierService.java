@@ -1,13 +1,10 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.CompanyBean;
-import com.terremotospr.beans.ConsumerBean;
 import com.terremotospr.beans.SupplierBean;
-import com.terremotospr.database.entities.Company;
-import com.terremotospr.database.entities.Consumer;
-import com.terremotospr.database.entities.Supplier;
-import com.terremotospr.database.repositories.ConsumerRepository;
-import com.terremotospr.database.repositories.SupplierRepository;
+import com.terremotospr.database.entities.administrativeEntities.Company;
+import com.terremotospr.database.entities.administrativeEntities.Supplier;
+import com.terremotospr.database.repositories.administrativeRepositories.SupplierRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

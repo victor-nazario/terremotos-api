@@ -1,8 +1,8 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.DryFoodBean;
-import com.terremotospr.database.entities.DryFood;
-import com.terremotospr.database.repositories.DryFoodRepository;
+import com.terremotospr.database.entities.resourceEntities.DryFood;
+import com.terremotospr.database.repositories.resourceRepositories.DryFoodRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,8 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.CardBean;
-import com.terremotospr.database.entities.Card;
-import com.terremotospr.database.repositories.CardRepository;
+import com.terremotospr.database.entities.paymentEntities.Card;
+import com.terremotospr.database.repositories.paymentRepositories.CardRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

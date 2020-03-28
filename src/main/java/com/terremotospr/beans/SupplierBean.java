@@ -1,7 +1,5 @@
 package com.terremotospr.beans;
 
-import com.terremotospr.database.entities.User;
-
 /*
  * @author Wilfredo Aponte Pomales
  */

@@ -1,8 +1,8 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.PersonBean;
-import com.terremotospr.database.entities.Person;
-import com.terremotospr.database.repositories.PersonRepository;
+import com.terremotospr.database.entities.administrativeEntities.Person;
+import com.terremotospr.database.repositories.administrativeRepositories.PersonRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -2,8 +2,8 @@ package com.terremotospr.services;
 
 
 import com.terremotospr.beans.MedicationBean;
-import com.terremotospr.database.entities.Medication;
-import com.terremotospr.database.repositories.MedicationRepository;
+import com.terremotospr.database.entities.resourceEntities.Medication;
+import com.terremotospr.database.repositories.resourceRepositories.MedicationRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

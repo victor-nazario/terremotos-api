@@ -1,8 +1,8 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.IceBean;
-import com.terremotospr.database.entities.Ice;
-import com.terremotospr.database.repositories.IceRepository;
+import com.terremotospr.database.entities.resourceEntities.Ice;
+import com.terremotospr.database.repositories.resourceRepositories.IceRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,8 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.PaypalAccountBean;
-import com.terremotospr.database.entities.PaypalAccount;
-import com.terremotospr.database.repositories.PaypalAccountRepository;
+import com.terremotospr.database.entities.paymentEntities.PaypalAccount;
+import com.terremotospr.database.repositories.paymentRepositories.PaypalAccountRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

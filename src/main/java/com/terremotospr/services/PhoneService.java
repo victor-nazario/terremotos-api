@@ -1,8 +1,8 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.PhoneBean;
-import com.terremotospr.database.entities.Phone;
-import com.terremotospr.database.repositories.PhoneRepository;
+import com.terremotospr.database.entities.administrativeEntities.Phone;
+import com.terremotospr.database.repositories.administrativeRepositories.PhoneRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

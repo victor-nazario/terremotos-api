@@ -1,8 +1,8 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.PowerGenBean;
-import com.terremotospr.database.entities.PowerGen;
-import com.terremotospr.database.repositories.PowerGenRepository;
+import com.terremotospr.database.entities.resourceEntities.PowerGen;
+import com.terremotospr.database.repositories.resourceRepositories.PowerGenRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

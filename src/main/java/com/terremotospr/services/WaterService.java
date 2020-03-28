@@ -1,8 +1,8 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.WaterBean;
-import com.terremotospr.database.entities.Water;
-import com.terremotospr.database.repositories.WaterRepository;
+import com.terremotospr.database.entities.resourceEntities.Water;
+import com.terremotospr.database.repositories.resourceRepositories.WaterRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,9 +1,8 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.MedicalDevicesBean;
-import com.terremotospr.database.entities.MedicalDevices;
-import com.terremotospr.database.repositories.MedicalDevicesRepository;
-import com.terremotospr.database.repositories.MedicationRepository;
+import com.terremotospr.database.entities.resourceEntities.MedicalDevices;
+import com.terremotospr.database.repositories.resourceRepositories.MedicalDevicesRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

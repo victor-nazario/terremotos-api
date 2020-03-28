@@ -1,8 +1,8 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.ToolBean;
-import com.terremotospr.database.entities.Tool;
-import com.terremotospr.database.repositories.ToolRepository;
+import com.terremotospr.database.entities.resourceEntities.Tool;
+import com.terremotospr.database.repositories.resourceRepositories.ToolRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

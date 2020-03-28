@@ -1,10 +1,8 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.ReservationBean;
-import com.terremotospr.beans.WaterBean;
-import com.terremotospr.database.entities.Reservation;
-import com.terremotospr.database.entities.Water;
-import com.terremotospr.database.repositories.ReservationRepository;
+import com.terremotospr.database.entities.administrativeEntities.Reservation;
+import com.terremotospr.database.repositories.administrativeRepositories.ReservationRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

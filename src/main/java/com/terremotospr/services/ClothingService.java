@@ -1,8 +1,8 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.ClothingBean;
-import com.terremotospr.database.entities.Clothing;
-import com.terremotospr.database.repositories.ClothingRepository;
+import com.terremotospr.database.entities.resourceEntities.Clothing;
+import com.terremotospr.database.repositories.resourceRepositories.ClothingRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

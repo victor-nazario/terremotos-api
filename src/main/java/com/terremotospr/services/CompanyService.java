@@ -1,8 +1,8 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.CompanyBean;
-import com.terremotospr.database.entities.Company;
-import com.terremotospr.database.repositories.CompanyRepository;
+import com.terremotospr.database.entities.administrativeEntities.Company;
+import com.terremotospr.database.repositories.administrativeRepositories.CompanyRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

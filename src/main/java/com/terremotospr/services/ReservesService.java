@@ -1,8 +1,8 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.ReservesBean;
-import com.terremotospr.database.entities.Reserves;
-import com.terremotospr.database.repositories.ReservesRepository;
+import com.terremotospr.database.entities.administrativeEntities.Reserves;
+import com.terremotospr.database.repositories.administrativeRepositories.ReservesRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

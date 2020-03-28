@@ -1,8 +1,8 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.HeavyEquipmentBean;
-import com.terremotospr.database.entities.HeavyEquipment;
-import com.terremotospr.database.repositories.HeavyEquipmentRepository;
+import com.terremotospr.database.entities.resourceEntities.HeavyEquipment;
+import com.terremotospr.database.repositories.resourceRepositories.HeavyEquipmentRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

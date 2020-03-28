@@ -1,8 +1,8 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.CannedFoodBean;
-import com.terremotospr.database.entities.CannedFood;
-import com.terremotospr.database.repositories.CannedFoodRepository;
+import com.terremotospr.database.entities.resourceEntities.CannedFood;
+import com.terremotospr.database.repositories.resourceRepositories.CannedFoodRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

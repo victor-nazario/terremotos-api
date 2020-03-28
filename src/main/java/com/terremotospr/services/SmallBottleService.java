@@ -1,8 +1,8 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.SmallBottleBean;
-import com.terremotospr.database.entities.SmallBottle;
-import com.terremotospr.database.repositories.SmallBottleRepository;
+import com.terremotospr.database.entities.resourceEntities.SmallBottle;
+import com.terremotospr.database.repositories.resourceRepositories.SmallBottleRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

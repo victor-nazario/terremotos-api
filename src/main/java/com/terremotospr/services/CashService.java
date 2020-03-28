@@ -1,8 +1,8 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.CashBean;
-import com.terremotospr.database.entities.Cash;
-import com.terremotospr.database.repositories.CashRepository;
+import com.terremotospr.database.entities.paymentEntities.Cash;
+import com.terremotospr.database.repositories.paymentRepositories.CashRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

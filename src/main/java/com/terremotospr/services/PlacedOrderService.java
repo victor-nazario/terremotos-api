@@ -1,8 +1,8 @@
 package com.terremotospr.services;
 
 import com.terremotospr.beans.PlacedOrderBean;
-import com.terremotospr.database.entities.PlacedOrder;
-import com.terremotospr.database.repositories.PlacedOrderRepository;
+import com.terremotospr.database.entities.paymentEntities.PlacedOrder;
+import com.terremotospr.database.repositories.paymentRepositories.PlacedOrderRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
