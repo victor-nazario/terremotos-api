@@ -1,40 +1,41 @@
-package com.terremotospr.controllers;
+package com.terremotospr.controllers.resourcesControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.MedicationBean;
-import com.terremotospr.beans.PersonBean;
-import com.terremotospr.services.MedicationService;
+import com.terremotospr.beans.GasolineBean;
+import com.terremotospr.services.GasolineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.util.List;
 
-/*
- * @author Wilfredo Aponte Pomales
+/**
+ * @author Kiara Rodriguez Rojas
+ * @date 03/14/2020
  */
+
 @RestController
-@RequestMapping("/medications")
-public class MedicationController {
+@RequestMapping(value = "/gasoline")
+public class GasolineController {
+
     @Autowired
-    MedicationService medicationService;
+    GasolineService gasolineService;
 
     @PostMapping(value = "/add")
-    public Boolean add(@RequestBody MedicationBean bean){
-        return medicationService.addMedication(bean);
+    public boolean add(@RequestBody GasolineBean bean) {
+        return gasolineService.addGasoline(bean);
     }
 
-//    @GetMapping(value = "/fetch")
-//    public List<MedicationBean> fetchAll(){
-//        return medicationService.fetchAllMedication();
+    //        @GetMapping(value = "/fetch")
+//    public List<GasolineBean> fetchAll(){
+//        return gasolineService.fetchAllGasoline();
 //    }
-
+//
     @GetMapping(value = "/fetch")
     public Object fetchAll() throws IOException {
         //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/medicationResponseJSON.json");
+        Resource resource = new ClassPathResource("responses/gasolineResponseJSON.json");
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(resource.getInputStream(), Object.class);
     }

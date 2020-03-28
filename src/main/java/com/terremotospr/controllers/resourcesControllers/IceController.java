@@ -1,8 +1,8 @@
-package com.terremotospr.controllers;
+package com.terremotospr.controllers.resourcesControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.CompanyBean;
-import com.terremotospr.services.CompanyService;
+import com.terremotospr.beans.IceBean;
+import com.terremotospr.services.IceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -16,26 +16,26 @@ import java.io.IOException;
  */
 
 @RestController
-@RequestMapping(value = "/company")
-public class CompanyController {
+@RequestMapping(value = "/ice")
+public class IceController {
 
     @Autowired
-    CompanyService companyService;
+    IceService iceService;
 
     @PostMapping(value = "/add")
-    public boolean add(@RequestBody CompanyBean bean) {
-        return companyService.addCompany(bean);
+    public boolean add(@RequestBody IceBean bean) {
+        return iceService.addIce(bean);
     }
 
 //    @GetMapping(value = "/fetch")
-//    public List<CompanyBean> fetchAll(){
-//        return companyService.fetchAllCompany();
+//    public List<IceBean> fetchAll(){
+//        return iceService.fetchAllIce();
 //    }
-//
+
     @GetMapping(value = "/fetch")
     public Object fetchAll() throws IOException {
         //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/companyResponseJSON.json");
+        Resource resource = new ClassPathResource("responses/iceResponseJSON.json");
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(resource.getInputStream(), Object.class);
     }

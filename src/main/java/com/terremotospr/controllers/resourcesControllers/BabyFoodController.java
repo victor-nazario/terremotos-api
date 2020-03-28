@@ -1,4 +1,4 @@
-package com.terremotospr.controllers;
+package com.terremotospr.controllers.resourcesControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.terremotospr.beans.BabyFoodBean;

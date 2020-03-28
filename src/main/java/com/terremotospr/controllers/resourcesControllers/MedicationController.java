@@ -1,41 +1,40 @@
-package com.terremotospr.controllers;
+package com.terremotospr.controllers.resourcesControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.HeavyEquipmentBean;
-import com.terremotospr.services.HeavyEquipmentService;
+import com.terremotospr.beans.MedicationBean;
+import com.terremotospr.beans.PersonBean;
+import com.terremotospr.services.MedicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.List;
 
-/**
- * @author Kiara Rodriguez Rojas
- * @date 03/15/2020
+/*
+ * @author Wilfredo Aponte Pomales
  */
-
 @RestController
-@RequestMapping(value = "/heavyequipment")
-public class HeavyEquipmentController {
-
+@RequestMapping("/medications")
+public class MedicationController {
     @Autowired
-    HeavyEquipmentService heavyEquipmentService;
+    MedicationService medicationService;
 
     @PostMapping(value = "/add")
-    public boolean add(@RequestBody HeavyEquipmentBean bean) {
-        return heavyEquipmentService.addHeavyEquipment(bean);
+    public Boolean add(@RequestBody MedicationBean bean){
+        return medicationService.addMedication(bean);
     }
 
 //    @GetMapping(value = "/fetch")
-//    public List<HeavyEquipmentBean> fetchAll(){
-//       return heavyEquipmentService.fetchAllHeavyEquipment();
+//    public List<MedicationBean> fetchAll(){
+//        return medicationService.fetchAllMedication();
 //    }
 
     @GetMapping(value = "/fetch")
     public Object fetchAll() throws IOException {
         //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/heavyEquipmentResponseJSON.json");
+        Resource resource = new ClassPathResource("responses/medicationResponseJSON.json");
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(resource.getInputStream(), Object.class);
     }

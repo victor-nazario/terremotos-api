@@ -1,4 +1,4 @@
-package com.terremotospr.controllers;
+package com.terremotospr.controllers.administrativeControllers;
 
 import com.terremotospr.beans.PersonBean;
 import com.terremotospr.services.PersonService;

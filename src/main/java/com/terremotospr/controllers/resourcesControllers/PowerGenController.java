@@ -1,9 +1,8 @@
-package com.terremotospr.controllers;
+package com.terremotospr.controllers.resourcesControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.ClothingBean;
-import com.terremotospr.database.repositories.ClothingRepository;
-import com.terremotospr.services.ClothingService;
+import com.terremotospr.beans.PowerGenBean;
+import com.terremotospr.services.PowerGenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -15,26 +14,26 @@ import java.util.List;
  * @author Wilfredo Aponte Pomales
  */
 @RestController
-@RequestMapping("/clothing")
-public class ClothingController {
+@RequestMapping("/powergenerator")
+public class PowerGenController {
+
     @Autowired
-    ClothingService clothingService;
+    PowerGenService powerGenService;
 
     @PostMapping(value = "/add")
-    public Boolean add(@RequestBody ClothingBean bean){
-        return clothingService.addClothing(bean);
-    }
+    public Boolean add(@RequestBody PowerGenBean bean) { return powerGenService.addPowerGen(bean); }
 
 //    @GetMapping(value = "/fetch")
-//    public List<ClothingBean> fetchAll(){
-//        return clothingService.fetchAllClothing();
+//    public List<PowerGenBean> fetchAll(){
+//        return powerGenService.fetchAllPowerGen();
 //    }
 
     @GetMapping(value = "/fetch")
     public Object fetchAll() throws IOException {
         //To obtain the path, in IDEA right click and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/clothingResponseJSON.json");
+        Resource resource = new ClassPathResource("responses/powerGeneratorResponseJSON.json");
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(resource.getInputStream(), Object.class);
     }
+
 }

@@ -1,8 +1,8 @@
-package com.terremotospr.controllers;
+package com.terremotospr.controllers.resourcesControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.SmallBottleBean;
-import com.terremotospr.services.SmallBottleService;
+import com.terremotospr.beans.HeavyEquipmentBean;
+import com.terremotospr.services.HeavyEquipmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -16,26 +16,26 @@ import java.io.IOException;
  */
 
 @RestController
-@RequestMapping(value = "/smallbottle")
-public class SmallBottleController {
+@RequestMapping(value = "/heavyequipment")
+public class HeavyEquipmentController {
 
     @Autowired
-    SmallBottleService smallBottleService;
+    HeavyEquipmentService heavyEquipmentService;
 
     @PostMapping(value = "/add")
-    public boolean add(@RequestBody SmallBottleBean bean) {
-        return smallBottleService.addSmallBottle(bean);
+    public boolean add(@RequestBody HeavyEquipmentBean bean) {
+        return heavyEquipmentService.addHeavyEquipment(bean);
     }
 
 //    @GetMapping(value = "/fetch")
-//    public List<SmallBottleBean> fetchAll(){
-//        return smallBottleService.fetchAllSmallBottles();
+//    public List<HeavyEquipmentBean> fetchAll(){
+//       return heavyEquipmentService.fetchAllHeavyEquipment();
 //    }
 
     @GetMapping(value = "/fetch")
     public Object fetchAll() throws IOException {
         //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/smallBottleResponseJSON.json");
+        Resource resource = new ClassPathResource("responses/heavyEquipmentResponseJSON.json");
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(resource.getInputStream(), Object.class);
     }

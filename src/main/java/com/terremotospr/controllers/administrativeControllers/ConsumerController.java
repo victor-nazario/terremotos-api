@@ -1,7 +1,7 @@
-package com.terremotospr.controllers;
+package com.terremotospr.controllers.administrativeControllers;
 
-import com.terremotospr.beans.PaymentBean;
-import com.terremotospr.services.PaymentService;
+import com.terremotospr.beans.ConsumerBean;
+import com.terremotospr.services.ConsumerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,31 +9,31 @@ import java.util.List;
 
 /**
  * @author Kiara Rodriguez Rojas
- * @date 03/19/2020
+ * @date 03/15/2020
  */
 
 @RestController
-@RequestMapping(value = "/payment")
-public class PaymentController {
+@RequestMapping(value = "/consumer")
+public class ConsumerController {
+
     @Autowired
-    PaymentService paymentService;
+    ConsumerService consumerService;
 
     @PostMapping(value = "/add")
-    public boolean add(@RequestBody PaymentBean bean) {
-        return paymentService.addPayment(bean);
+    public boolean add(@RequestBody ConsumerBean bean) {
+        return consumerService.addConsumer(bean);
     }
 
     @GetMapping(value = "/fetch")
-    public List<PaymentBean> fetchAll(){
-        return paymentService.fetchAllPayment();
+    public List<ConsumerBean> fetchAll(){
+        return consumerService.fetchAllConsumer();
     }
-
+//
 //    @GetMapping(value = "/fetch")
 //    public Object fetchAll() throws IOException {
 //        //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-//        Resource resource = new ClassPathResource("responses/paymentResponseJSON.json");
+//        Resource resource = new ClassPathResource("responses/consumerResponseJSON.json");
 //        ObjectMapper mapper = new ObjectMapper();
 //        return mapper.readValue(resource.getInputStream(), Object.class);
 //    }
-
 }

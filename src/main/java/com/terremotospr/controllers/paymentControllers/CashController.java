@@ -1,4 +1,4 @@
-package com.terremotospr.controllers;
+package com.terremotospr.controllers.paymentControllers;
 
 import com.terremotospr.beans.CashBean;
 import com.terremotospr.services.CashService;

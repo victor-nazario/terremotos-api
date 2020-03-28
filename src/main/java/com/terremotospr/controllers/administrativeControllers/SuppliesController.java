@@ -1,27 +1,33 @@
-package com.terremotospr.controllers;
+package com.terremotospr.controllers.administrativeControllers;
 
-import com.terremotospr.beans.BelongsBean;
-import com.terremotospr.services.BelongsService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.terremotospr.beans.SuppliesBean;
 import com.terremotospr.services.SuppliesService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
-
+import java.io.IOException;
 import java.util.List;
 
+/*
+ * @author Wilfredo Aponte Pomales
+ */
 @RestController
-@RequestMapping("/belongs")
-public class BelongsController {
+@RequestMapping("/supplies")
+public class SuppliesController {
+
     @Autowired
-    BelongsService belongsService;
+    SuppliesService suppliesService;
 
     @PostMapping(value = "/add")
-    public Boolean add(@RequestBody BelongsBean bean){
-        return belongsService.addBelongs(bean);
+    public Boolean add(@RequestBody SuppliesBean bean){
+        return suppliesService.addSupplies(bean);
     }
 
     @GetMapping(value = "/fetch")
-    public List<BelongsBean> fetchAll(){
-        return belongsService.fetchAllBelongs();
+    public List<SuppliesBean> fetchAll(){
+        return suppliesService.fetchAllSupplies();
     }
 
 //    @GetMapping(value = "/fetch")

@@ -1,4 +1,4 @@
-package com.terremotospr.controllers;
+package com.terremotospr.controllers.administrativeControllers;
 
 import com.terremotospr.beans.PhoneBean;
 import com.terremotospr.services.PhoneService;
