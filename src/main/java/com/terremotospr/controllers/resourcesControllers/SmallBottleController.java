@@ -1,8 +1,8 @@
 package com.terremotospr.controllers.resourcesControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.SmallBottleBean;
-import com.terremotospr.services.SmallBottleService;
+import com.terremotospr.beans.resourceBeans.SmallBottleBean;
+import com.terremotospr.services.resourceServices.SmallBottleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;

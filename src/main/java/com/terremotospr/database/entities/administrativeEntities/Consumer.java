@@ -1,6 +1,6 @@
 package com.terremotospr.database.entities.administrativeEntities;
 
-import com.terremotospr.beans.ConsumerType;
+import com.terremotospr.beans.administrativeBeans.ConsumerType;
 import com.terremotospr.database.entities.paymentEntities.Payment;
 
 import javax.persistence.Entity;

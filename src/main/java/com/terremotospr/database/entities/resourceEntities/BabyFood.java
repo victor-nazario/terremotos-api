@@ -1,6 +1,6 @@
 package com.terremotospr.database.entities.resourceEntities;
 
-import com.terremotospr.beans.BabyFoodFlavor;
+import com.terremotospr.beans.resourceBeans.BabyFoodFlavor;
 
 import javax.persistence.Entity;
 /*

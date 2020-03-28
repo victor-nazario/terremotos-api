@@ -1,7 +1,7 @@
 package com.terremotospr.controllers.administrativeControllers;
 
-import com.terremotospr.beans.PhoneBean;
-import com.terremotospr.services.PhoneService;
+import com.terremotospr.beans.administrativeBeans.PhoneBean;
+import com.terremotospr.services.administrativeServices.PhoneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

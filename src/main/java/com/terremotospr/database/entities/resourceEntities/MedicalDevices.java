@@ -1,7 +1,6 @@
 package com.terremotospr.database.entities.resourceEntities;
 
-import com.terremotospr.beans.medicalDeviceType;
-import com.terremotospr.database.entities.resourceEntities.BaseResource;
+import com.terremotospr.beans.resourceBeans.medicalDeviceType;
 
 import javax.persistence.Entity;
 /*

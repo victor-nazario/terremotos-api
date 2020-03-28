@@ -1,8 +1,8 @@
 package com.terremotospr.controllers.resourcesControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.CannedFoodBean;
-import com.terremotospr.services.CannedFoodService;
+import com.terremotospr.beans.resourceBeans.CannedFoodBean;
+import com.terremotospr.services.resourceServices.CannedFoodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;

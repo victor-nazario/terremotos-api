@@ -1,8 +1,8 @@
 package com.terremotospr.controllers.resourcesControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.GasolineBean;
-import com.terremotospr.services.GasolineService;
+import com.terremotospr.beans.resourceBeans.GasolineBean;
+import com.terremotospr.services.resourceServices.GasolineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;

@@ -1,9 +1,8 @@
 package com.terremotospr.controllers.administrativeControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.ReservationBean;
-import com.terremotospr.beans.WaterBean;
-import com.terremotospr.services.ReservationService;
+import com.terremotospr.beans.administrativeBeans.ReservationBean;
+import com.terremotospr.services.administrativeServices.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;

@@ -1,7 +1,6 @@
 package com.terremotospr.database.entities.resourceEntities;
 
-import com.terremotospr.beans.DFoodType;
-import com.terremotospr.database.entities.resourceEntities.BaseResource;
+import com.terremotospr.beans.resourceBeans.DFoodType;
 
 import javax.persistence.Entity;
 /*

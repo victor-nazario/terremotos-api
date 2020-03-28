@@ -1,8 +1,8 @@
 package com.terremotospr.controllers.resourcesControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.ClothingBean;
-import com.terremotospr.services.ClothingService;
+import com.terremotospr.beans.resourceBeans.ClothingBean;
+import com.terremotospr.services.resourceServices.ClothingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;

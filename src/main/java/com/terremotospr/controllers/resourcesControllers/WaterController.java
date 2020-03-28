@@ -1,8 +1,8 @@
 package com.terremotospr.controllers.resourcesControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.WaterBean;
-import com.terremotospr.services.WaterService;
+import com.terremotospr.beans.resourceBeans.WaterBean;
+import com.terremotospr.services.resourceServices.WaterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;

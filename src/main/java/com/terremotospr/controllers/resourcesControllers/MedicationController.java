@@ -1,16 +1,14 @@
 package com.terremotospr.controllers.resourcesControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.MedicationBean;
-import com.terremotospr.beans.PersonBean;
-import com.terremotospr.services.MedicationService;
+import com.terremotospr.beans.resourceBeans.MedicationBean;
+import com.terremotospr.services.resourceServices.MedicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.util.List;
 
 /*
  * @author Wilfredo Aponte Pomales

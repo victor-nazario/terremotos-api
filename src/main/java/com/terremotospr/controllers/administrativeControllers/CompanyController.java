@@ -1,8 +1,8 @@
 package com.terremotospr.controllers.administrativeControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.CompanyBean;
-import com.terremotospr.services.CompanyService;
+import com.terremotospr.beans.administrativeBeans.CompanyBean;
+import com.terremotospr.services.administrativeServices.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;

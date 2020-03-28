@@ -1,8 +1,8 @@
 package com.terremotospr.controllers.resourcesControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.HeavyEquipmentBean;
-import com.terremotospr.services.HeavyEquipmentService;
+import com.terremotospr.beans.resourceBeans.HeavyEquipmentBean;
+import com.terremotospr.services.resourceServices.HeavyEquipmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;

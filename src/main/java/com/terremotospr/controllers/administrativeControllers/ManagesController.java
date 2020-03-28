@@ -1,7 +1,7 @@
 package com.terremotospr.controllers.administrativeControllers;
 
-import com.terremotospr.beans.ManagesBean;
-import com.terremotospr.services.ManagesService;
+import com.terremotospr.beans.administrativeBeans.ManagesBean;
+import com.terremotospr.services.administrativeServices.ManagesService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

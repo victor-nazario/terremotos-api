@@ -1,15 +1,15 @@
 package com.terremotospr.controllers.resourcesControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.PowerGenBean;
-import com.terremotospr.services.PowerGenService;
+import com.terremotospr.beans.resourceBeans.PowerGenBean;
+import com.terremotospr.services.resourceServices.PowerGenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.util.List;
+
 /*
  * @author Wilfredo Aponte Pomales
  */

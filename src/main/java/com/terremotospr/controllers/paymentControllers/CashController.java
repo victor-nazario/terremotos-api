@@ -1,7 +1,7 @@
 package com.terremotospr.controllers.paymentControllers;
 
-import com.terremotospr.beans.CashBean;
-import com.terremotospr.services.CashService;
+import com.terremotospr.beans.paymentBeans.CashBean;
+import com.terremotospr.services.paymentServices.CashService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

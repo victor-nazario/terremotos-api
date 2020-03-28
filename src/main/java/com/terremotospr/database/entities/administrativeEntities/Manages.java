@@ -1,6 +1,6 @@
 package com.terremotospr.database.entities.administrativeEntities;
 
-import com.terremotospr.beans.AccountStatus;
+import com.terremotospr.beans.administrativeBeans.AccountStatus;
 
 import javax.persistence.*;
 import java.io.Serializable;

@@ -1,8 +1,8 @@
 package com.terremotospr.controllers.resourcesControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.IceBean;
-import com.terremotospr.services.IceService;
+import com.terremotospr.beans.resourceBeans.IceBean;
+import com.terremotospr.services.resourceServices.IceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;

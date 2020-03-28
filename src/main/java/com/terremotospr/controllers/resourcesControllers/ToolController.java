@@ -2,8 +2,8 @@ package com.terremotospr.controllers.resourcesControllers;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.ToolBean;
-import com.terremotospr.services.ToolService;
+import com.terremotospr.beans.resourceBeans.ToolBean;
+import com.terremotospr.services.resourceServices.ToolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;

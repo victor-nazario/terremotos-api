@@ -1,13 +1,10 @@
 package com.terremotospr.controllers.administrativeControllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.SuppliesBean;
-import com.terremotospr.services.SuppliesService;
+import com.terremotospr.beans.administrativeBeans.SuppliesBean;
+import com.terremotospr.services.administrativeServices.SuppliesService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
-import java.io.IOException;
+
 import java.util.List;
 
 /*

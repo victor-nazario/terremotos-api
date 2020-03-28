@@ -1,8 +1,7 @@
 package com.terremotospr.database.entities.resourceEntities;
 
-import com.terremotospr.beans.FuelTypeGenerator;
-import com.terremotospr.beans.generatorType;
-import com.terremotospr.database.entities.resourceEntities.BaseResource;
+import com.terremotospr.beans.resourceBeans.FuelTypeGenerator;
+import com.terremotospr.beans.resourceBeans.generatorType;
 
 import javax.persistence.Entity;
 /*

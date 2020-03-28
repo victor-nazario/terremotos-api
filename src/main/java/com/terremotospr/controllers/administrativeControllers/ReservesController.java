@@ -1,7 +1,7 @@
 package com.terremotospr.controllers.administrativeControllers;
 
-import com.terremotospr.beans.ReservesBean;
-import com.terremotospr.services.ReservesService;
+import com.terremotospr.beans.administrativeBeans.ReservesBean;
+import com.terremotospr.services.administrativeServices.ReservesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,8 +1,7 @@
 package com.terremotospr.database.entities.resourceEntities;
 
-import com.terremotospr.beans.ClothingType;
-import com.terremotospr.beans.Gender;
-import com.terremotospr.database.entities.resourceEntities.BaseResource;
+import com.terremotospr.beans.resourceBeans.ClothingType;
+import com.terremotospr.beans.administrativeBeans.Gender;
 
 import javax.persistence.Entity;
 

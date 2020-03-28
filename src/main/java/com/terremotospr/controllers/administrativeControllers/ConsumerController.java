@@ -1,7 +1,7 @@
 package com.terremotospr.controllers.administrativeControllers;
 
-import com.terremotospr.beans.ConsumerBean;
-import com.terremotospr.services.ConsumerService;
+import com.terremotospr.beans.administrativeBeans.ConsumerBean;
+import com.terremotospr.services.administrativeServices.ConsumerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

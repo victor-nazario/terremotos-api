@@ -1,7 +1,7 @@
 package com.terremotospr.controllers.administrativeControllers;
 
-import com.terremotospr.beans.PersonBean;
-import com.terremotospr.services.PersonService;
+import com.terremotospr.beans.administrativeBeans.PersonBean;
+import com.terremotospr.services.administrativeServices.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

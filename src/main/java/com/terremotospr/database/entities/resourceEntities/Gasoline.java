@@ -1,7 +1,6 @@
 package com.terremotospr.database.entities.resourceEntities;
 
-import com.terremotospr.beans.TypeOfGasoline;
-import com.terremotospr.database.entities.resourceEntities.BaseResource;
+import com.terremotospr.beans.resourceBeans.TypeOfGasoline;
 
 import javax.persistence.Entity;
 

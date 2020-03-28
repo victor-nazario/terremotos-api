@@ -1,14 +1,10 @@
 package com.terremotospr.controllers.resourcesControllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.DryFoodBean;
-import com.terremotospr.services.DryFoodService;
+import com.terremotospr.beans.resourceBeans.DryFoodBean;
+import com.terremotospr.services.resourceServices.DryFoodService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.List;
 /*
  * @author Wilfredo Aponte Pomales
