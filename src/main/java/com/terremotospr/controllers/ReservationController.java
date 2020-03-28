@@ -26,11 +26,10 @@ public class ReservationController {
     @GetMapping(value = "/fetch")
     public Object fetchReservation() throws IOException {
         //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-        //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-//        Resource resource = new ClassPathResource("responses/AdminResponseJSON.json");
-//        ObjectMapper mapper = new ObjectMapper();
-//        return mapper.readValue(resource.getInputStream(), Object.class);
-        return reservationService.fetchAllReservation();
+        Resource resource = new ClassPathResource("responses/reservationResponseJSON.json");
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.readValue(resource.getInputStream(), Object.class);
+   //     return reservationService.fetchAllReservation();
     }
 
     @PostMapping(value = "/add")

@@ -1,0 +1,43 @@
+[
+  {
+    "adminId": 1,
+    "id": null,
+    "email": "sample@sample.com",
+    "firstName": "Sample",
+    "lastName": "Sampleson",
+    "line1": "Sample 412",
+    "line2": "Sample Drive",
+    "city": "Guaynabo",
+    "country": "Puerto Rico",
+    "region": "Metro",
+    "zipCode": "00619"
+  },
+
+  {
+    "adminId": 2,
+    "id": null,
+    "email": "sample@sample.com",
+    "firstName": "Sample",
+    "lastName": "Sampleson",
+    "line1": "Sample 412",
+    "line2": "Sample Drive",
+    "city": "Guaynabo",
+    "country": "Puerto Rico",
+    "region": "Metro",
+    "zipCode": "00619"
+  },
+
+  {
+    "adminId": 3,
+    "id": null,
+    "email": "sample@sample.com",
+    "firstName": "Sample",
+    "lastName": "Sampleson",
+    "line1": "Sample 412",
+    "line2": "Sample Drive",
+    "city": "Guaynabo",
+    "country": "Puerto Rico",
+    "region": "Metro",
+    "zipCode": "00619"
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "date": "2020-03-27 19:52:40",
+    "consumer": {
+      "type": "CIVILIAN",
+      "id": null,
+      "email": "sample@sampleton.com",
+      "firstName": "Sample",
+      "lastName": "Sampleton",
+      "line1": "Sample 343",
+      "line2": "Sampleton Street",
+      "city": "San Juan",
+      "country": "Puerto Rico",
+      "region": "metro",
+      "zipCode": "00693"
+    }
+  },
+  {
+    "id": 2,
+    "date": "2020-03-27 19:52:40",
+    "consumer": {
+      "type": "CIVILIAN",
+      "id": null,
+      "email": "sample@sampleton.com",
+      "firstName": "Sample",
+      "lastName": "Sampleton",
+      "line1": "Sample 343",
+      "line2": "Sampleton Street",
+      "city": "San Juan",
+      "country": "Puerto Rico",
+      "region": "metro",
+      "zipCode": "00693"
+    }
+  },
+
+  {
+    "id": 3,
+    "date": "2020-03-27 19:52:40",
+    "consumer": {
+      "type": "CIVILIAN",
+      "id": null,
+      "email": "sample@sampleton.com",
+      "firstName": "Sample",
+      "lastName": "Sampleton",
+      "line1": "Sample 343",
+      "line2": "Sampleton Street",
+      "city": "San Juan",
+      "country": "Puerto Rico",
+      "region": "metro",
+      "zipCode": "00693"
+    }
+  }
+]

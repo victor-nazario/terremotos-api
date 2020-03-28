@@ -1,0 +1,43 @@
+[
+  {
+    "type": "ELECTRICAL",
+    "weight": 2.40,
+    "name": "Drill",
+    "brand": "Makita",
+    "category": "PowerTool",
+    "description": "Orange with dark accents",
+    "available": true,
+    "price": 120.00,
+    "longitude": 18.00,
+    "latitude": 56.00,
+    "expirationDate": null
+  },
+
+  {
+    "type": "ELECTRICAL",
+    "weight": 2.40,
+    "name": "Drill",
+    "brand": "Makita",
+    "category": "PowerTool",
+    "description": "Orange with dark accents",
+    "available": true,
+    "price": 120.00,
+    "longitude": 18.00,
+    "latitude": 56.00,
+    "expirationDate": null
+  },
+
+  {
+    "type": "ELECTRICAL",
+    "weight": 2.40,
+    "name": "Drill",
+    "brand": "Makita",
+    "category": "PowerTool",
+    "description": "Orange with dark accents",
+    "available": true,
+    "price": 120.00,
+    "longitude": 18.00,
+    "latitude": 56.00,
+    "expirationDate": null
+  }
+]
