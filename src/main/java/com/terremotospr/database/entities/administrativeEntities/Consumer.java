@@ -2,6 +2,7 @@ package com.terremotospr.database.entities.administrativeEntities;
 
 import com.terremotospr.beans.administrativeBeans.ConsumerType;
 import com.terremotospr.database.entities.paymentEntities.Payment;
+import com.terremotospr.database.entities.paymentEntities.PaymentMethod;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -36,6 +37,13 @@ public class Consumer extends User{
     public Set<Phone> getPhones() { return phones; }
 
     public void setPhones(Set<Phone> phones) { this.phones = phones; }
+
+    @OneToMany(targetEntity= PaymentMethod.class, mappedBy = "consumer", orphanRemoval=true)
+    private Set<PaymentMethod> paymentMethods = new HashSet<>();
+
+    public Set<PaymentMethod> getPaymentMethods() { return paymentMethods; }
+
+    public void setPaymentMethods(Set<PaymentMethod> phones) { this.paymentMethods = paymentMethods; }
 
 
 }
