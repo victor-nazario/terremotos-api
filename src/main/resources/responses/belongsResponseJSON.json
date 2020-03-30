@@ -1,0 +1,20 @@
+[
+  {
+    "orderId": 1,
+    "resourceId": 2,
+    "quantity": 2,
+    "finalPrice": 20.0
+  },
+  {
+    "orderId": 2,
+    "resourceId": 7,
+    "quantity": 1,
+    "finalPrice": 23.99
+  },
+  {
+    "orderId": 3,
+    "resourceId": 4,
+    "quantity": 5,
+    "finalPrice": 31.04
+  }
+]
