@@ -39,7 +39,8 @@ public class PhoneService {
         if(bean == null) return false;
 
         Phone entity = new Phone();
-        BeanUtils.copyProperties(bean, entity);
+        BeanUtils.copyProperties(bean, entity, "consumer");
+        entity.setConsumerId(bean.getConsumerId());
         phoneRepository.save(entity);
         return true;
     }

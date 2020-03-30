@@ -30,7 +30,12 @@ public class Consumer extends User{
 
     public void setPayments(Set<Payment> payments) { this.payments = payments; }
 
+    @OneToMany(targetEntity= Phone.class, mappedBy = "consumer", orphanRemoval=true)
+    private Set<Phone> phones = new HashSet<>();
 
+    public Set<Phone> getPhones() { return phones; }
+
+    public void setPhones(Set<Phone> phones) { this.phones = phones; }
 
 
 }

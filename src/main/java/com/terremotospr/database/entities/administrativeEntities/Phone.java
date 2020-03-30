@@ -1,9 +1,6 @@
 package com.terremotospr.database.entities.administrativeEntities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created on March 17, 2020 - 12:31 PM
@@ -14,34 +11,32 @@ import javax.persistence.Id;
 public class Phone {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long phone_id;
 
     private String phone;
 
-    //Añadir la relación en el parent class
-    private String customerIdPhone;
+    public Long getPhone_id() { return phone_id; }
 
-    public Long getId() {
-        return id;
-    }
+    public void setPhone_id(Long phone_id) { this.phone_id = phone_id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public String getPhone() { return phone; }
 
-    public String getPhone() {
-        return phone;
-    }
+    public void setPhone(String phone) { this.phone = phone; }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+    //Relationship
+    @ManyToOne(targetEntity = Consumer.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "id", insertable = false, updatable = false)
 
-    public String getCustomerIdPhone() {
-        return customerIdPhone;
-    }
+    private Consumer consumer;
 
-    public void setCustomerIdPhone(String customerIdPhone) {
-        this.customerIdPhone = customerIdPhone;
-    }
+    @Column(name = "id")
+    private Long consumerId;
+
+    public Consumer getConsumer(){return consumer;}
+
+    public void setConsumer(Consumer consumer) { this.consumer = consumer; }
+
+    private Long getConsumerId(){return consumerId;}
+
+    public void setConsumerId(Long consumerId) { this.consumerId = consumerId;}
 }

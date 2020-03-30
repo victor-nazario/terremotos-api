@@ -6,31 +6,19 @@ package com.terremotospr.beans.administrativeBeans;
  * @author Victor Nazario
  */
 public class PhoneBean{
-    private Long id;
+    private Long phone_id;
     private String phone;
-    private String customerIdPhone;
+    private Long consumerId;
 
-    public Long getId() {
-        return id;
-    }
+    public Long getPhone_id() { return phone_id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public void setPhone_id(Long phone_id) { this.phone_id = phone_id; }
 
-    public String getPhone() {
-        return phone;
-    }
+    public String getPhone() { return phone; }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+    public void setPhone(String phone) { this.phone = phone; }
 
-    public String getCustomerIdPhone() {
-        return customerIdPhone;
-    }
+    public Long getConsumerId() { return consumerId; }
 
-    public void setCustomerIdPhone(String customerIdPhone) {
-        this.customerIdPhone = customerIdPhone;
-    }
+    public void setConsumerId(Long consumerId) { this.consumerId = consumerId; }
 }
