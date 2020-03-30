@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "email": "luisri@hotmail.com",
+    "firstName": "Luis",
+    "lastName": "Rivera",
+    "line1": "PO Box 3167",
+    "line2": "",
+    "city": "Coamo",
+    "country": "Puerto Rico",
+    "region": "Ponce",
+    "zipCode": "91045",
+    "position": "Manager",
+    "compId": 1
+  },
+  {
+    "id": 2,
+    "email": "ramon12@yahoo.com",
+    "firstName": "Ramon",
+    "lastName": "Viera",
+    "line1": "PO Box 2398",
+    "line2": "",
+    "city": "Fajardo",
+    "country": "Puerto Rico",
+    "region": "Carolina",
+    "zipCode": "738",
+    "position": "Distributor",
+    "compId": null
+  },
+  {
+    "id": 3,
+    "email": "ricky96@walmart.com",
+    "firstName": "Ricardo",
+    "lastName": "Rodriguez",
+    "line1": "Calle Buena Vista Bayamon 345",
+    "line2": "Desvio Alcazar Rojo",
+    "city": "Bayamon",
+    "country": "Puerto Rico",
+    "region": "Bayamon",
+    "zipCode": "8975",
+    "position": "Sales",
+    "compId": null
+  }
+]
