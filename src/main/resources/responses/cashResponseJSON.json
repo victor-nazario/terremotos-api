@@ -1,12 +1,17 @@
 [
   {
-    "id": 1,
-    "customerId": null,
-    "amountAvailable": 90
+    "id": 9,
+    "customerId": 11,
+    "amountAvailable": 300
   },
   {
-    "id": 2,
-    "customerId": null,
-    "amountAvailable": 300
+    "id": 10,
+    "customerId": 1,
+    "amountAvailable": 20
+  },
+  {
+    "id": 11,
+    "customerId": 13,
+    "amountAvailable": 90
   }
 ]

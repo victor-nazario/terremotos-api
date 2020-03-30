@@ -1,0 +1,17 @@
+[
+  {
+    "stock": 2,
+    "supplierId": 3,
+    "resourceId": 1
+  },
+  {
+    "stock": 51,
+    "supplierId": 1,
+    "resourceId": 4
+  },
+  {
+    "stock": 22,
+    "supplierId": 2,
+    "resourceId": 6
+  }
+]

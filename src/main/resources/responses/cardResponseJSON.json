@@ -1,13 +1,13 @@
 [
   {
-    "id": 3,
-    "customerId": null,
+    "id": 4,
+    "customerId": 4,
     "cardNumber": 762890182345,
     "expirationDate": "2021-03-22T00:00:00.000+0000"
   },
   {
-    "id": 4,
-    "customerId": null,
+    "id": 5,
+    "customerId": 3,
     "cardNumber": 2267389123,
     "expirationDate": "2021-09-22T00:00:00.000+0000"
   }
