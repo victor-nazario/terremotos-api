@@ -1,0 +1,44 @@
+[
+  {
+    "potable": true,
+    "packagedQuantity": 1,
+    "brand": "Nikini",
+    "type": "PURIFIED",
+    "name": "Nikini 1 Gal",
+    "category": "WATER",
+    "description": "One individual gallon of Nikini Puridfied",
+    "available": true,
+    "price": 1.19,
+    "longitude": 19.00,
+    "latitude": 58.30,
+    "expirationDate": "2021-03-30 15:06:00"
+  },
+  {
+    "potable": true,
+    "packagedQuantity": 1,
+    "brand": "Nikini",
+    "type": "PURIFIED",
+    "name": "Nikini 1 Gal",
+    "category": "WATER",
+    "description": "One individual gallon of Nikini Puridfied",
+    "available": true,
+    "price": 1.19,
+    "longitude": 19.00,
+    "latitude": 58.30,
+    "expirationDate": "2021-03-30 15:06:00"
+  },
+  {
+    "potable": true,
+    "packagedQuantity": 1,
+    "brand": "Nikini",
+    "type": "PURIFIED",
+    "name": "Nikini 1 Gal",
+    "category": "WATER",
+    "description": "One individual gallon of Nikini Puridfied",
+    "available": true,
+    "price": 1.19,
+    "longitude": 19.00,
+    "latitude": 58.30,
+    "expirationDate": "2021-03-30 15:06:00"
+  }
+]

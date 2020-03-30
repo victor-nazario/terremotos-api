@@ -1,0 +1,41 @@
+[
+  {
+    "type": "AA",
+    "size": 4.00,
+    "name": "Duracell Plus",
+    "brand": "Duracell",
+    "category": "BATTERY",
+    "description": "Four pack of Duracell's premium AA Battery",
+    "available": true,
+    "price": 4.59,
+    "longitude": 18.00,
+    "latitude": 56.00,
+    "expirationDate": null
+  },
+  {
+    "type": "AA",
+    "size": 4.00,
+    "name": "Duracell Plus",
+    "brand": "Duracell",
+    "category": "BATTERY",
+    "description": "Four pack of Duracell's premium AA Battery",
+    "available": true,
+    "price": 4.59,
+    "longitude": 18.00,
+    "latitude": 56.00,
+    "expirationDate": null
+  },
+  {
+    "type": "AA",
+    "size": 4.00,
+    "name": "Duracell Plus",
+    "brand": "Duracell",
+    "category": "BATTERY",
+    "description": "Four pack of Duracell's premium AA Battery",
+    "available": true,
+    "price": 4.59,
+    "longitude": 18.00,
+    "latitude": 56.00,
+    "expirationDate": null
+  }
+]
