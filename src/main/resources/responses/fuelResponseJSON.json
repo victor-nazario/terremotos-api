@@ -1,0 +1,39 @@
+[
+  {
+    "type": "Gasoline",
+    "name": "Regular",
+    "brand": "Texaco",
+    "category": "GASOLINE",
+    "description": "89 Octane gas",
+    "available": true,
+    "price": 35.00,
+    "longitude": 18.00,
+    "latitude": 56.00,
+    "expirationDate": null
+  },
+  {
+    "type": "Gasoline",
+    "name": "Regular",
+    "brand": "Texaco",
+    "category": "GASOLINE",
+    "description": "89 Octane gas",
+    "available": true,
+    "price": 35.00,
+    "longitude": 18.00,
+    "latitude": 56.00,
+    "expirationDate": null
+  },
+  {
+    "type": "Gasoline",
+    "name": "Regular",
+    "brand": "Shell",
+    "category": "GASOLINE",
+    "description": "89 Octane gas",
+    "available": true,
+    "price": 39.00,
+    "longitude": 18.00,
+    "latitude": 56.00,
+    "expirationDate": null
+  }
+
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "size": 15.00,
+    "type": "FUEL",
+    "name": "Equi Propane",
+    "brand": "Equi Fuels",
+    "category": "PROPANE",
+    "description": "One small ta nk of propane",
+    "available": true,
+    "price": 30.00,
+    "longitude": 15.00,
+    "latitude": 57.00,
+    "expirationDate": null
+  },
+  {
+    "size": 15.00,
+    "type": "FUEL",
+    "name": "Equi Propane",
+    "brand": "Equi Fuels",
+    "category": "PROPANE",
+    "description": "One small ta nk of propane",
+    "available": true,
+    "price": 30.00,
+    "longitude": 15.00,
+    "latitude": 57.00,
+    "expirationDate": null
+  },
+  {
+    "size": 15.00,
+    "type": "FUEL",
+    "name": "Equi Propane",
+    "brand": "Equi Fuels",
+    "category": "PROPANE",
+    "description": "One small ta nk of propane",
+    "available": true,
+    "price": 30.00,
+    "longitude": 15.00,
+    "latitude": 57.00,
+    "expirationDate": null
+  }
+]

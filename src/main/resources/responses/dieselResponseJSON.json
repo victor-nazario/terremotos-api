@@ -1,0 +1,41 @@
+[
+  {
+    "size": 1.00,
+    "type": "Diesel",
+    "name": "Revolucion Diesel",
+    "brand": "Revo",
+    "category": "FUEL",
+    "description": "Diesel Extraido en Venezuela y Cuba",
+    "available": true,
+    "price": 40.00,
+    "longitude": 19.00,
+    "latitude": 56.00,
+    "expirationDate": null
+  },
+  {
+    "size": 1.00,
+    "type": "Diesel",
+    "name": "Revolucion Diesel",
+    "brand": "Revo",
+    "category": "FUEL",
+    "description": "Diesel Extraido en Venezuela y Cuba",
+    "available": true,
+    "price": 40.00,
+    "longitude": 19.00,
+    "latitude": 56.00,
+    "expirationDate": null
+  },
+  {
+    "size": 1.00,
+    "type": "Diesel",
+    "name": "Revolucion Diesel",
+    "brand": "Revo",
+    "category": "FUEL",
+    "description": "Diesel Extraido en Venezuela y Cuba",
+    "available": true,
+    "price": 40.00,
+    "longitude": 19.00,
+    "latitude": 56.00,
+    "expirationDate": null
+  }
+]
