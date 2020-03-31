@@ -1,7 +1,5 @@
 package com.terremotospr.beans.resourceBeans;
 
-import com.terremotospr.beans.administrativeBeans.Gender;
-
 /*
  * @author Wilfredo Aponte Pomales
  */
@@ -11,7 +9,7 @@ public class ClothingBean extends BaseResourceBean {
     private String size;
     private String material;
     private ClothingType type;
-    private Gender gender;
+    private ClothesGender gender;
 
     public Long getId() { return id; }
 
@@ -29,8 +27,8 @@ public class ClothingBean extends BaseResourceBean {
 
     public void setDosageForm(String material) { this.material = material; }
 
-    public Gender getGender() { return gender; }
+    public ClothesGender getGender() { return gender; }
 
-    public void setGender(Gender gender) { this.gender = gender; }
+    public void setGender(ClothesGender gender) { this.gender = gender; }
 
 }
