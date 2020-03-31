@@ -1,7 +1,7 @@
 package com.terremotospr.database.entities.resourceEntities;
 
 import com.terremotospr.beans.resourceBeans.ClothingType;
-import com.terremotospr.beans.administrativeBeans.Gender;
+import com.terremotospr.beans.resourceBeans.ClothesGender;
 
 import javax.persistence.Entity;
 
@@ -15,7 +15,7 @@ public class Clothing extends BaseResource {
     private String size;
     private String material;
     private ClothingType type;
-    private Gender gender;
+    private ClothesGender gender;
 
     public ClothingType getMedType() { return type; }
 
@@ -29,7 +29,7 @@ public class Clothing extends BaseResource {
 
     public void setDosageForm(String material) { this.material = material; }
 
-    public Gender getGender() { return gender; }
+    public ClothesGender getGender() { return gender; }
 
-    public void setGender(Gender gender) { this.gender = gender; }
+    public void setGender(ClothesGender gender) { this.gender = gender; }
 }
