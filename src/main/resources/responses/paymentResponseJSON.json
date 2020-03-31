@@ -1,0 +1,17 @@
+[
+  {
+    "payment_id": 0,
+    "consumerId": 1,
+    "purchaseTotal": 35.90
+  },
+  {
+    "payment_id": 1,
+    "consumerId": 2,
+    "purchaseTotal": 150.10
+  },
+  {
+    "payment_id": 2,
+    "consumerId": 1,
+    "purchaseTotal": 10.99
+  }
+]
