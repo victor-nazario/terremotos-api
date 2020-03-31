@@ -12,17 +12,6 @@ import java.util.Set;
 @Entity
 public class Admin extends User {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long adminId;
-
-    public Long getAdminId() {
-        return adminId;
-    }
-
-    public void setAdminId(Long adminId) {
-        this.adminId = adminId;
-    }
-
     @OneToMany(targetEntity= Reserves.class, mappedBy="admin", cascade= CascadeType.ALL, orphanRemoval=true)
     private Set<Manages> manages = new HashSet<>();
 
