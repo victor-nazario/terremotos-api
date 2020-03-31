@@ -1,19 +1,5 @@
 [
   {
-    "name": null,
-    "brand": null,
-    "category": null,
-    "description": null,
-    "available": false,
-    "price": null,
-    "longitude": null,
-    "latitude": null,
-    "id": 1,
-    "medType": null,
-    "size": null,
-    "dosageForm": null
-  },
-  {
     "name": "Beng",
     "brand": "Bengay",
     "category": "medication",
