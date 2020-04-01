@@ -8,7 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-It's NEEDED to have the follwoing requesites in order for the project to run as a datasource is configured and data is being persisted. 
+It's HIGHLY RECOMMENDED to have the follwoing requesites in order for the project to run as a datasource is configured and data is being persisted. 
 
 ```
 A working version of MySQL is needed, preferible innodb version 8.0.18
