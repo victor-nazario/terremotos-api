@@ -25,6 +25,12 @@ spring:
     url: jdbc:mysql://localhost:3306/terremotos?createDatabaseIfNotExist=true
     username: root
     password: root
+    continueOnError: true
+    initialize: false
+    initialSize: 0
+    timeBetweenEvictionRunsMillis: 5000
+    minEvictableIdleTimeMillis: 5000
+    minIdle: 0
 
 logging:
   level:
