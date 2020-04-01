@@ -24,7 +24,7 @@ public class PaymentMethodController {
     @GetMapping(value = "/fetch")
     public Object fetchAllPaymentMethod() throws IOException {
         //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("paymentMethodResponseJSON.json");
+        Resource resource = new ClassPathResource("responses/paymentMethodResponseJSON.json");
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(resource.getInputStream(), Object.class);
     }
