@@ -16,6 +16,6 @@ public class HelloController {
                     "<h3>Developed by:<br/>"+
                     "Víctor Nazario Morales<br/>" +
                     "Wilfredo Aponte Pomales<br/>" +
-                    "Kiara Rodriguez Rojas<br/></h3>";
+                    "Kiara Rodríguez Rojas<br/></h3>";
         }
 }
