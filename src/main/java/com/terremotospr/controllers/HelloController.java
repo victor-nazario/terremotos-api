@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
         @GetMapping("/")
         public String hello(){
-            return "Hello World";
+            return "<h1>Terremotos-API</h1>" +
+                    "<h3>Developed by:<br/>"+
+                    "Víctor Nazario Morales<br/>" +
+                    "Wilfredo Aponte Pomales<br/>" +
+                    "Kiara Rodriguez Rojas<br/></h3>";
         }
 }
