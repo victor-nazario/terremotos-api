@@ -22,7 +22,7 @@ spring:
 
     type: com.zaxxer.hikari.HikariDataSource
     platform: mysql
-    url: jdbc:mysql://localhost:3306/terremotos?createDatabaseIfNotExist=true
+    url: jdbc:mysql://b5af5f94f94e86:a9544cec@us-cdbr-iron-east-01.cleardb.net/heroku_c42b6aa5eafb24f?reconnect=true
     username: root
     password: root
 
