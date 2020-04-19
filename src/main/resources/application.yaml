@@ -22,7 +22,7 @@ spring:
 
     type: com.zaxxer.hikari.HikariDataSource
     platform: mysql
-    url: jdbc:mysql://b5af5f94f94e86:a9544cec@us-cdbr-iron-east-01.cleardb.net/heroku_c42b6aa5eafb24f?reconnect=true
+    url: jdbc:mysql://b42f47451b8532:e143d8a8@us-cdbr-iron-east-01.cleardb.net/heroku_8e6bdf534d413b1?reconnect=true
     username: root
     password: root
 
