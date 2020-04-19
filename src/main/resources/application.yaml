@@ -13,7 +13,7 @@ spring:
     show-sql: true
     database: mysql
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
   datasource:
     hikari:
       connection-test-query: select 1 from dual
