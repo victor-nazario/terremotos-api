@@ -1,7 +1,7 @@
 server:
   port: 8085
   servlet:
-    context-path: /terremotos/api
+    context-path:
     session:
       timeout: 10m
 
