@@ -66,7 +66,7 @@
     </repositories>
 
     <build>
-        <finalName>${name}##${project.version}</finalName>
+        <finalName>terremotos-api</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
