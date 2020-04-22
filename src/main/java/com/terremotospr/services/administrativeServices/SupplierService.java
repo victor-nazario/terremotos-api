@@ -54,6 +54,10 @@ public class SupplierService {
         return supplier;
     }
 
+    public Supplier findSupplierById(Integer id){
+            return supplierRepository.findById(id);
+    }
+
     /*  private Long comp_id;
     private String cName;
     private String cLocation;*/
