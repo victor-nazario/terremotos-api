@@ -10,7 +10,7 @@ import javax.persistence.Entity;
  */
 
 @Entity(name = "Gasoline")
-public class Gasoline extends BaseResource {
+public class Gasoline extends Fuel {
 
     private TypeOfGasoline type;
     private Double octane;

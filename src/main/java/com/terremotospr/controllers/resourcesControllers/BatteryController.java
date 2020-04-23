@@ -1,40 +1,38 @@
-package com.terremotospr.controllers.administrativeControllers;
+package com.terremotospr.controllers.resourcesControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.administrativeBeans.PhoneBean;
-import com.terremotospr.services.administrativeServices.PhoneService;
+import com.terremotospr.beans.resourceBeans.BatteryBean;
+import com.terremotospr.beans.resourceBeans.WaterBean;
+import com.terremotospr.services.resourceServices.BatteryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.util.List;
 
 /**
- * Created on March 17, 2020 - 12:40PM
+ * Created on  -
  *
  * @author Victor Nazario
  */
 @RestController
-@RequestMapping("/phone")
-public class PhoneController {
-
+@RequestMapping("/battery")
+public class BatteryController {
 
     @Autowired
-    PhoneService phoneService;
+    BatteryService batteryService;
 
     @GetMapping(value = "/fetch")
-    public Object fetchAllPhone() throws IOException {
+    public Object fetchAvailableBattery() throws IOException {
         //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/phoneResponseJSON.json");
+        Resource resource = new ClassPathResource("responses/batteryResponseJSON.json");
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(resource.getInputStream(), Object.class);
-//        return phoneService.fetchAllPhone();
     }
 
     @PostMapping(value = "/add")
-    public boolean addPhone(@RequestBody()PhoneBean bean) {
-        return phoneService.addPhone(bean);
+    public boolean addBattery(@RequestBody BatteryBean bean){
+        return batteryService.addBattery(bean);
     }
 }

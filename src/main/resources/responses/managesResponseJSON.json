@@ -1,0 +1,22 @@
+[
+  {
+    "userId": 2,
+    "adminId": 0,
+    "status": "ACTIVE"
+  },
+  {
+    "userId": 3,
+    "adminId": 1,
+    "status": "ACTIVE"
+  },
+  {
+    "userId": 1,
+    "adminId": 2,
+    "status": "ACTIVE"
+  },
+  {
+    "userId": 0,
+    "adminId": 0,
+    "status": "INACTIVE"
+  }
+]

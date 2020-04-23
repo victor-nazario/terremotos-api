@@ -60,4 +60,5 @@ public class TerremotosApplication extends SpringBootServletInitializer {
                 .build()
                 .apiInfo(new ApiInfoBuilder().title("TerremotosPR Api").build());
     }
+
 }

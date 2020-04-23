@@ -1,5 +1,7 @@
 package com.terremotospr.database.entities.paymentEntities;
 
+import com.terremotospr.database.entities.administrativeEntities.Consumer;
+
 import javax.persistence.*;
 
 /**
@@ -14,23 +16,26 @@ public class PaymentMethod {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long pm_id;
 
-    private Long customerId;
+    public Long getPM_id() { return pm_id; }
 
-    public Long getId() {
-        return id;
-    }
+    public void setPM_id(Long pm_id) { this.pm_id = pm_id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    //Relationship
+    @ManyToOne(targetEntity = Consumer.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "id", insertable = false, updatable = false)
 
-    public Long getCustomerId() {
-        return customerId;
-    }
+    private Consumer consumer;
 
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
-    }
+    @Column(name = "id")
+    private Long consumerId;
+
+    public Consumer getConsumer(){return consumer;}
+
+    public void setConsumer(Consumer consumer) { this.consumer = consumer; }
+
+    private Long getConsumerId(){return consumerId;}
+
+    public void setConsumerId(Long consumerId) { this.consumerId = consumerId;}
 }

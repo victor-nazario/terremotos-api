@@ -1,0 +1,17 @@
+[
+{
+  "rquantity": 2,
+  "resourceId": 13,
+  "reservationId": 0
+},
+{
+  "rquantity": 1,
+  "resourceId": 7,
+  "reservationId": 1
+},
+{
+  "rquantity": 3,
+  "resourceId": 1,
+  "reservationId": 2
+}
+]

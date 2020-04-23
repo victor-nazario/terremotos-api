@@ -9,6 +9,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created on March 12, 2020 - 9:30 PM
@@ -24,11 +25,8 @@ public class WaterController {
     WaterService waterService;
 
     @GetMapping(value = "/fetch")
-    public Object fetchAvailableWater() throws IOException {
-        //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/waterResponseJSON.json");
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(resource.getInputStream(), Object.class);
+    public List<WaterBean> fetchAvailableWater(){
+      return waterService.fetchAllWater();
     }
 
     @PostMapping(value = "/add")

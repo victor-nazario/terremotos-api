@@ -8,22 +8,14 @@ package com.terremotospr.beans.paymentBeans;
 
 public class PaymentMethodBean {
 
-    private Long id;
-    private Long customerId;
+    private Long pm_id;
+    private Long consumerId;
 
-    public Long getId() {
-        return id;
-    }
+    public Long getPM_id() { return pm_id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public void setPM_id(Long pm_id) { this.pm_id = pm_id; }
 
-    public Long getCustomerId() {
-        return customerId;
-    }
+    public Long getConsumerId() { return consumerId; }
 
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
-    }
+    public void setConsumerId(Long consumerId) { this.consumerId = consumerId; }
 }

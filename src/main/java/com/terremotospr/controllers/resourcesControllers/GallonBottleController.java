@@ -1,40 +1,37 @@
-package com.terremotospr.controllers.administrativeControllers;
+package com.terremotospr.controllers.resourcesControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.terremotospr.beans.administrativeBeans.PhoneBean;
-import com.terremotospr.services.administrativeServices.PhoneService;
+import com.terremotospr.beans.resourceBeans.GallonBottleBean;
+import com.terremotospr.beans.resourceBeans.WaterBean;
+import com.terremotospr.services.resourceServices.GallonBottleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.util.List;
 
 /**
- * Created on March 17, 2020 - 12:40PM
+ * Created on  -
  *
  * @author Victor Nazario
  */
 @RestController
-@RequestMapping("/phone")
-public class PhoneController {
-
-
+@RequestMapping("/gallon")
+public class GallonBottleController {
     @Autowired
-    PhoneService phoneService;
+    GallonBottleService gallonBottleService;
 
     @GetMapping(value = "/fetch")
-    public Object fetchAllPhone() throws IOException {
+    public Object fetchAvailableGallon() throws IOException {
         //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/phoneResponseJSON.json");
+        Resource resource = new ClassPathResource("responses/gallonBottleResponseJSON.json");
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(resource.getInputStream(), Object.class);
-//        return phoneService.fetchAllPhone();
     }
 
     @PostMapping(value = "/add")
-    public boolean addPhone(@RequestBody()PhoneBean bean) {
-        return phoneService.addPhone(bean);
+    public boolean addGallon(@RequestBody GallonBottleBean bean){
+        return gallonBottleService.addGallon(bean);
     }
 }

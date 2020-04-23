@@ -1,12 +1,14 @@
 server:
   port: 8085
   servlet:
-    context-path: /terremotos/api
+    context-path:
     session:
       timeout: 10m
 
 
 spring.jpa.properties.hibernate.dialect:  org.hibernate.dialect.MySQL5InnoDBDialect
+
+spring.jackson.serialization.indent-output: true
 
 spring:
   jpa:
@@ -22,7 +24,7 @@ spring:
 
     type: com.zaxxer.hikari.HikariDataSource
     platform: mysql
-    url: jdbc:mysql://localhost:3306/terremotos
+    url: jdbc:mysql://b42f47451b8532:e143d8a8@us-cdbr-iron-east-01.cleardb.net/heroku_8e6bdf534d413b1?reconnect=true
     username: root
     password: root
 
