@@ -11,9 +11,9 @@ import java.util.List;
 
 @Repository
 public interface SupplierRepository extends CrudRepository<Supplier, Long> {
-    @Query(value = "SELECT * FROM supplier", nativeQuery = true)
+    @Query(value = "SELECT * FROM supplier s inner join user u on s.id = u.id;", nativeQuery = true)
     List<Supplier> findAll();
 
-    @Query(value="SELECT * FROM supplier WHERE id = :id", nativeQuery = true)
+    @Query(value="SELECT * FROM supplier s inner join user u on s.id = u.id WHERE s.id = :id", nativeQuery = true)
     Supplier findById(@Param("id") Integer id);
 }
