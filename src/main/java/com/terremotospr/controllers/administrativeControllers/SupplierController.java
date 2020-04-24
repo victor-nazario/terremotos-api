@@ -34,6 +34,21 @@ public class SupplierController {
         return supplierService.findSupplierById(id);
     }
 
+    @GetMapping(value = "/position/{position}")
+    public List<SupplierBean> findSupplierByPosition(@PathVariable String position) {
+        return supplierService.findByPosition(position);
+    }
+
+    @GetMapping(value = "/city/{city}")
+    public List<SupplierBean> findSupplierByCity(@PathVariable String city) {
+        return supplierService.findByCity(city);
+    }
+
+    @GetMapping(value = "/region/{region}")
+    public List<SupplierBean> findSupplierByRegion(@PathVariable String region) {
+        return supplierService.findByRegion(region);
+    }
+
 //    @GetMapping(value = "/fetch")
 //    public Object fetchAll() throws IOException {
 //        //To obtain the path, in IDEA right click and when the dialog shows up, select copy path -> path from source root
