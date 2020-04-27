@@ -42,4 +42,7 @@ public interface PowerGenRepository extends CrudRepository<PowerGen, Long> {
             , nativeQuery = true)
     List<PowerGen> findByGeneratorType(@Param("type") generatorType type);
 
+    @Query(value = "select * from power_gen pg inner join base_resource br on pg.id = br.id where br.available = true"
+            , nativeQuery = true)
+    List<PowerGen> findAvailable();
 }
