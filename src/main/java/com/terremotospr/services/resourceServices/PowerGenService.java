@@ -1,12 +1,12 @@
 package com.terremotospr.services.resourceServices;
 
 import com.terremotospr.beans.resourceBeans.PowerGenBean;
+import com.terremotospr.beans.resourceBeans.generatorType;
 import com.terremotospr.database.entities.resourceEntities.PowerGen;
 import com.terremotospr.database.repositories.resourceRepositories.PowerGenRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -46,4 +46,64 @@ public class PowerGenService {
         BeanUtils.copyProperties(entity, bean);
         return bean;
     }
+
+    public PowerGen findById(Integer id){
+        return powerGenRepository.findById(id);
+    }
+
+    public List<PowerGenBean> findByPriceUnder(Double price){
+        List<PowerGenBean> powerGen;
+        Iterable<PowerGen> iter = powerGenRepository.findByPriceUnder(price);
+
+        powerGen = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return powerGen;
+    }
+
+    public List<PowerGenBean> findByBrand(String brand){
+        List<PowerGenBean> powerGen;
+        Iterable<PowerGen> iter = powerGenRepository.findByBrand(brand);
+
+        powerGen = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return powerGen;
+    }
+
+    public List<PowerGenBean> findByName(String name){
+        List<PowerGenBean> powerGen;
+        Iterable<PowerGen> iter = powerGenRepository.findByName(name);
+
+        powerGen = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return powerGen;
+    }
+
+    public List<PowerGenBean> findByPower(String power){
+        List<PowerGenBean> powerGen;
+        Iterable<PowerGen> iter = powerGenRepository.findByPower(power);
+
+        powerGen = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return powerGen;
+    }
+
+    public List<PowerGenBean> findByGeneratorType(generatorType type){
+        List<PowerGenBean> powerGen;
+        Iterable<PowerGen> iter = powerGenRepository.findByGeneratorType(type);
+
+        powerGen = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return powerGen;
+    }
+
 }
