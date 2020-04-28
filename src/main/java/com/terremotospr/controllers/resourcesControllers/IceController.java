@@ -1,14 +1,12 @@
 package com.terremotospr.controllers.resourcesControllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.terremotospr.beans.resourceBeans.IceBean;
+import com.terremotospr.database.entities.resourceEntities.Ice;
 import com.terremotospr.services.resourceServices.IceService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
+import java.util.List;
 
 /**
  * @author Kiara Rodriguez Rojas
@@ -27,16 +25,35 @@ public class IceController {
         return iceService.addIce(bean);
     }
 
+    @GetMapping(value = "/fetch") public List<IceBean> fetchAll(){ return iceService.fetchAllIce(); }
+
 //    @GetMapping(value = "/fetch")
-//    public List<IceBean> fetchAll(){
-//        return iceService.fetchAllIce();
+//    public Object fetchAll() throws IOException {
+//        //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
+//        Resource resource = new ClassPathResource("responses/iceResponseJSON.json");
+//        ObjectMapper mapper = new ObjectMapper();
+//        return mapper.readValue(resource.getInputStream(), Object.class);
 //    }
 
-    @GetMapping(value = "/fetch")
-    public Object fetchAll() throws IOException {
-        //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/iceResponseJSON.json");
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(resource.getInputStream(), Object.class);
-    }
+    @GetMapping(value = "/{id}")
+    public Ice findIceById(@PathVariable int id){ return iceService.findById(id); }
+
+    @GetMapping(value = "/price_under/{price}")
+    public List<IceBean> findByPriceUnder(@PathVariable Double price){ return iceService.findByPriceUnder(price); }
+
+    @GetMapping(value = "/price_over/{price}")
+    public List<IceBean> findByPriceOver(@PathVariable Double price){ return iceService.findByPriceOver(price); }
+
+    @GetMapping(value = "/brand/{brand}")
+    public List<IceBean> findByBrand(@PathVariable String brand){ return iceService.findByBrand(brand); }
+
+    @GetMapping(value = "/name/{name}")
+    public List<IceBean> findByName(@PathVariable String name){ return iceService.findByName(name); }
+
+    @GetMapping(value = "/available")
+    public List<IceBean> findAvailable(){ return iceService.findAvailable(); }
+
+    @GetMapping(value = "/size/{size}")
+    public List<IceBean> findBySize(@PathVariable Double size){ return iceService.findBySize(size); }
+
 }
