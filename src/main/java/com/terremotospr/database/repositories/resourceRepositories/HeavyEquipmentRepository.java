@@ -27,7 +27,7 @@ public interface HeavyEquipmentRepository extends CrudRepository<HeavyEquipment,
             , nativeQuery = true)
     List<HeavyEquipment> findByPriceUnder(@Param("price") Double price);
 
-    @Query(value = "select * from heavy_equipment he inner join base_resource br on g.id = br.id where br.price => :price"
+    @Query(value = "select * from heavy_equipment he inner join base_resource br on he.id = br.id where br.price => :price"
             , nativeQuery = true)
     List<HeavyEquipment> findByPriceOver(@Param("price") Double price);
 

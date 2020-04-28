@@ -19,7 +19,7 @@ public interface CannedFoodRepository extends CrudRepository<CannedFood,Long> {
     @Query(value = "select * from canned_food cf inner join base_resource br on cf.id = br.id", nativeQuery = true)
     List<CannedFood> findAll();
 
-    @Query(value = "select * from canned_food cf inner join base_resource br on cf.id = br.id where g.id = :id"
+    @Query(value = "select * from canned_food cf inner join base_resource br on cf.id = br.id where cf.id = :id"
             , nativeQuery = true)
     CannedFood findById(@Param("id") Integer id);
 

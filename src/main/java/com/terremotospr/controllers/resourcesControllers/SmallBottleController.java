@@ -1,14 +1,13 @@
 package com.terremotospr.controllers.resourcesControllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.terremotospr.beans.resourceBeans.SmallBottleBean;
+import com.terremotospr.beans.resourceBeans.TypeOfWater;
+import com.terremotospr.database.entities.resourceEntities.SmallBottle;
 import com.terremotospr.services.resourceServices.SmallBottleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
+import java.util.List;
 
 /**
  * @author Kiara Rodriguez Rojas
@@ -27,16 +26,44 @@ public class SmallBottleController {
         return smallBottleService.addSmallBottle(bean);
     }
 
-//    @GetMapping(value = "/fetch")
-//    public List<SmallBottleBean> fetchAll(){
-//        return smallBottleService.fetchAllSmallBottles();
-//    }
-
     @GetMapping(value = "/fetch")
-    public Object fetchAll() throws IOException {
-        //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/smallBottleResponseJSON.json");
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(resource.getInputStream(), Object.class);
-    }
+    public List<SmallBottleBean> fetchAll(){ return smallBottleService.fetchAllSmallBottles(); }
+
+//    @GetMapping(value = "/fetch")
+//    public Object fetchAll() throws IOException {
+//        //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
+//        Resource resource = new ClassPathResource("responses/smallBottleResponseJSON.json");
+//        ObjectMapper mapper = new ObjectMapper();
+//        return mapper.readValue(resource.getInputStream(), Object.class);
+//    }
+    @GetMapping(value = "/{id}")
+    public SmallBottle findSmallBottleWaterById(@PathVariable int id){ return smallBottleService.findById(id); }
+
+    @GetMapping(value = "/price_under/{price}")
+    public List<SmallBottleBean> findByPriceUnder(@PathVariable Double price){ return smallBottleService.findByPriceUnder(price); }
+
+    @GetMapping(value = "/price_over/{price}")
+    public List<SmallBottleBean> findByPriceOver(@PathVariable Double price){ return smallBottleService.findByPriceOver(price); }
+
+    @GetMapping(value = "/brand/{brand}")
+    public List<SmallBottleBean> findByBrand(@PathVariable String brand){ return smallBottleService.findByBrand(brand); }
+
+    @GetMapping(value = "/name/{name}")
+    public List<SmallBottleBean> findByName(@PathVariable String name){ return smallBottleService.findByName(name); }
+
+    @GetMapping(value = "/available")
+    public List<SmallBottleBean> findAvailable(){ return smallBottleService.findAvailable(); }
+
+    @GetMapping(value = "/size/{size}")
+    public List<SmallBottleBean> findBySize(@PathVariable Double size){ return smallBottleService.findBySize(size); }
+
+    @GetMapping(value = "/type/{type}")
+    public List<SmallBottleBean> findByType(@PathVariable TypeOfWater type){ return smallBottleService.findByType(type); }
+
+    @GetMapping(value = "/potable")
+    public List<SmallBottleBean> findPotable(){ return smallBottleService.findPotable(); }
+
+    @GetMapping(value = "/packagedQuantity/{packagedQuantity}")
+    public List<SmallBottleBean> findByPackagedQuantity(@PathVariable int packagedQuantity){return smallBottleService.findByPackagedQuantity(packagedQuantity); }
+
 }
