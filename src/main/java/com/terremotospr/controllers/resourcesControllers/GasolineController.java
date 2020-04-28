@@ -1,14 +1,13 @@
 package com.terremotospr.controllers.resourcesControllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.terremotospr.beans.resourceBeans.GasolineBean;
+import com.terremotospr.beans.resourceBeans.TypeOfGasoline;
+import com.terremotospr.database.entities.resourceEntities.Gasoline;
 import com.terremotospr.services.resourceServices.GasolineService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
+import java.util.List;
 
 /**
  * @author Kiara Rodriguez Rojas
@@ -23,20 +22,46 @@ public class GasolineController {
     GasolineService gasolineService;
 
     @PostMapping(value = "/add")
-    public boolean add(@RequestBody GasolineBean bean) {
+    public Boolean add(@RequestBody GasolineBean bean) {
         return gasolineService.addGasoline(bean);
     }
 
-    //        @GetMapping(value = "/fetch")
-//    public List<GasolineBean> fetchAll(){
-//        return gasolineService.fetchAllGasoline();
-//    }
-//
     @GetMapping(value = "/fetch")
-    public Object fetchAll() throws IOException {
-        //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/gasolineResponseJSON.json");
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(resource.getInputStream(), Object.class);
-    }
+    public List<GasolineBean> fetchAll(){ return gasolineService.fetchAllGasoline(); }
+
+//    @GetMapping(value = "/fetch")
+//    public Object fetchAll() throws IOException {
+//        //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
+//        Resource resource = new ClassPathResource("responses/gasolineResponseJSON.json");
+//        ObjectMapper mapper = new ObjectMapper();
+//        return mapper.readValue(resource.getInputStream(), Object.class);
+//    }
+
+    @GetMapping(value = "/{id}")
+    public Gasoline findGasolineById(@PathVariable int id){ return gasolineService.findById(id); }
+
+    @GetMapping(value = "/price_under/{price}")
+    public List<GasolineBean> findByPriceUnder(@PathVariable Double price){ return gasolineService.findByPriceUnder(price); }
+
+    @GetMapping(value = "/price_over/{price}")
+    public List<GasolineBean> findByPriceOver(@PathVariable Double price){ return gasolineService.findByPriceOver(price); }
+
+    @GetMapping(value = "/brand/{brand}")
+    public List<GasolineBean> findByBrand(@PathVariable String brand){ return gasolineService.findByBrand(brand); }
+
+    @GetMapping(value = "/name/{name}")
+    public List<GasolineBean> findByName(@PathVariable String name){ return gasolineService.findByName(name); }
+
+    @GetMapping(value = "/available")
+    public List<GasolineBean> findAvailable(){ return gasolineService.findAvailable(); }
+
+    @GetMapping(value = "/size/{size}")
+    public List<GasolineBean> findBySize(@PathVariable Double size){ return gasolineService.findBySize(size); }
+
+    @GetMapping(value = "/octane/{octane}")
+    public List<GasolineBean> findByOctane(@PathVariable Double octane){ return gasolineService.findByOctane(octane); }
+
+    @GetMapping(value = "/type/{type}")
+    public List<GasolineBean> findByType(@PathVariable TypeOfGasoline type){ return gasolineService.findByType(type); }
+
 }
