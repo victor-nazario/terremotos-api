@@ -1,6 +1,7 @@
 package com.terremotospr.services.resourceServices;
 
 import com.terremotospr.beans.resourceBeans.HeavyEquipmentBean;
+import com.terremotospr.beans.resourceBeans.TypeofHeavyEquipment;
 import com.terremotospr.database.entities.resourceEntities.HeavyEquipment;
 import com.terremotospr.database.repositories.resourceRepositories.HeavyEquipmentRepository;
 import org.springframework.beans.BeanUtils;
@@ -40,6 +41,85 @@ public class HeavyEquipmentService {
                 .collect(Collectors.toList());
 
         return heavyEquipment;
+    }
+
+    public HeavyEquipment findById(Integer id){ return heavyEquipmentRepository.findById(id);}
+
+    public List<HeavyEquipmentBean> findByPriceUnder(Double price){
+        List<HeavyEquipmentBean> heavyEquipments;
+        Iterable<HeavyEquipment> iter = heavyEquipmentRepository.findByPriceUnder(price);
+
+        heavyEquipments = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return heavyEquipments;
+    }
+
+    public List<HeavyEquipmentBean> findByPriceOver(Double price){
+        List<HeavyEquipmentBean> heavyEquipments;
+        Iterable<HeavyEquipment> iter = heavyEquipmentRepository.findByPriceOver(price);
+
+        heavyEquipments = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return heavyEquipments;
+    }
+
+    public List<HeavyEquipmentBean> findByBrand(String brand){
+        List<HeavyEquipmentBean> heavyEquipments;
+        Iterable<HeavyEquipment> iter = heavyEquipmentRepository.findByBrand(brand);
+
+        heavyEquipments = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return heavyEquipments;
+    }
+
+    public List<HeavyEquipmentBean> findByName(String name){
+        List<HeavyEquipmentBean> heavyEquipments;
+        Iterable<HeavyEquipment> iter = heavyEquipmentRepository.findByName(name);
+
+        heavyEquipments = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return heavyEquipments;
+    }
+
+    public List<HeavyEquipmentBean> findAvailable(){
+        List<HeavyEquipmentBean> heavyEquipments;
+        Iterable<HeavyEquipment> iter = heavyEquipmentRepository.findAvailable();
+
+        heavyEquipments = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return heavyEquipments;
+    }
+
+    public List<HeavyEquipmentBean> findBySize(Double size){
+        List<HeavyEquipmentBean> heavyEquipments;
+        Iterable<HeavyEquipment> iter = heavyEquipmentRepository.findBySize(size);
+
+        heavyEquipments = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return heavyEquipments;
+    }
+
+    public List<HeavyEquipmentBean> findByType(TypeofHeavyEquipment type){
+        List<HeavyEquipmentBean> heavyEquipments;
+        Iterable<HeavyEquipment> iter = heavyEquipmentRepository.findByType(type);
+
+        heavyEquipments = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return heavyEquipments;
     }
 
 }
