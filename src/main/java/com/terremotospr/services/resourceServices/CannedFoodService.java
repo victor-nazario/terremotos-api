@@ -1,6 +1,7 @@
 package com.terremotospr.services.resourceServices;
 
 import com.terremotospr.beans.resourceBeans.CannedFoodBean;
+import com.terremotospr.beans.resourceBeans.TypeOfCannedFood;
 import com.terremotospr.database.entities.resourceEntities.CannedFood;
 import com.terremotospr.database.repositories.resourceRepositories.CannedFoodRepository;
 import org.springframework.beans.BeanUtils;
@@ -40,6 +41,85 @@ public class CannedFoodService {
     public List<CannedFoodBean> fetchAllCannedFood(){
         List<CannedFoodBean> cannedFoods;
         Iterable<CannedFood> iter = cannedFoodRepository.findAll();
+
+        cannedFoods = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return cannedFoods;
+    }
+
+    public CannedFood findById(Integer id){ return cannedFoodRepository.findById(id);}
+
+    public List<CannedFoodBean> findByPriceUnder(Double price){
+        List<CannedFoodBean> cannedFoods;
+        Iterable<CannedFood> iter = cannedFoodRepository.findByPriceUnder(price);
+
+        cannedFoods = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return cannedFoods;
+    }
+
+    public List<CannedFoodBean> findByPriceOver(Double price){
+        List<CannedFoodBean> cannedFoods;
+        Iterable<CannedFood> iter = cannedFoodRepository.findByPriceOver(price);
+
+        cannedFoods = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return cannedFoods;
+    }
+
+    public List<CannedFoodBean> findByBrand(String brand){
+        List<CannedFoodBean> cannedFoods;
+        Iterable<CannedFood> iter = cannedFoodRepository.findByBrand(brand);
+
+        cannedFoods = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return cannedFoods;
+    }
+
+    public List<CannedFoodBean> findByName(String name){
+        List<CannedFoodBean> cannedFoods;
+        Iterable<CannedFood> iter = cannedFoodRepository.findByName(name);
+
+        cannedFoods = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return cannedFoods;
+    }
+
+    public List<CannedFoodBean> findAvailable(){
+        List<CannedFoodBean> cannedFoods;
+        Iterable<CannedFood> iter = cannedFoodRepository.findAvailable();
+
+        cannedFoods = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return cannedFoods;
+    }
+
+    public List<CannedFoodBean> findBySize(Double size){
+        List<CannedFoodBean> cannedFoods;
+        Iterable<CannedFood> iter = cannedFoodRepository.findBySize(size);
+
+        cannedFoods = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return cannedFoods;
+    }
+
+    public List<CannedFoodBean> findByType(TypeOfCannedFood type){
+        List<CannedFoodBean> cannedFoods;
+        Iterable<CannedFood> iter = cannedFoodRepository.findByType(type);
 
         cannedFoods = StreamSupport.stream(iter.spliterator(), false)
                 .map(this::copyProperties)
