@@ -9,13 +9,12 @@
     "longitude": 57.0,
     "latitude": 54.0,
     "id": 1,
-    "size": "MEDIUM",
+    "size": "medium",
     "gender": "MALE",
-    "medType": null,
-    "dosageForm": null
+    "type": "SHIRT"
   },
   {
-    "name": "",
+    "name": "Pants",
     "brand": "Levi's",
     "category": "CLOTHES",
     "description": "Skinny long pants",
@@ -26,7 +25,6 @@
     "id": 2,
     "size": "40x32",
     "gender": "MALE",
-    "medType": null,
-    "dosageForm": null
+    "type": "PANTS"
   }
 ]

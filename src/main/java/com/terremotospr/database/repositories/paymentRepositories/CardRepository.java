@@ -2,6 +2,7 @@ package com.terremotospr.database.repositories.paymentRepositories;
 
 import com.terremotospr.beans.paymentBeans.CardBean;
 import com.terremotospr.database.entities.paymentEntities.Card;
+import com.terremotospr.database.entities.paymentEntities.Cash;
 import com.terremotospr.database.entities.paymentEntities.PaypalAccount;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -15,6 +16,10 @@ import java.util.List;
  */
 @Repository
 public interface CardRepository extends CrudRepository<Card, Long> {
-    @Query(value = "select * from card c inner join payment_method pm on c.id = pm.id where c.pm_id = :pm_id", nativeQuery = true)
-    CardBean findByPmId(@Param("pm_id") Integer pm_id);
+
+    @Query(value = "select * from card c inner join payment_method pm on c.pm_id = pm.pm_id", nativeQuery = true)
+    List<Card> findAll();
+
+    @Query(value = "select * from card c inner join payment_method pm on c.pm_id = pm.pm_id where c.pm_id = :pm_id", nativeQuery = true)
+    Card findByPmId(@Param("pm_id") Integer pm_id);
 }

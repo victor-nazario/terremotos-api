@@ -45,5 +45,5 @@ public class CardService {
         return bean;
     }
 
-    public CardBean findById(Integer id) { return cardRepository.findByPmId(id); }
+    public Card findById(Integer id) { return cardRepository.findByPmId(id); }
 }

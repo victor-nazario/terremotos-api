@@ -3,6 +3,7 @@ package com.terremotospr.controllers.paymentControllers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.terremotospr.beans.paymentBeans.CardBean;
 import com.terremotospr.beans.paymentBeans.CashBean;
+import com.terremotospr.database.entities.paymentEntities.Card;
 import com.terremotospr.services.paymentServices.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
@@ -37,5 +38,5 @@ public class CardController {
 //    }
 
     @GetMapping(value = "/{id}")
-    public CardBean findById(@PathVariable int id) {return cardService.findById(id);}
+    public Card findById(@PathVariable int id) {return cardService.findById(id);}
 }

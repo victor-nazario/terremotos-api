@@ -40,6 +40,6 @@ public class CashController {
 //    }
 
     @GetMapping(value = "/{id}")
-    public CashBean findById(@PathVariable int id) {return cashService.findById(id);}
+    public Cash findById(@PathVariable int id) {return cashService.findById(id);}
 
 }

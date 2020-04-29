@@ -15,13 +15,13 @@ import java.util.List;
 @Repository
 public interface PaypalAccountRepository extends CrudRepository<PaypalAccount, Long> {
 
-    @Query(value = "select * from paypal_account ppa inner join payment_method pm on ppa.id = pm.id", nativeQuery = true)
+    @Query(value = "select * from paypal_account ppa inner join payment_method pm on ppa.pm_id = pm.pm_id", nativeQuery = true)
     List<PaypalAccount> findAll();
 
-    @Query(value = "select * from paypal_account ppa inner join payment_method pm on ppa.id = pm.id where ppa.id = :id", nativeQuery = true)
+    @Query(value = "select * from paypal_account ppa inner join payment_method pm on ppa.pm_id = pm.pm_id where ppa.id = :id", nativeQuery = true)
     PaypalAccount findById(@Param("id") Integer id);
 
-    @Query(value = "select * from paypal_account ppa inner join payment_method pm on ppa.id = pm.id where ppa.pm_id = :pm_id", nativeQuery = true)
+    @Query(value = "select * from paypal_account ppa inner join payment_method pm on ppa.pm_id = pm.pm_id where ppa.pm_id = :pm_id", nativeQuery = true)
     List<PaypalAccount> findByPmId(@Param("pm_id") Integer pm_id);
 
 }

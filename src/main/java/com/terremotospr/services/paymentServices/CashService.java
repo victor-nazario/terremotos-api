@@ -48,5 +48,5 @@ public class CashService {
         return bean;
     }
 
-    public CashBean findById(Integer id) { return cashRepository.findByPmId(id); }
+    public Cash findById(Integer id) { return cashRepository.findByPmId(id); }
 }

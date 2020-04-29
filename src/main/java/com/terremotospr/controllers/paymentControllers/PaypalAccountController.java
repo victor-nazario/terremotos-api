@@ -37,8 +37,8 @@ public class PaypalAccountController {
         return paypalAccountService.findByPmId(pm_id);
     }
 
-    @GetMapping(value = "/{id}")
-    public PaypalAccount findById(@PathVariable int id) { return paypalAccountService.findById(id);}
+//    @GetMapping(value = "/{id}")
+//    public PaypalAccount findById(@PathVariable int id) { return paypalAccountService.findById(id);}
 
 //    @GetMapping(value = "/fetch")
 //    public Object fetchAll() throws IOException {
