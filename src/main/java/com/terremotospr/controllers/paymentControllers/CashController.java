@@ -11,6 +11,10 @@ import org.springframework.core.io.Resource;
 import java.io.IOException;
 import java.util.List;
 
+/*
+ * @author Wilfredo Aponte Pomales
+ */
+
 @RestController
 @RequestMapping("/cash")
 public class CashController {
