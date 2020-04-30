@@ -23,7 +23,7 @@ public interface ClothingRepository extends CrudRepository<Clothing, Long> {
 
     @Query(value = "select * from clothing c inner join base_resource br on c.id = br.id where c.id = :id"
             , nativeQuery = true)
-    List<Clothing> findById(@Param("id") Integer id);
+    Clothing findById(@Param("id") Integer id);
 
     @Query(value = "select * from clothing c inner join base_resource br on c.id = br.id where br.price <= :price"
             , nativeQuery = true)

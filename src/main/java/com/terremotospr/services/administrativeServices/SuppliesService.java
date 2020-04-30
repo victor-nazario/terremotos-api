@@ -43,4 +43,26 @@ public class SuppliesService {
 
         return supplies;
     }
+
+    public List<SuppliesBean> findBySupplierId(Integer supplierId){
+        List<SuppliesBean> supplies;
+        Iterable<Supplies> iter = suppliesRepository.findBySupplierId(supplierId);
+
+        supplies = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return supplies;
+    }
+
+    public List<SuppliesBean> findByResourceId(Integer resourceId){
+        List<SuppliesBean> supplies;
+        Iterable<Supplies> iter = suppliesRepository.findByResourceId(resourceId);
+
+        supplies = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return supplies;
+    }
 }
