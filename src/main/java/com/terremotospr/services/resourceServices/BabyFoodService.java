@@ -46,4 +46,64 @@ public class BabyFoodService {
         BeanUtils.copyProperties(entity, bean);
         return bean;
     }
+
+    public BabyFood findById(Integer id){
+        return babyFoodRepository.findById(id);
+    }
+
+    public List<BabyFoodBean> findByPriceUnder(Double price){
+        List<BabyFoodBean> babyFood;
+        Iterable<BabyFood> iter = babyFoodRepository.findByPriceUnder(price);
+
+        babyFood = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return babyFood;
+    }
+
+    public List<BabyFoodBean> findByBrand(String brand){
+        List<BabyFoodBean> babyFood;
+        Iterable<BabyFood> iter = babyFoodRepository.findByBrand(brand);
+
+        babyFood = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return babyFood;
+    }
+
+    public List<BabyFoodBean> findByName(String name){
+        List<BabyFoodBean> babyFood;
+        Iterable<BabyFood> iter = babyFoodRepository.findByName(name);
+
+        babyFood = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return babyFood;
+    }
+
+    public List<BabyFoodBean> findBySize(String size){
+        List<BabyFoodBean> babyFood;
+        Iterable<BabyFood> iter = babyFoodRepository.findBySize(size);
+
+        babyFood = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return babyFood;
+    }
+
+    public List<BabyFoodBean> findAvailable(){
+        List<BabyFoodBean> babyFood;
+
+        Iterable<BabyFood> iter = babyFoodRepository.findAvailable();
+
+        babyFood = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return babyFood;
+    }
 }
