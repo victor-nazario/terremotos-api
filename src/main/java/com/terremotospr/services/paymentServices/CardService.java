@@ -2,6 +2,7 @@ package com.terremotospr.services.paymentServices;
 
 import com.terremotospr.beans.paymentBeans.CardBean;
 import com.terremotospr.database.entities.paymentEntities.Card;
+import com.terremotospr.database.entities.paymentEntities.Cash;
 import com.terremotospr.database.repositories.paymentRepositories.CardRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,4 +44,6 @@ public class CardService {
         BeanUtils.copyProperties(entity, bean);
         return bean;
     }
+
+    public Card findById(Integer id) { return cardRepository.findByPmId(id); }
 }
