@@ -1,8 +1,6 @@
 package com.terremotospr.database.repositories.administrativeRepositories;
 
-import com.terremotospr.beans.resourceBeans.generatorType;
 import com.terremotospr.database.entities.administrativeEntities.Admin;
-import com.terremotospr.database.entities.resourceEntities.PowerGen;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
