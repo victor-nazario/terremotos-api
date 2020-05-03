@@ -1,14 +1,11 @@
 package com.terremotospr.controllers.resourcesControllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.terremotospr.beans.resourceBeans.TypeOfWater;
 import com.terremotospr.beans.resourceBeans.WaterBean;
 import com.terremotospr.services.resourceServices.WaterService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.List;
 
 /**
@@ -32,5 +29,30 @@ public class WaterController {
     @PostMapping(value = "/add")
     public boolean addWater(@RequestBody WaterBean bean){
         return waterService.addWater(bean);
+    }
+
+    @GetMapping(value = "/{id}")
+    public WaterBean findWaterById(@PathVariable Long id) {
+        return waterService.findById(id);
+    }
+
+    @GetMapping(value = "/brand/{brand}")
+    public List<WaterBean> findByBrand(@PathVariable String brand) {
+        return waterService.findByBrand(brand);
+    }
+
+    @GetMapping(value = "/name/{name}")
+    public List<WaterBean> findByName(@PathVariable String name) {
+        return waterService.findByName(name);
+    }
+
+    @GetMapping(value = "/price_under/{price}")
+    public List<WaterBean> findByPriceUnder(@PathVariable Double price) {
+        return waterService.findByPriceUnder(price);
+    }
+
+    @GetMapping(value = "/watertype/{type}")
+    public List<WaterBean> findByWaterType(@PathVariable TypeOfWater type) {
+        return waterService.findByWaterType(type);
     }
 }
