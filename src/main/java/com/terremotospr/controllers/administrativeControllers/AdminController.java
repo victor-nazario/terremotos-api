@@ -32,7 +32,7 @@ public class AdminController {
     }
 
     @GetMapping(value = "/{id}")
-    public Admin findAdminById(@PathVariable Long id) {
+    public AdminBean findAdminById(@PathVariable Long id) {
         return adminService.findById(id);
     }
 }
