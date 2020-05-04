@@ -1,14 +1,12 @@
 package com.terremotospr.controllers.administrativeControllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.terremotospr.beans.administrativeBeans.CompanyBean;
+import com.terremotospr.database.entities.administrativeEntities.Company;
 import com.terremotospr.services.administrativeServices.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
+import java.util.List;
 
 /**
  * @author Kiara Rodriguez Rojas
@@ -27,16 +25,22 @@ public class CompanyController {
         return companyService.addCompany(bean);
     }
 
-//    @GetMapping(value = "/fetch")
-//    public List<CompanyBean> fetchAll(){
-//        return companyService.fetchAllCompany();
-//    }
-//
     @GetMapping(value = "/fetch")
-    public Object fetchAll() throws IOException {
-        //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/companyResponseJSON.json");
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(resource.getInputStream(), Object.class);
+    public List<CompanyBean> fetchAll(){ return companyService.fetchAllCompany(); }
+
+    @GetMapping(value = "/{id}")
+    public Company findCompanyById(@PathVariable int id) {
+        return companyService.findCompanyById(id);
     }
+
+    @GetMapping(value = "/name/{name}")
+    public List<CompanyBean> findCompanyByName(@PathVariable String name) {
+        return companyService.findByCompanyName(name);
+    }
+
+    @GetMapping(value = "/location/{location}")
+    public List<CompanyBean> findCompanyByLocation(@PathVariable String location) {
+        return companyService.findByCompanyLocation(location);
+    }
+
 }
