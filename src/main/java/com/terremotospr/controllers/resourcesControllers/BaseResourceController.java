@@ -24,7 +24,6 @@ public class BaseResourceController {
     @GetMapping(value = "/available")
     public List<BaseResourceBean> findAvailable() { return baseResourceService.findAvailable();}
 
-
     @GetMapping(value = "/name/{name}")
     public List<BaseResourceBean> findByName(@PathVariable String name) {
         return baseResourceService.findByName(name);
