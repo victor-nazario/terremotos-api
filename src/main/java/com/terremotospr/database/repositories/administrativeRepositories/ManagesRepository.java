@@ -29,6 +29,6 @@ public interface ManagesRepository extends CrudRepository<Manages, Long> {
 
     @Query(value = "select * from manages ma inner join user u on ma.user_id = u.id " +
             "inner join admin a on ma.admin_id = a.id where ma.status = :status", nativeQuery = true)
-    List<Manages> findByAccountStatus(@Param("adminId") AccountStatus status);
+    List<Manages> findByAccountStatus(@Param("status") AccountStatus status);
 
 }

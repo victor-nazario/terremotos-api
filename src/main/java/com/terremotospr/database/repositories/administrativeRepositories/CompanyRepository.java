@@ -23,11 +23,11 @@ public interface CompanyRepository extends CrudRepository<Company,Long> {
     @Query(value="SELECT * FROM company co WHERE co.id = :id", nativeQuery = true)
     Optional<Company> findById(@Param("id") Integer id);
 
-    @Query(value = "SELECT * FROM company co WHERE co.cName = :cName"
+    @Query(value = "SELECT * FROM company co WHERE co.cName = :name"
             , nativeQuery = true)
     List<Company> findByCompanyName(@Param("name") String name);
 
-    @Query(value = "SELECT * FROM company co WHERE u.cLocation = :cLocation"
+    @Query(value = "SELECT * FROM company co WHERE u.cLocation = :location"
             , nativeQuery = true)
     List<Company> findByCompanyLocation(@Param("location") String location);
 
