@@ -4,12 +4,16 @@ import com.terremotospr.beans.resourceBeans.FuelTypeGenerator;
 import com.terremotospr.beans.resourceBeans.generatorType;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
 /*
  * @author Wilfredo Aponte Pomales
  */
 @Entity
 public class PowerGen extends BaseResource {
 
+    @Enumerated(EnumType.STRING)
     private generatorType type;
     private String power;
     private FuelTypeGenerator fuelType;
