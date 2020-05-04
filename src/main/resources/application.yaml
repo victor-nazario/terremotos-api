@@ -27,6 +27,12 @@ spring:
     url: jdbc:mysql://bbd3de1e4ea2c7:8fafb6e1@us-cdbr-iron-east-01.cleardb.net/heroku_2f5b13624a2916e?reconnect=true
     username: root
     password: root
+    continueOnError: true
+    initialize: false
+    initialSize: 0
+    timeBetweenEvictionRunsMillis: 5000
+    minEvictableIdleTimeMillis: 5000
+    minIdle: 0
 
 logging:
   level:

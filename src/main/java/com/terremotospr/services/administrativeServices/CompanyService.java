@@ -47,4 +47,31 @@ public class CompanyService {
 
         return companies;
     }
+
+    public Company findCompanyById(Integer id){
+        return companyRepository.findById(id).get();
+    }
+
+    public List<CompanyBean> findByCompanyName(String name){
+        List<CompanyBean> company;
+        Iterable<Company> iter = companyRepository.findByCompanyName(name);
+
+        company = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return company;
+    }
+
+    public List<CompanyBean> findByCompanyLocation(String location){
+        List<CompanyBean> company;
+        Iterable<Company> iter = companyRepository.findByCompanyLocation(location);
+
+        company = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return company;
+    }
+
 }

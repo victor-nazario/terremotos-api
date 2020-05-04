@@ -1,14 +1,13 @@
 package com.terremotospr.controllers.resourcesControllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.terremotospr.beans.resourceBeans.CannedFoodBean;
+import com.terremotospr.beans.resourceBeans.TypeOfCannedFood;
+import com.terremotospr.database.entities.resourceEntities.CannedFood;
 import com.terremotospr.services.resourceServices.CannedFoodService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
+import java.util.List;
 
 /**
  * @author Kiara Rodriguez Rojas
@@ -27,16 +26,31 @@ public class CannedFoodController {
         return cannedFoodService.addCannedFood(bean);
     }
 
-//    @GetMapping(value = "/fetch")
-//    public List<CannedFoodBean> fetchAll(){
-//        return cannedFoodService.fetchAllCannedFood();
-//    }
-//
     @GetMapping(value = "/fetch")
-    public Object fetchAll() throws IOException {
-        //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/cannedFoodResponseJSON.json");
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(resource.getInputStream(), Object.class);
-    }
+    public List<CannedFoodBean> fetchAll(){ return cannedFoodService.fetchAllCannedFood(); }
+
+    @GetMapping(value = "/{id}")
+    public CannedFood findCannedFoodById(@PathVariable int id){ return cannedFoodService.findById(id); }
+
+    @GetMapping(value = "/price_under/{price}")
+    public List<CannedFoodBean> findByPriceUnder(@PathVariable Double price){ return cannedFoodService.findByPriceUnder(price); }
+
+    @GetMapping(value = "/price_over/{price}")
+    public List<CannedFoodBean> findByPriceOver(@PathVariable Double price){ return cannedFoodService.findByPriceOver(price); }
+
+    @GetMapping(value = "/brand/{brand}")
+    public List<CannedFoodBean> findByBrand(@PathVariable String brand){ return cannedFoodService.findByBrand(brand); }
+
+    @GetMapping(value = "/name/{name}")
+    public List<CannedFoodBean> findByName(@PathVariable String name){ return cannedFoodService.findByName(name); }
+
+    @GetMapping(value = "/available")
+    public List<CannedFoodBean> findAvailable(){ return cannedFoodService.findAvailable(); }
+
+    @GetMapping(value = "/size/{size}")
+    public List<CannedFoodBean> findBySize(@PathVariable Double size){ return cannedFoodService.findBySize(size); }
+
+    @GetMapping(value = "/type/{type}")
+    public List<CannedFoodBean> findByType(@PathVariable TypeOfCannedFood type){ return cannedFoodService.findByType(type); }
+
 }

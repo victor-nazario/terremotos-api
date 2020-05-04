@@ -1,14 +1,10 @@
 package com.terremotospr.controllers.administrativeControllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.terremotospr.beans.administrativeBeans.ReservesBean;
 import com.terremotospr.services.administrativeServices.ReservesService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.List;
 
 /**
@@ -26,16 +22,22 @@ public class ReservesController {
         return reservesService.addReserves(bean);
     }
 
-//    @GetMapping(value = "/fetch")
-//    public List<ReservesBean> fetchAll(){
-//        return reservesService.fetchAllReserves();
-//    }
-
     @GetMapping(value = "/fetch")
-    public Object fetchAll() throws IOException {
-        //To obtain the path, in IDEA right click and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/reservesResponseJSON.json");
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(resource.getInputStream(), Object.class);
+    public List<ReservesBean> fetchAll(){
+        return reservesService.fetchAllReserves();
     }
+
+    @GetMapping(value = "/reservation/{id}")
+    public List<ReservesBean> findByReservationId(@PathVariable Integer id) { return reservesService.findByReservationId(id); }
+
+    @GetMapping(value = "/resource/{id}")
+    public List<ReservesBean> findByResourceId(@PathVariable Integer id) { return reservesService.findByResourceId(id); }
+
+    @GetMapping(value = "/quantity_over/{quantity}")
+    public List<ReservesBean> findByReservedQuantityOver(@PathVariable Integer quantity) { return reservesService.findByReservedQuantityOver(quantity); }
+
+    @GetMapping(value = "/quantity_under/{quantity}")
+    public List<ReservesBean> findByReservedQuantityUnder(@PathVariable Integer quantity) { return reservesService.findByReservedQuantityUnder(quantity); }
+
+
 }

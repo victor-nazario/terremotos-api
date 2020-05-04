@@ -47,4 +47,72 @@ public class IceService {
 
         return ice;
     }
+
+    public Ice findById(Integer id){ return iceRepository.findById(id);}
+
+    public List<IceBean> findByPriceUnder(Double price){
+        List<IceBean> ice;
+        Iterable<Ice> iter = iceRepository.findByPriceUnder(price);
+
+        ice = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return ice;
+    }
+
+    public List<IceBean> findByPriceOver(Double price){
+        List<IceBean> ice;
+        Iterable<Ice> iter = iceRepository.findByPriceOver(price);
+
+        ice = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return ice;
+    }
+
+    public List<IceBean> findByBrand(String brand){
+        List<IceBean> ice;
+        Iterable<Ice> iter = iceRepository.findByBrand(brand);
+
+        ice = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return ice;
+    }
+
+    public List<IceBean> findByName(String name){
+        List<IceBean> ice;
+        Iterable<Ice> iter = iceRepository.findByName(name);
+
+        ice = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return ice;
+    }
+
+    public List<IceBean> findAvailable(){
+        List<IceBean> ice;
+        Iterable<Ice> iter = iceRepository.findAvailable();
+
+        ice = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return ice;
+    }
+
+    public List<IceBean> findBySize(Double size){
+        List<IceBean> ice;
+        Iterable<Ice> iter = iceRepository.findBySize(size);
+
+        ice = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return ice;
+    }
 }
