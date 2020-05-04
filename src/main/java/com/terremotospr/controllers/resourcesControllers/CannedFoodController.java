@@ -29,14 +29,6 @@ public class CannedFoodController {
     @GetMapping(value = "/fetch")
     public List<CannedFoodBean> fetchAll(){ return cannedFoodService.fetchAllCannedFood(); }
 
-//    @GetMapping(value = "/fetch")
-//    public Object fetchAll() throws IOException {
-//        //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-//        Resource resource = new ClassPathResource("responses/cannedFoodResponseJSON.json");
-//        ObjectMapper mapper = new ObjectMapper();
-//        return mapper.readValue(resource.getInputStream(), Object.class);
-//    }
-
     @GetMapping(value = "/{id}")
     public CannedFood findCannedFoodById(@PathVariable int id){ return cannedFoodService.findById(id); }
 

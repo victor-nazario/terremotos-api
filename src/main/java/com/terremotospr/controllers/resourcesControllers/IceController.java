@@ -27,14 +27,6 @@ public class IceController {
 
     @GetMapping(value = "/fetch") public List<IceBean> fetchAll(){ return iceService.fetchAllIce(); }
 
-//    @GetMapping(value = "/fetch")
-//    public Object fetchAll() throws IOException {
-//        //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-//        Resource resource = new ClassPathResource("responses/iceResponseJSON.json");
-//        ObjectMapper mapper = new ObjectMapper();
-//        return mapper.readValue(resource.getInputStream(), Object.class);
-//    }
-
     @GetMapping(value = "/{id}")
     public Ice findIceById(@PathVariable int id){ return iceService.findById(id); }
 

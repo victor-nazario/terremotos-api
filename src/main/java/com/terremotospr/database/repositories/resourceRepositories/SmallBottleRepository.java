@@ -27,7 +27,7 @@ public interface SmallBottleRepository extends CrudRepository<SmallBottle,Long> 
             , nativeQuery = true)
     List<SmallBottle> findByPriceUnder(@Param("price") Double price);
 
-    @Query(value = "select * from small_bottle sb inner join base_resource br on sb.id = br.id where br.price => :price"
+    @Query(value = "select * from small_bottle sb inner join base_resource br on sb.id = br.id where br.price >= :price"
             , nativeQuery = true)
     List<SmallBottle> findByPriceOver(@Param("price") Double price);
 

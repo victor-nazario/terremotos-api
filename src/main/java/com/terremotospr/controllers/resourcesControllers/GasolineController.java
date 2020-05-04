@@ -29,14 +29,6 @@ public class GasolineController {
     @GetMapping(value = "/fetch")
     public List<GasolineBean> fetchAll(){ return gasolineService.fetchAllGasoline(); }
 
-//    @GetMapping(value = "/fetch")
-//    public Object fetchAll() throws IOException {
-//        //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-//        Resource resource = new ClassPathResource("responses/gasolineResponseJSON.json");
-//        ObjectMapper mapper = new ObjectMapper();
-//        return mapper.readValue(resource.getInputStream(), Object.class);
-//    }
-
     @GetMapping(value = "/{id}")
     public Gasoline findGasolineById(@PathVariable int id){ return gasolineService.findById(id); }
 

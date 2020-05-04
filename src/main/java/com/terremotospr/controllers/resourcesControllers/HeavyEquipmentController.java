@@ -28,14 +28,6 @@ public class HeavyEquipmentController {
 
     @GetMapping(value = "/fetch") public List<HeavyEquipmentBean> fetchAll(){ return heavyEquipmentService.fetchAllHeavyEquipment(); }
 
-//    @GetMapping(value = "/fetch")
-//    public Object fetchAll() throws IOException {
-//        //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-//        Resource resource = new ClassPathResource("responses/heavyEquipmentResponseJSON.json");
-//        ObjectMapper mapper = new ObjectMapper();
-//        return mapper.readValue(resource.getInputStream(), Object.class);
-//    }
-
     @GetMapping(value = "/{id}")
     public HeavyEquipment findHeavyEquipmentById(@PathVariable int id){ return heavyEquipmentService.findById(id); }
 

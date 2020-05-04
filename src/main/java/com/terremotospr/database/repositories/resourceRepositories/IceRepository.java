@@ -26,7 +26,7 @@ public interface IceRepository extends CrudRepository<Ice,Long> {
             , nativeQuery = true)
     List<Ice> findByPriceUnder(@Param("price") Double price);
 
-    @Query(value = "select * from ice ic inner join base_resource br on ic.id = br.id where br.price => :price"
+    @Query(value = "select * from ice ic inner join base_resource br on ic.id = br.id where br.price >= :price"
             , nativeQuery = true)
     List<Ice> findByPriceOver(@Param("price") Double price);
 

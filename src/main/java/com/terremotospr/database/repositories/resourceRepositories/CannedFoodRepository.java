@@ -27,7 +27,7 @@ public interface CannedFoodRepository extends CrudRepository<CannedFood,Long> {
             , nativeQuery = true)
     List<CannedFood> findByPriceUnder(@Param("price") Double price);
 
-    @Query(value = "select * from canned_food cf inner join base_resource br on cf.id = br.id where br.price => :price"
+    @Query(value = "select * from canned_food cf inner join base_resource br on cf.id = br.id where br.price >= :price"
             , nativeQuery = true)
     List<CannedFood> findByPriceOver(@Param("price") Double price);
 

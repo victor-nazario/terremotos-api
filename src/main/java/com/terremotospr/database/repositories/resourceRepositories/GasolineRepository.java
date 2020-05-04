@@ -26,7 +26,7 @@ public interface GasolineRepository extends CrudRepository<Gasoline, Long> {
             , nativeQuery = true)
     List<Gasoline> findByPriceUnder(@Param("price") Double price);
 
-    @Query(value = "select * from gasoline g inner join base_resource br on g.id = br.id where br.price => :price"
+    @Query(value = "select * from gasoline g inner join base_resource br on g.id = br.id where br.price >= :price"
             , nativeQuery = true)
     List<Gasoline> findByPriceOver(@Param("price") Double price);
 
