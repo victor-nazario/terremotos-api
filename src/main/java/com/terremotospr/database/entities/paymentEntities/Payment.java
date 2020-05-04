@@ -30,11 +30,11 @@ public class Payment {
 
     //Relationship
     @ManyToOne(targetEntity = Consumer.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "consumer_id", insertable = false, updatable = false)
 
     private Consumer consumer;
 
-    @Column(name = "id")
+    @Column(name = "consumer_id")
     private Long consumerId;
 
     public Consumer getConsumer(){return consumer;}

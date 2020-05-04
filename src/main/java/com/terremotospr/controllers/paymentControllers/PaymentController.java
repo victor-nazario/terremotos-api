@@ -32,7 +32,7 @@ public class PaymentController {
         return paymentService.findPaymentById(id);
     }
 
-    @GetMapping(value = "/consumerId/{id}")
+    @GetMapping(value = "/consumer/{id}")
     public Payment findByConsumerId(@PathVariable int id) {
         return paymentService.findByConsumerId(id);
     }
