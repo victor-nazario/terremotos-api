@@ -51,4 +51,8 @@ public class AdminService {
         BeanUtils.copyProperties(entity, bean);
         return bean;
     }
+
+    public Admin findById(Long id){
+        return adminRepository.findTheAdminId(id).get();
+    }
 }
