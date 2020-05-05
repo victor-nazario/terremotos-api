@@ -50,4 +50,8 @@ public class DieselService {
         dieselRepository.save(entity);
         return true;
     }
+
+    public Diesel findById(Long id) {
+        return dieselRepository.findById(id).get();
+    }
 }

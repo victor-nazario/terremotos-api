@@ -1,6 +1,7 @@
 package com.terremotospr.beans.administrativeBeans;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Date;
 
@@ -15,6 +16,7 @@ public class ReservationBean {
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date date;
 
+    @JsonIgnore
     private ConsumerBean consumer;
 
     public Long getId() {
