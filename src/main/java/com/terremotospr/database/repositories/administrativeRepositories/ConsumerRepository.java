@@ -1,5 +1,6 @@
 package com.terremotospr.database.repositories.administrativeRepositories;
 
+import com.terremotospr.beans.administrativeBeans.ConsumerType;
 import com.terremotospr.database.entities.administrativeEntities.Consumer;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

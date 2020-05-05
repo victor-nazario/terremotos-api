@@ -3,6 +3,8 @@ package com.terremotospr.controllers.resourcesControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.terremotospr.beans.resourceBeans.ToolBean;
+import com.terremotospr.beans.resourceBeans.WaterBean;
+import com.terremotospr.database.entities.resourceEntities.Tool;
 import com.terremotospr.services.resourceServices.ToolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
@@ -10,6 +12,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created on  -
@@ -24,16 +27,17 @@ public class ToolController {
     ToolService toolService;
 
     @GetMapping(value = "/fetch")
-    public Object fetchAllTool() throws IOException {
-        //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/toolResponseJSON.json");
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(resource.getInputStream(), Object.class);
-        //return toolService.fetchAllTool();
+    public List<ToolBean> fetchAllTool(){
+        return toolService.fetchAllTool();
     }
 
     @PostMapping(value = "/add")
     public boolean addTool(@RequestBody ToolBean bean){
         return toolService.addTool(bean);
+    }
+
+    @GetMapping(value = "/{id}")
+    public Tool findById(@PathVariable Long id) {
+        return toolService.findById(id);
     }
 }

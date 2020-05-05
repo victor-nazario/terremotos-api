@@ -38,11 +38,4 @@ public class SuppliesController {
     @GetMapping(value = "/resource/{id}")
     public List<SuppliesBean> findByResourceId(@PathVariable Integer id) { return suppliesService.findByResourceId(id); }
 
-//    @GetMapping(value = "/fetch")
-//    public Object fetchAll() throws IOException {
-//        //To obtain the path, in IDEA right click and when the dialog shows up, select copy path -> path from source root
-//        Resource resource = new ClassPathResource("responses/suppliesResponseJSON.json");
-//        ObjectMapper mapper = new ObjectMapper();
-//        return mapper.readValue(resource.getInputStream(), Object.class);
-//    }
 }

@@ -1,7 +1,9 @@
 package com.terremotospr.services.administrativeServices;
 
 import com.terremotospr.beans.administrativeBeans.BelongsBean;
+import com.terremotospr.beans.administrativeBeans.SuppliesBean;
 import com.terremotospr.database.entities.administrativeEntities.Belongs;
+import com.terremotospr.database.entities.administrativeEntities.Supplies;
 import com.terremotospr.database.repositories.administrativeRepositories.BelongsRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +38,28 @@ public class BelongsService {
     public List<BelongsBean> fetchAllBelongs(){
         List<BelongsBean> belongs;
         Iterable<Belongs> iter = belongsRepository.findAll();
+
+        belongs = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return belongs;
+    }
+
+    public List<BelongsBean> findByOrderId(Integer orderId){
+        List<BelongsBean> belongs;
+        Iterable<Belongs> iter = belongsRepository.findByOrderId(orderId);
+
+        belongs = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return belongs;
+    }
+
+    public List<BelongsBean> findByResourceId(Integer resourceId){
+        List<BelongsBean> belongs;
+        Iterable<Belongs> iter = belongsRepository.findByResourceId(resourceId);
 
         belongs = StreamSupport.stream(iter.spliterator(), false)
                 .map(this::copyProperties)

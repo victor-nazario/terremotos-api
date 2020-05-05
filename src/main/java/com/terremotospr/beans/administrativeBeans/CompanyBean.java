@@ -6,13 +6,13 @@ package com.terremotospr.beans.administrativeBeans;
  */
 public class CompanyBean{
 
-    private Long comp_id;
+//    private Long cid;
     private String cName;
     private String cLocation;
-
-    public Long getComp_id() { return comp_id; }
-
-    public void setComp_id(Long comp_id) { this.comp_id = comp_id; }
+//
+//    public Long getComp_id() { return cid; }
+//
+//    public void setComp_id(Long cid) { this.cid = cid; }
 
     public String getcName() { return cName; }
 

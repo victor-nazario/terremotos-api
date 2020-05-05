@@ -54,8 +54,8 @@ public class SupplierService {
         return supplier;
     }
 
-    public Supplier findSupplierById(Integer id){
-            return supplierRepository.findById(id);
+    public Supplier findById(Long id){
+            return supplierRepository.findById(id).get();
     }
 
     public List<SupplierBean> findByPosition(String position){

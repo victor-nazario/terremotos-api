@@ -20,7 +20,7 @@ public interface SuppliesRepository extends CrudRepository<Supplies, Long> {
     List<Supplies> findBySupplierId(@Param("supplierId") Integer supplierId);
 
     @Query(value = "select * from supplies ss inner join supplier s on ss.supplier_id = s.id " +
-            "inner join base_resource br on ss.resource_id = br.id where ss.supplier_id = :resourceId"
+            "inner join base_resource br on ss.resource_id = br.id where ss.resource_id = :resourceId"
             , nativeQuery = true)
     List<Supplies> findByResourceId(@Param("resourceId") Integer resourceId);
 }

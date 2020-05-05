@@ -11,14 +11,14 @@ import javax.persistence.Entity;
  */
 @Entity
 public class Tool extends BaseResource {
-    private ToolType type;
+    private String type;
     private double weight;
 
-    public ToolType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(ToolType type) {
+    public void setType(String type) {
         this.type = type;
     }
 

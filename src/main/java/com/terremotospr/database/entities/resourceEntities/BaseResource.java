@@ -1,6 +1,7 @@
 package com.terremotospr.database.entities.resourceEntities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.terremotospr.database.entities.administrativeEntities.Belongs;
 import com.terremotospr.database.entities.administrativeEntities.Reserves;
 import com.terremotospr.database.entities.administrativeEntities.Supplies;
@@ -31,12 +32,16 @@ public class BaseResource {
     private Double price;
     private Double longitude;
     private Double latitude;
+
+    @JsonIgnore
     @OneToMany(targetEntity= Supplies.class, mappedBy="resource", cascade=CascadeType.ALL, orphanRemoval=true)
     private Set<Supplies> supplies = new HashSet<>();
 
+    @JsonIgnore
     @OneToMany(targetEntity= Reserves.class, mappedBy="resource", cascade=CascadeType.ALL, orphanRemoval=true)
     private Set<Reserves> reserves = new HashSet<>();
 
+    @JsonIgnore
     @OneToMany(targetEntity= Belongs.class, mappedBy="resource", cascade=CascadeType.ALL, orphanRemoval=true)
     private Set<Belongs> belongs = new HashSet<>();
 

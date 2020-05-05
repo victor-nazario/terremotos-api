@@ -1,6 +1,7 @@
 package com.terremotospr.controllers.administrativeControllers;
 
 import com.terremotospr.beans.administrativeBeans.ConsumerBean;
+import com.terremotospr.beans.administrativeBeans.ConsumerType;
 import com.terremotospr.database.entities.administrativeEntities.Consumer;
 import com.terremotospr.services.administrativeServices.ConsumerService;
 import org.springframework.beans.factory.annotation.Autowired;

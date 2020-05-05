@@ -1,7 +1,7 @@
 package com.terremotospr.services.resourceServices;
 
 import com.terremotospr.beans.resourceBeans.PowerGenBean;
-import com.terremotospr.beans.resourceBeans.generatorType;
+import com.terremotospr.beans.resourceBeans.PowerGeneratorType;
 import com.terremotospr.database.entities.resourceEntities.PowerGen;
 import com.terremotospr.database.repositories.resourceRepositories.PowerGenRepository;
 import org.springframework.beans.BeanUtils;
@@ -95,7 +95,7 @@ public class PowerGenService {
         return powerGen;
     }
 
-    public List<PowerGenBean> findByGeneratorType(generatorType type){
+    public List<PowerGenBean> findByGeneratorType(PowerGeneratorType type){
         List<PowerGenBean> powerGen;
         Iterable<PowerGen> iter = powerGenRepository.findByGeneratorType(type);
 

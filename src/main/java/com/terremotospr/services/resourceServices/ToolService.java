@@ -48,4 +48,8 @@ public class ToolService {
         toolRepository.save(entity);
         return true;
     }
+
+    public Tool findById(Long id) {
+        return toolRepository.findById(id).get();
+    }
 }
