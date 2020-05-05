@@ -1,6 +1,8 @@
 package com.terremotospr.controllers.resourcesControllers;
 
 import com.terremotospr.beans.resourceBeans.BaseResourceBean;
+import com.terremotospr.beans.resourceBeans.WaterBean;
+import com.terremotospr.database.entities.resourceEntities.BaseResource;
 import com.terremotospr.services.resourceServices.BaseResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,15 +23,9 @@ public class BaseResourceController {
         return baseResourceService.fetchAllBaseResource();
     }
 
-    @GetMapping(value = "/available")
-    public List<BaseResourceBean> findAvailable() { return baseResourceService.findAvailable();}
-
-    @GetMapping(value = "/name/{name}")
-    public List<BaseResourceBean> findByName(@PathVariable String name) {
-        return baseResourceService.findByName(name);
+    @GetMapping(value = "/{id}")
+    public BaseResource findById(@PathVariable Long id) {
+        return baseResourceService.findById(id);
     }
-
-    @GetMapping(value = "/count")
-    public String countAll(){ return baseResourceService.availableResources();}
 
 }
