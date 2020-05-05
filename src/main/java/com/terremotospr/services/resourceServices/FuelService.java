@@ -48,4 +48,8 @@ public class FuelService {
         fuelRepository.save(entity);
         return true;
     }
+
+    public Fuel findById(Long id) {
+        return fuelRepository.findById(id).get();
+    }
 }

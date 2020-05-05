@@ -1,5 +1,6 @@
 package com.terremotospr.database.entities.paymentEntities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.terremotospr.database.entities.administrativeEntities.Consumer;
 
 import javax.persistence.*;
@@ -22,10 +23,11 @@ public class PaymentMethod {
 
     public void setPM_id(Long pm_id) { this.pm_id = pm_id; }
 
+
     //Relationship
+    @JsonIgnore
     @ManyToOne(targetEntity = Consumer.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "id", insertable = false, updatable = false)
-
     private Consumer consumer;
 
     @Column(name = "id")
