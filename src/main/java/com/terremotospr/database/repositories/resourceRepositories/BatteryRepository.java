@@ -19,11 +19,21 @@ public interface BatteryRepository extends CrudRepository<Battery, Long> {
     @Query(value = "select * from battery b inner join base_resource br on b.id = br.id;", nativeQuery = true)
     List<Battery> findAll();
 
+    @Query(value = "select * from battery b inner join base_resource br on b.id = br.id where b.id = :id"
+            , nativeQuery = true)
+    Battery findById(@Param("id") Integer id);
+
     @Query(value = "select * from battery b inner join base_resource br on b.id = br.id where br.price <= :price ;"
             , nativeQuery = true)
     List<Battery> findByPriceUnder(@Param("price") Double price);
 
+    @Query(value = "select * from battery b inner join base_resource br on b.id = br.id where br.name = :name"
+            , nativeQuery = true)
+    List<Battery> findByName(@Param("name") String name);
 
+    @Query(value = "select * from battery b inner join base_resource br on b.id = br.id where br.available = true"
+            , nativeQuery = true)
+    List<Battery> findAvailable();
 
 
 
