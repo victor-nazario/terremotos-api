@@ -1,7 +1,7 @@
 package com.terremotospr.database.entities.resourceEntities;
 
 import com.terremotospr.beans.resourceBeans.FuelTypeGenerator;
-import com.terremotospr.beans.resourceBeans.generatorType;
+import com.terremotospr.beans.resourceBeans.PowerGeneratorType;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -14,13 +14,13 @@ import javax.persistence.Enumerated;
 public class PowerGen extends BaseResource {
 
     @Enumerated(EnumType.STRING)
-    private generatorType type;
+    private PowerGeneratorType type;
     private String power;
     private FuelTypeGenerator fuelType;
 
-    public generatorType getType() { return type; }
+    public PowerGeneratorType getType() { return type; }
 
-    public void setType(generatorType type) { this.type = type;}
+    public void setType(PowerGeneratorType type) { this.type = type;}
 
     public String getPower() { return power;}
 

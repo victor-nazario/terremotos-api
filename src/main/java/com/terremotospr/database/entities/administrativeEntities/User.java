@@ -1,5 +1,7 @@
 package com.terremotospr.database.entities.administrativeEntities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -104,7 +106,8 @@ public class User{
         this.zipCode = zipCode;
     }
 
-    @OneToMany(targetEntity=Manages.class, mappedBy="user", cascade=CascadeType.ALL, orphanRemoval=true)
+    @JsonIgnore
+    @OneToMany(targetEntity=Manages.class, mappedBy="user", cascade=CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval=true)
     private Set<Manages> manages = new HashSet<>();
 
     public Set<Manages> getManages() { return manages; }
