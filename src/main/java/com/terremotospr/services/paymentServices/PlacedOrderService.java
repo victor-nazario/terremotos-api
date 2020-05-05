@@ -2,6 +2,8 @@ package com.terremotospr.services.paymentServices;
 
 import com.terremotospr.beans.paymentBeans.PlacedOrderBean;
 import com.terremotospr.database.entities.paymentEntities.PlacedOrder;
+import com.terremotospr.database.entities.resourceEntities.PowerGen;
+import com.terremotospr.database.repositories.administrativeRepositories.ConsumerRepository;
 import com.terremotospr.database.repositories.paymentRepositories.PlacedOrderRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,9 @@ public class PlacedOrderService {
     @Autowired
     PlacedOrderRepository placedOrderRepository;
 
+    @Autowired
+    ConsumerRepository consumerRepository;
+
     public List<PlacedOrderBean> fetchAllOrder(){
         List<PlacedOrderBean> order;
 
@@ -37,6 +42,7 @@ public class PlacedOrderService {
     private PlacedOrderBean copyProperties(PlacedOrder entity){
         PlacedOrderBean bean = new PlacedOrderBean();
         BeanUtils.copyProperties(entity, bean);
+        bean.setCustomerId(entity.getConsumer().getId());
         return bean;
     }
 
@@ -45,7 +51,12 @@ public class PlacedOrderService {
 
         PlacedOrder entity = new PlacedOrder();
         BeanUtils.copyProperties(bean, entity);
+        entity.setConsumer(consumerRepository.findConsumerById(bean.getCustomerId()).get());
         placedOrderRepository.save(entity);
         return true;
+    }
+
+    public PlacedOrder findById(Long id){
+        return placedOrderRepository.findById(id).get();
     }
 }
