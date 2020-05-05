@@ -29,4 +29,7 @@ public class BaseResourceController {
         return baseResourceService.findByName(name);
     }
 
+    @GetMapping(value = "/count")
+    public String countAll(){ return baseResourceService.availableResources();}
+
 }

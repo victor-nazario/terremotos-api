@@ -48,9 +48,9 @@ public class MedicationService {
         return bean;
     }
 
-//    public DryFood findById(Integer id){
-//        return medicationRepository.findById(id);
-//    }
+    public Medication findById(Integer id){
+        return medicationRepository.findById(id);
+    }
 
     public List<MedicationBean> findByPriceUnder(Double price){
         List<MedicationBean> medication;

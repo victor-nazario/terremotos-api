@@ -71,4 +71,8 @@ public class BaseResourceService {
         return resource;
     }
 
+    public String availableResources(){
+        return baseResourceRepository.countAvailable();
+    }
+
 }
