@@ -18,8 +18,7 @@ import java.util.Set;
 @Repository
 public interface ManagesRepository extends CrudRepository<Manages, Long> {
     Set<Manages> findAllByAdminEquals(Admin admin);
-    @Query(value = "select * from manages ma inner join user u on ma.user_id = u.id " +
-            "inner join admin a on ma.admin_id = a.id", nativeQuery = true)
+    @Query(value = "select * from manages", nativeQuery = true)
     List<Manages> findAll();
 
     @Query(value = "select * from manages ma inner join user u on ma.user_id = u.id " +

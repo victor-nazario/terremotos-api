@@ -14,7 +14,7 @@ import java.util.Optional;
  */
 public interface PaymentRepository extends CrudRepository<Payment, Long> {
 
-    @Query(value = "SELECT * FROM payment p inner join consumer c on p.consumer_id = c.id;", nativeQuery = true)
+    @Query(value = "SELECT * FROM payment", nativeQuery = true)
     List<Payment> findAll();
 
     @Query(value="SELECT * FROM payment p inner join consumer c on p.consumer_id = c.id WHERE p.payment_id = :id", nativeQuery = true)
