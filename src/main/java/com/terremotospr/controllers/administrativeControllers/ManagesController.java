@@ -27,12 +27,12 @@ public class ManagesController {
         return managesService.fetchAllManages();
     }
 
-//    @GetMapping(value = "/user/{id}")
-//    public List<ManagesBean> findByUserId(@PathVariable Integer id) { return managesService.findByUserId(id); }
-//
-//    @GetMapping(value = "/admin/{id}")
-//    public List<ManagesBean> findByAdminId(@PathVariable Integer id) { return managesService.findByAdminId(id); }
-//
-//    @GetMapping(value = "/account_status/{status}")
-//    public List<ManagesBean> findByAccountStatus(@PathVariable AccountStatus status) { return managesService.findByAccountStatus(status); }
+    @GetMapping(value = "/user/{id}")
+    public List<ManagesBean> findByUserId(@PathVariable Integer id) { return managesService.findByUserId(id); }
+
+    @GetMapping(value = "/admin/{id}")
+    public List<ManagesBean> findByAdminId(@PathVariable Integer id) { return managesService.findByAdminId(id); }
+
+    @GetMapping(value = "/account_status/{status}")
+    public List<ManagesBean> findByAccountStatus(@PathVariable AccountStatus status) { return managesService.findByAccountStatus(status); }
 }

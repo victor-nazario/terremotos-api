@@ -50,36 +50,36 @@ public class ManagesService {
         return manages;
     }
 //
-//    public List<ManagesBean> findByUserId(Integer userId){
-//        List<ManagesBean> manages;
-//        Iterable<Manages> iter = managesRepository.findByUserId(userId);
-//
-//        manages = StreamSupport.stream(iter.spliterator(), false)
-//                .map(this::copyProperties)
-//                .collect(Collectors.toList());
-//
-//        return manages;
-//    }
-//
-//    public List<ManagesBean> findByAdminId(Integer adminId){
-//        List<ManagesBean> manages;
-//        Iterable<Manages> iter = managesRepository.findByAdminId(adminId);
-//
-//        manages = StreamSupport.stream(iter.spliterator(), false)
-//                .map(this::copyProperties)
-//                .collect(Collectors.toList());
-//
-//        return manages;
-//    }
-//
-//    public List<ManagesBean> findByAccountStatus(AccountStatus status){
-//        List<ManagesBean> manages;
-//        Iterable<Manages> iter = managesRepository.findByAccountStatus(status);
-//
-//        manages = StreamSupport.stream(iter.spliterator(), false)
-//                .map(this::copyProperties)
-//                .collect(Collectors.toList());
-//
-//        return manages;
-//    }
+    public List<ManagesBean> findByUserId(Integer userId){
+        List<ManagesBean> manages;
+        Iterable<Manages> iter = managesRepository.findByUserId(userId);
+
+        manages = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return manages;
+    }
+
+    public List<ManagesBean> findByAdminId(Integer adminId){
+        List<ManagesBean> manages;
+        Iterable<Manages> iter = managesRepository.findByAdminId(adminId);
+
+        manages = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return manages;
+    }
+
+    public List<ManagesBean> findByAccountStatus(AccountStatus status){
+        List<ManagesBean> manages;
+        Iterable<Manages> iter = managesRepository.findByAccountStatus(status);
+
+        manages = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return manages;
+    }
 }
