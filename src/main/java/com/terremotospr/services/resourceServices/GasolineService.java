@@ -1,7 +1,6 @@
 package com.terremotospr.services.resourceServices;
 
 import com.terremotospr.beans.resourceBeans.GasolineBean;
-import com.terremotospr.beans.resourceBeans.TypeOfGasoline;
 import com.terremotospr.database.entities.resourceEntities.Gasoline;
 import com.terremotospr.database.repositories.resourceRepositories.GasolineRepository;
 import org.springframework.beans.BeanUtils;
@@ -128,7 +127,7 @@ public class GasolineService {
         return gasoline;
     }
 
-    public List<GasolineBean> findByType(TypeOfGasoline type){
+    public List<GasolineBean> findByType(String type){
         List<GasolineBean> gasoline;
         Iterable<Gasoline> iter = gasolineRepository.findByType(type);
 

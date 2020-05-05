@@ -1,7 +1,6 @@
 package com.terremotospr.services.resourceServices;
 
 import com.terremotospr.beans.resourceBeans.CannedFoodBean;
-import com.terremotospr.beans.resourceBeans.TypeOfCannedFood;
 import com.terremotospr.database.entities.resourceEntities.CannedFood;
 import com.terremotospr.database.repositories.resourceRepositories.CannedFoodRepository;
 import org.springframework.beans.BeanUtils;
@@ -117,7 +116,7 @@ public class CannedFoodService {
         return cannedFoods;
     }
 
-    public List<CannedFoodBean> findByType(TypeOfCannedFood type){
+    public List<CannedFoodBean> findByType(String type){
         List<CannedFoodBean> cannedFoods;
         Iterable<CannedFood> iter = cannedFoodRepository.findByType(type);
 

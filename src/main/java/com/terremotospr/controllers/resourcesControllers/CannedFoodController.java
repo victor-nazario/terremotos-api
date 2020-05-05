@@ -51,6 +51,6 @@ public class CannedFoodController {
     public List<CannedFoodBean> findBySize(@PathVariable Double size){ return cannedFoodService.findBySize(size); }
 
     @GetMapping(value = "/type/{type}")
-    public List<CannedFoodBean> findByType(@PathVariable TypeOfCannedFood type){ return cannedFoodService.findByType(type); }
+    public List<CannedFoodBean> findByType(@PathVariable String type){ return cannedFoodService.findByType(type); }
 
 }

@@ -7,12 +7,12 @@ package com.terremotospr.beans.resourceBeans;
  */
 public class HeavyEquipmentBean extends BaseResourceBean {
 
-    private TypeofHeavyEquipment type;
+    private String type;
     private Double size;
 
-    public TypeofHeavyEquipment getType() { return type; }
+    public String getType() { return type; }
 
-    public void setType(TypeofHeavyEquipment type) { this.type = type; }
+    public void setType(String type) { this.type = type; }
 
     public Double getSize() { return size; }
 

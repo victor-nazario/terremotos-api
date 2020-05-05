@@ -1,7 +1,6 @@
 package com.terremotospr.services.resourceServices;
 
 import com.terremotospr.beans.resourceBeans.HeavyEquipmentBean;
-import com.terremotospr.beans.resourceBeans.TypeofHeavyEquipment;
 import com.terremotospr.database.entities.resourceEntities.HeavyEquipment;
 import com.terremotospr.database.repositories.resourceRepositories.HeavyEquipmentRepository;
 import org.springframework.beans.BeanUtils;
@@ -111,7 +110,7 @@ public class HeavyEquipmentService {
         return heavyEquipments;
     }
 
-    public List<HeavyEquipmentBean> findByType(TypeofHeavyEquipment type){
+    public List<HeavyEquipmentBean> findByType(String type){
         List<HeavyEquipmentBean> heavyEquipments;
         Iterable<HeavyEquipment> iter = heavyEquipmentRepository.findByType(type);
 

@@ -1,6 +1,6 @@
 package com.terremotospr.database.entities.administrativeEntities;
 
-import com.terremotospr.beans.administrativeBeans.ConsumerType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.terremotospr.database.entities.paymentEntities.Payment;
 import com.terremotospr.database.entities.paymentEntities.PaymentMethod;
 
@@ -18,12 +18,13 @@ import java.util.Set;
 @Entity(name = "Consumer")
 public class Consumer extends User{
 
-    private ConsumerType type;
+    private String type;
 
-    public ConsumerType getType() { return type; }
+    public String getType() { return type; }
 
-    public void setType(ConsumerType type) { this.type = type; }
+    public void setType(String type) { this.type = type; }
 
+    @JsonIgnore
     @OneToMany(targetEntity= Payment.class, mappedBy = "consumer", orphanRemoval=true)
     private Set<Payment> payments = new HashSet<>();
 
@@ -31,6 +32,7 @@ public class Consumer extends User{
 
     public void setPayments(Set<Payment> payments) { this.payments = payments; }
 
+    @JsonIgnore
     @OneToMany(targetEntity= Phone.class, mappedBy = "consumer", orphanRemoval=true)
     private Set<Phone> phones = new HashSet<>();
 
@@ -38,6 +40,7 @@ public class Consumer extends User{
 
     public void setPhones(Set<Phone> phones) { this.phones = phones; }
 
+    @JsonIgnore
     @OneToMany(targetEntity= PaymentMethod.class, mappedBy = "consumer", orphanRemoval=true)
     private Set<PaymentMethod> paymentMethods = new HashSet<>();
 

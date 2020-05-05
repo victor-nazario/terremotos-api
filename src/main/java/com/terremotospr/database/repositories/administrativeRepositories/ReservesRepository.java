@@ -14,8 +14,7 @@ import java.util.List;
  */
 @Repository
 public interface ReservesRepository extends CrudRepository<Reserves, Long> {
-    @Query(value = "select * from reserves rs inner join reservation rv on rs.reservation_id = rv.id " +
-            "inner join base_resource br on rs.resource_id = br.id", nativeQuery = true)
+    @Query(value = "select * from reserves", nativeQuery = true)
     List<Reserves> findAll();
 
     @Query(value = "select * from reserves rs inner join reservation rv on rs.reservation_id = rv.id " +
