@@ -50,7 +50,7 @@ public class BaseResourceService {
     public List<BaseResourceBean> findAvailable(){
         List<BaseResourceBean> resource;
 
-        Iterable<BaseResource> iter = baseResourceRepository.findAvailable();
+        Iterable<BaseResource> iter = baseResourceRepository.findAll();
 
         resource = StreamSupport.stream(iter.spliterator(), false)
                 .map(this::copyProperties)
@@ -59,20 +59,24 @@ public class BaseResourceService {
         return resource;
     }
 
-    public List<BaseResourceBean> findByName(String name){
-        List<BaseResourceBean> resource;
-
-        Iterable<BaseResource> iter = baseResourceRepository.findByName(name);
-
-        resource = StreamSupport.stream(iter.spliterator(), false)
-                .map(this::copyProperties)
-                .collect(Collectors.toList());
-
-        return resource;
+    public BaseResource findById(Long id) {
+        return baseResourceRepository.findById(id).get();
     }
 
-    public String availableResources(){
-        return baseResourceRepository.countAvailable();
-    }
+//    public List<BaseResourceBean> findByName(String name){
+//        List<BaseResourceBean> resource;
+//
+//        Iterable<BaseResource> iter = baseResourceRepository.findByName(name);
+//
+//        resource = StreamSupport.stream(iter.spliterator(), false)
+//                .map(this::copyProperties)
+//                .collect(Collectors.toList());
+//
+//        return resource;
+//    }
+
+//    public String availableResources(){
+//        return baseResourceRepository.countAvailable();
+//    }
 
 }
