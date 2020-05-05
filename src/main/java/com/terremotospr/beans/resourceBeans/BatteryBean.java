@@ -6,14 +6,14 @@ package com.terremotospr.beans.resourceBeans;
  * @author Victor Nazario
  */
 public class BatteryBean extends BaseResourceBean{
-    private BatteryType type;
+    private String type;
     private double size;
 
-    public BatteryType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(BatteryType type) {
+    public void setType(String type) {
         this.type = type;
     }
 

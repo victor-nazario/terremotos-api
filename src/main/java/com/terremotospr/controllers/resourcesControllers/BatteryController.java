@@ -1,15 +1,12 @@
 package com.terremotospr.controllers.resourcesControllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.terremotospr.beans.resourceBeans.BatteryBean;
-import com.terremotospr.beans.resourceBeans.WaterBean;
+import com.terremotospr.database.entities.resourceEntities.Battery;
 import com.terremotospr.services.resourceServices.BatteryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
+import java.util.List;
 
 /**
  * Created on  -
@@ -24,15 +21,22 @@ public class BatteryController {
     BatteryService batteryService;
 
     @GetMapping(value = "/fetch")
-    public Object fetchAvailableBattery() throws IOException {
-        //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/batteryResponseJSON.json");
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(resource.getInputStream(), Object.class);
+    public List<BatteryBean> fetchAvailableBattery(){
+      return batteryService.fetchAllBattery();
     }
 
     @PostMapping(value = "/add")
     public boolean addBattery(@RequestBody BatteryBean bean){
         return batteryService.addBattery(bean);
+    }
+
+    @GetMapping(value = "/{id}")
+    public Battery findPowerGenById(@PathVariable Long id) {
+        return batteryService.findById(id);
+    }
+
+    @GetMapping(value = "/price_under/{price}")
+    public List<BatteryBean> findByPriceUnder(@PathVariable Double price) {
+        return batteryService.findByPriceUnder(price);
     }
 }

@@ -15,6 +15,8 @@ import java.util.Optional;
  */
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {
+    List<User> findAllByIdEquals(Long id);
+
     @Query(value = "SELECT * FROM user u;", nativeQuery = true)
     List<User> findAll();
 
