@@ -1,6 +1,5 @@
 package com.terremotospr.database.entities.administrativeEntities;
 
-import com.terremotospr.beans.administrativeBeans.ConsumerType;
 import com.terremotospr.database.entities.paymentEntities.Payment;
 import com.terremotospr.database.entities.paymentEntities.PaymentMethod;
 
@@ -18,11 +17,11 @@ import java.util.Set;
 @Entity(name = "Consumer")
 public class Consumer extends User{
 
-    private ConsumerType type;
+    private String type;
 
-    public ConsumerType getType() { return type; }
+    public String getType() { return type; }
 
-    public void setType(ConsumerType type) { this.type = type; }
+    public void setType(String type) { this.type = type; }
 
     @OneToMany(targetEntity= Payment.class, mappedBy = "consumer", orphanRemoval=true)
     private Set<Payment> payments = new HashSet<>();

@@ -7,12 +7,12 @@ package com.terremotospr.beans.resourceBeans;
  */
 public class CannedFoodBean extends BaseResourceBean {
 
-    private TypeOfCannedFood type;
+    private String type;
     private Double size;
 
-    public TypeOfCannedFood getType() { return type; }
+    public String getType() { return type; }
 
-    public void setType(TypeOfCannedFood type) { this.type = type; }
+    public void setType(String type) { this.type = type; }
 
     public Double getSize() { return size; }
 

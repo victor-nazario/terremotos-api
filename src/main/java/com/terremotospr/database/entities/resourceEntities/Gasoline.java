@@ -1,7 +1,5 @@
 package com.terremotospr.database.entities.resourceEntities;
 
-import com.terremotospr.beans.resourceBeans.TypeOfGasoline;
-
 import javax.persistence.Entity;
 
 /**
@@ -12,13 +10,13 @@ import javax.persistence.Entity;
 @Entity(name = "Gasoline")
 public class Gasoline extends Fuel {
 
-    private TypeOfGasoline type;
+    private String  type;
     private Double octane;
     private Double size;
 
-    public TypeOfGasoline getType() { return type; }
+    public String  getType() { return type; }
 
-    public void setType(TypeOfGasoline type) { this.type = type; }
+    public void setType(String  type) { this.type = type; }
 
     public Double getOctane() { return octane; }
 

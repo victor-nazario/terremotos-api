@@ -54,6 +54,6 @@ public class GasolineController {
     public List<GasolineBean> findByOctane(@PathVariable Double octane){ return gasolineService.findByOctane(octane); }
 
     @GetMapping(value = "/type/{type}")
-    public List<GasolineBean> findByType(@PathVariable TypeOfGasoline type){ return gasolineService.findByType(type); }
+    public List<GasolineBean> findByType(@PathVariable String type){ return gasolineService.findByType(type); }
 
 }

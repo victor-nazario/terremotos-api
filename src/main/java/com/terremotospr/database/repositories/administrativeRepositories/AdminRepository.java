@@ -16,10 +16,10 @@ import java.util.Optional;
  */
 @Repository
 public interface AdminRepository extends CrudRepository<Admin, Long> {
-    @Query(value = "select * from admin a inner join user u on a.id = u.id;", nativeQuery = true)
+    @Query(value = "select * from admin a INNER JOIN  user u on a.id = u.id;", nativeQuery = true)
     List<Admin> findAll();
 
-    @Query(value = "select * from admin a inner join user u on a.id = u.id where a.id = :id ;"
+    @Query(value = "select * from admin a INNER JOIN  user u on a.id = u.id where a.id = :id ;"
             , nativeQuery = true)
     Optional<Admin> findTheAdminId(@Param("id") Long id);
 }

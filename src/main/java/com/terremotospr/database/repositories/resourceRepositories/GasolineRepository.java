@@ -1,6 +1,5 @@
 package com.terremotospr.database.repositories.resourceRepositories;
 
-import com.terremotospr.beans.resourceBeans.TypeOfGasoline;
 import com.terremotospr.database.entities.resourceEntities.Gasoline;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -52,5 +51,5 @@ public interface GasolineRepository extends CrudRepository<Gasoline, Long> {
 
     @Query(value = "select * from gasoline g inner join base_resource br on g.id = br.id where g.type = :type"
             , nativeQuery = true)
-    List<Gasoline> findByType(@Param("type") TypeOfGasoline type);
+    List<Gasoline> findByType(@Param("type") String type);
 }

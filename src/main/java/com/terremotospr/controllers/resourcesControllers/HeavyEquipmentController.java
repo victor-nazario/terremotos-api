@@ -50,6 +50,6 @@ public class HeavyEquipmentController {
     public List<HeavyEquipmentBean> findBySize(@PathVariable Double size){ return heavyEquipmentService.findBySize(size); }
 
     @GetMapping(value = "/type/{type}")
-    public List<HeavyEquipmentBean> findByType(@PathVariable TypeofHeavyEquipment type){ return heavyEquipmentService.findByType(type); }
+    public List<HeavyEquipmentBean> findByType(@PathVariable String type){ return heavyEquipmentService.findByType(type); }
 
 }

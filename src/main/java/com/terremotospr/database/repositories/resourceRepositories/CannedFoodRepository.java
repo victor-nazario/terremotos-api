@@ -1,6 +1,5 @@
 package com.terremotospr.database.repositories.resourceRepositories;
 
-import com.terremotospr.beans.resourceBeans.TypeOfCannedFood;
 import com.terremotospr.database.entities.resourceEntities.CannedFood;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -49,5 +48,5 @@ public interface CannedFoodRepository extends CrudRepository<CannedFood,Long> {
 
     @Query(value = "select * from canned_food cf inner join base_resource br on cf.id = br.id where cf.type = :type"
             , nativeQuery = true)
-    List<CannedFood> findByType(@Param("type") TypeOfCannedFood type);
+    List<CannedFood> findByType(@Param("type") String type);
 }
