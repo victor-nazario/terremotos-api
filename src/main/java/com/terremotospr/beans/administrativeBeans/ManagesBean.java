@@ -7,7 +7,7 @@ package com.terremotospr.beans.administrativeBeans;
 public class ManagesBean {
     private Long userId;
     private Long adminId;
-    private AccountStatus status;
+    private String status;
 
     public Long getUserId() { return userId; }
 
@@ -17,7 +17,7 @@ public class ManagesBean {
 
     public void setAdminId(Long adminId) { this.adminId = adminId; }
 
-    public AccountStatus getStatus() { return status; }
+    public String getStatus() { return status; }
 
-    public void setStatus(AccountStatus status) { this.status = status; }
+    public void setStatus(String status) { this.status = status; }
 }

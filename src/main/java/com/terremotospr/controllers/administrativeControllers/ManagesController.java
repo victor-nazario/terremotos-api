@@ -3,6 +3,7 @@ package com.terremotospr.controllers.administrativeControllers;
 import com.terremotospr.beans.administrativeBeans.AccountStatus;
 import com.terremotospr.beans.administrativeBeans.ManagesBean;
 import com.terremotospr.services.administrativeServices.ManagesService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/manages")
 public class ManagesController {
-
+    @Autowired
     ManagesService managesService;
 
     @PostMapping(value = "/add")

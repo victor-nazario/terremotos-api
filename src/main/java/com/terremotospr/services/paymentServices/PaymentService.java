@@ -34,6 +34,8 @@ public class PaymentService {
     private PaymentBean copyProperties(Payment entity){
         PaymentBean bean = new PaymentBean();
         BeanUtils.copyProperties(entity, bean);
+        bean.setConsumerId(entity.getConsumer().getId());
+        bean.setPayment_id(entity.getPaymentId());
         return bean;
     }
 
