@@ -3,6 +3,7 @@ package com.terremotospr.controllers.resourcesControllers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.terremotospr.beans.resourceBeans.DryFoodBean;
 import com.terremotospr.beans.resourceBeans.MedicationBean;
+import com.terremotospr.database.entities.resourceEntities.Medication;
 import com.terremotospr.services.resourceServices.MedicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
@@ -16,7 +17,7 @@ import java.util.List;
  * @author Wilfredo Aponte Pomales
  */
 @RestController
-@RequestMapping("/medications")
+@RequestMapping("/medication")
 public class MedicationController {
     @Autowired
     MedicationService medicationService;
@@ -56,5 +57,6 @@ public class MedicationController {
         return medicationService.findAvailable();
     }
 
-
+    @GetMapping(value = "/{id}")
+    public Medication findById(@PathVariable Integer id){return medicationService.findById(id);}
 }
