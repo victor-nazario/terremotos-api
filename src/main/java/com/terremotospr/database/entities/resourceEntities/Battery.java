@@ -3,10 +3,7 @@ package com.terremotospr.database.entities.resourceEntities;
 import com.terremotospr.beans.resourceBeans.BatteryType;
 import com.terremotospr.database.entities.resourceEntities.BaseResource;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created on  -
@@ -20,7 +17,8 @@ public class Battery extends BaseResource {
     private Long id;
 
     private Long rId;
-    private BatteryType type;
+
+    private String type;
     private double size;
 
     @Override
@@ -41,11 +39,11 @@ public class Battery extends BaseResource {
         this.rId = rId;
     }
 
-    public BatteryType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(BatteryType type) {
+    public void setType(String type) {
         this.type = type;
     }
 
