@@ -31,38 +31,38 @@ public class UserController {
     }
 
     @GetMapping(value = "/{id}")
-    public User findUserById(@PathVariable int id) {
+    public User findUserById(@PathVariable Long id) {
         return userService.findUserById(id);
     }
 
-    @GetMapping(value = "/email/{email}")
-    public List<UserBean> findUserByEmail(@PathVariable String email) {
-        return userService.findByEmail(email);
-    }
-
-    @GetMapping(value = "/firstName/{firstName}")
-    public List<UserBean> findUserByFirstName(@PathVariable String firstName) {
-        return userService.findByFirstName(firstName);
-    }
-
-    @GetMapping(value = "/lastName/{lastName}")
-    public List<UserBean> findUserByLastName(@PathVariable String lastName) {
-        return userService.findByFirstName(lastName);
-    }
-
-    @GetMapping(value = "/city/{city}")
-    public List<UserBean> findUserByCity(@PathVariable String city) {
-        return userService.findByCity(city);
-    }
-
-    @GetMapping(value = "/country/{country}")
-    public List<UserBean> findUserByCountry(@PathVariable String country) {
-        return userService.findByCountry(country);
-    }
-
-    @GetMapping(value = "/region/{region}")
-    public List<UserBean> findUserByRegion(@PathVariable String region) {
-        return userService.findByRegion(region);
-    }
+//    @GetMapping(value = "/email/{email}")
+//    public List<UserBean> findUserByEmail(@PathVariable String email) {
+//        return userService.findByEmail(email);
+//    }
+//
+//    @GetMapping(value = "/firstName/{firstName}")
+//    public List<UserBean> findUserByFirstName(@PathVariable String firstName) {
+//        return userService.findByFirstName(firstName);
+//    }
+//
+//    @GetMapping(value = "/lastName/{lastName}")
+//    public List<UserBean> findUserByLastName(@PathVariable String lastName) {
+//        return userService.findByFirstName(lastName);
+//    }
+//
+//    @GetMapping(value = "/city/{city}")
+//    public List<UserBean> findUserByCity(@PathVariable String city) {
+//        return userService.findByCity(city);
+//    }
+//
+//    @GetMapping(value = "/country/{country}")
+//    public List<UserBean> findUserByCountry(@PathVariable String country) {
+//        return userService.findByCountry(country);
+//    }
+//
+//    @GetMapping(value = "/region/{region}")
+//    public List<UserBean> findUserByRegion(@PathVariable String region) {
+//        return userService.findByRegion(region);
+//    }
 
 }

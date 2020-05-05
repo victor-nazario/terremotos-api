@@ -47,73 +47,73 @@ public class UserService {
         return users;
     }
 
-    public User findUserById(Integer id){
+    public User findUserById(Long id){
         return userRepository.findById(id).get();
     }
 
-    public List<UserBean> findByEmail(String email){
-        List<UserBean> user;
-        Iterable<User> iter = userRepository.findByEmail(email);
-
-        user = StreamSupport.stream(iter.spliterator(), false)
-                .map(this::copyProperties)
-                .collect(Collectors.toList());
-
-        return user;
-    }
-
-    public List<UserBean> findByFirstName(String firstName){
-        List<UserBean> user;
-        Iterable<User> iter = userRepository.findByFirstName(firstName);
-
-        user = StreamSupport.stream(iter.spliterator(), false)
-                .map(this::copyProperties)
-                .collect(Collectors.toList());
-
-        return user;
-    }
-
-    public List<UserBean> findByLastName(String lastName){
-        List<UserBean> user;
-        Iterable<User> iter = userRepository.findByLastName(lastName);
-
-        user = StreamSupport.stream(iter.spliterator(), false)
-                .map(this::copyProperties)
-                .collect(Collectors.toList());
-
-        return user;
-    }
-
-    public List<UserBean> findByCity(String city){
-        List<UserBean> user;
-        Iterable<User> iter = userRepository.findByCity(city);
-
-        user = StreamSupport.stream(iter.spliterator(), false)
-                .map(this::copyProperties)
-                .collect(Collectors.toList());
-
-        return user;
-    }
-
-    public List<UserBean> findByCountry(String country){
-        List<UserBean> user;
-        Iterable<User> iter = userRepository.findByCity(country);
-
-        user = StreamSupport.stream(iter.spliterator(), false)
-                .map(this::copyProperties)
-                .collect(Collectors.toList());
-
-        return user;
-    }
-
-    public List<UserBean> findByRegion(String region){
-        List<UserBean> user;
-        Iterable<User> iter = userRepository.findByRegion(region);
-
-        user = StreamSupport.stream(iter.spliterator(), false)
-                .map(this::copyProperties)
-                .collect(Collectors.toList());
-
-        return user;
-    }
+//    public List<UserBean> findByEmail(String email){
+//        List<UserBean> user;
+//        Iterable<User> iter = userRepository.findByEmail(email);
+//
+//        user = StreamSupport.stream(iter.spliterator(), false)
+//                .map(this::copyProperties)
+//                .collect(Collectors.toList());
+//
+//        return user;
+//    }
+//
+//    public List<UserBean> findByFirstName(String firstName){
+//        List<UserBean> user;
+//        Iterable<User> iter = userRepository.findByFirstName(firstName);
+//
+//        user = StreamSupport.stream(iter.spliterator(), false)
+//                .map(this::copyProperties)
+//                .collect(Collectors.toList());
+//
+//        return user;
+//    }
+//
+//    public List<UserBean> findByLastName(String lastName){
+//        List<UserBean> user;
+//        Iterable<User> iter = userRepository.findByLastName(lastName);
+//
+//        user = StreamSupport.stream(iter.spliterator(), false)
+//                .map(this::copyProperties)
+//                .collect(Collectors.toList());
+//
+//        return user;
+//    }
+//
+//    public List<UserBean> findByCity(String city){
+//        List<UserBean> user;
+//        Iterable<User> iter = userRepository.findByCity(city);
+//
+//        user = StreamSupport.stream(iter.spliterator(), false)
+//                .map(this::copyProperties)
+//                .collect(Collectors.toList());
+//
+//        return user;
+//    }
+//
+//    public List<UserBean> findByCountry(String country){
+//        List<UserBean> user;
+//        Iterable<User> iter = userRepository.findByCity(country);
+//
+//        user = StreamSupport.stream(iter.spliterator(), false)
+//                .map(this::copyProperties)
+//                .collect(Collectors.toList());
+//
+//        return user;
+//    }
+//
+//    public List<UserBean> findByRegion(String region){
+//        List<UserBean> user;
+//        Iterable<User> iter = userRepository.findByRegion(region);
+//
+//        user = StreamSupport.stream(iter.spliterator(), false)
+//                .map(this::copyProperties)
+//                .collect(Collectors.toList());
+//
+//        return user;
+//    }
 }

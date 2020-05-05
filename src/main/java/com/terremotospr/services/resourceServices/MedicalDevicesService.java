@@ -48,51 +48,51 @@ public class MedicalDevicesService {
     }
 
     public List<MedicalDevicesBean> findAvailable(){
-        List<MedicalDevicesBean> clothing;
+        List<MedicalDevicesBean> medicalDevices;
 
         Iterable<MedicalDevices> iter = medicalDevicesRepository.findAvailable();
 
-        clothing = StreamSupport.stream(iter.spliterator(), false)
+        medicalDevices = StreamSupport.stream(iter.spliterator(), false)
                 .map(this::copyProperties)
                 .collect(Collectors.toList());
 
-        return clothing;
+        return medicalDevices;
     }
 
     public List<MedicalDevicesBean> findByBrand(String brand){
-        List<MedicalDevicesBean> clothing;
+        List<MedicalDevicesBean> medicalDevices;
 
         Iterable<MedicalDevices> iter = medicalDevicesRepository.findByBrand(brand);
 
-        clothing = StreamSupport.stream(iter.spliterator(), false)
+        medicalDevices = StreamSupport.stream(iter.spliterator(), false)
                 .map(this::copyProperties)
                 .collect(Collectors.toList());
 
-        return clothing;
+        return medicalDevices;
     }
 
     public List<MedicalDevicesBean> findByName(String name){
-        List<MedicalDevicesBean> clothing;
+        List<MedicalDevicesBean> medicalDevices;
 
         Iterable<MedicalDevices> iter = medicalDevicesRepository.findByName(name);
 
-        clothing = StreamSupport.stream(iter.spliterator(), false)
+        medicalDevices = StreamSupport.stream(iter.spliterator(), false)
                 .map(this::copyProperties)
                 .collect(Collectors.toList());
 
-        return clothing;
+        return medicalDevices;
     }
 
     public List<MedicalDevicesBean> findByPriceUnder(Double price){
-        List<MedicalDevicesBean> clothing;
+        List<MedicalDevicesBean> medicalDevices;
 
         Iterable<MedicalDevices> iter = medicalDevicesRepository.findByPriceUnder(price);
 
-        clothing = StreamSupport.stream(iter.spliterator(), false)
+        medicalDevices = StreamSupport.stream(iter.spliterator(), false)
                 .map(this::copyProperties)
                 .collect(Collectors.toList());
 
-        return clothing;
+        return medicalDevices;
     }
 
     public MedicalDevices findById(Integer id){
@@ -100,15 +100,15 @@ public class MedicalDevicesService {
     }
 
     public List<MedicalDevicesBean> findByType(medicalDeviceType type){
-        List<MedicalDevicesBean> clothing;
+        List<MedicalDevicesBean> medicalDevices;
 
         Iterable<MedicalDevices> iter = medicalDevicesRepository.findByType(type);
 
-        clothing = StreamSupport.stream(iter.spliterator(), false)
+        medicalDevices = StreamSupport.stream(iter.spliterator(), false)
                 .map(this::copyProperties)
                 .collect(Collectors.toList());
 
-        return clothing;
+        return medicalDevices;
     }
 
 }

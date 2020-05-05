@@ -30,8 +30,8 @@ public class SupplierController {
     }
 
     @GetMapping(value = "/{id}")
-    public Supplier findSupplierById(@PathVariable int id) {
-        return supplierService.findSupplierById(id);
+    public Supplier findSupplierById(@PathVariable Long id) {
+        return supplierService.findById(id);
     }
 
     @GetMapping(value = "/position/{position}")
@@ -49,11 +49,4 @@ public class SupplierController {
         return supplierService.findByRegion(region);
     }
 
-//    @GetMapping(value = "/fetch")
-//    public Object fetchAll() throws IOException {
-//        //To obtain the path, in IDEA right click and when the dialog shows up, select copy path -> path from source root
-//        Resource resource = new ClassPathResource("responses/supplierResponseJSON.json");
-//        ObjectMapper mapper = new ObjectMapper();
-//        return mapper.readValue(resource.getInputStream(), Object.class);
-//    }
 }

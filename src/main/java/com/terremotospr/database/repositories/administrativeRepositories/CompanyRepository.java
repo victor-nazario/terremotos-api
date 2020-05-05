@@ -20,14 +20,14 @@ public interface CompanyRepository extends CrudRepository<Company,Long> {
     @Query(value = "SELECT * FROM company co", nativeQuery = true)
     List<Company> findAll();
 
-    @Query(value="SELECT * FROM company co WHERE co.id = :id", nativeQuery = true)
+    @Query(value="SELECT * FROM company co WHERE co.cid = :id", nativeQuery = true)
     Optional<Company> findById(@Param("id") Integer id);
 
-    @Query(value = "SELECT * FROM company co WHERE co.cName = :name"
+    @Query(value = "SELECT * FROM company co WHERE co.c_name = :name"
             , nativeQuery = true)
     List<Company> findByCompanyName(@Param("name") String name);
 
-    @Query(value = "SELECT * FROM company co WHERE u.cLocation = :location"
+    @Query(value = "SELECT * FROM company co WHERE co.c_location = :location"
             , nativeQuery = true)
     List<Company> findByCompanyLocation(@Param("location") String location);
 

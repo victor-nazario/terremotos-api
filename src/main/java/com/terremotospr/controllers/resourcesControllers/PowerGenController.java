@@ -1,16 +1,12 @@
 package com.terremotospr.controllers.resourcesControllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.terremotospr.beans.resourceBeans.PowerGenBean;
-import com.terremotospr.beans.resourceBeans.generatorType;
+import com.terremotospr.beans.resourceBeans.PowerGeneratorType;
 import com.terremotospr.database.entities.resourceEntities.PowerGen;
 import com.terremotospr.services.resourceServices.PowerGenService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.List;
 
 /*
@@ -65,7 +61,7 @@ public class PowerGenController {
     }
 
     @GetMapping(value = "/generatortype/{type}")
-    public List<PowerGenBean> findByGeneratorType(@PathVariable generatorType type) {
+    public List<PowerGenBean> findByGeneratorType(@PathVariable PowerGeneratorType type) {
         return powerGenService.findByGeneratorType(type);
     }
 }
