@@ -1,12 +1,18 @@
 package com.terremotospr.services.administrativeServices;
 
+import com.terremotospr.beans.administrativeBeans.AdminBean;
 import com.terremotospr.beans.administrativeBeans.PhoneBean;
+import com.terremotospr.beans.administrativeBeans.UserBean;
+import com.terremotospr.database.entities.administrativeEntities.Admin;
+import com.terremotospr.database.entities.administrativeEntities.Consumer;
 import com.terremotospr.database.entities.administrativeEntities.Phone;
+import com.terremotospr.database.entities.administrativeEntities.User;
 import com.terremotospr.database.repositories.administrativeRepositories.PhoneRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -50,6 +56,12 @@ public class PhoneService {
     private PhoneBean copyProperties(Phone entity){
         PhoneBean bean = new PhoneBean();
         BeanUtils.copyProperties(entity, bean);
+        bean.setConsumerId(entity.getConsumer().getId());
         return bean;
+    }
+
+
+    public PhoneBean findById(Long id){
+       return copyProperties(phoneRepository.findById(id).get());
     }
 }
