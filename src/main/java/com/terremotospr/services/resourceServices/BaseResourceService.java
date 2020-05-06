@@ -44,6 +44,7 @@ public class BaseResourceService {
     private BaseResourceBean copyProperties(BaseResource entity){
         BaseResourceBean bean = new BaseResourceBean();
         BeanUtils.copyProperties(entity, bean);
+        bean.setMapURL(buildMapUrl(entity.getLongitude().toString(), entity.getLatitude().toString()));
         return bean;
     }
 
@@ -59,24 +60,41 @@ public class BaseResourceService {
         return resource;
     }
 
-    public BaseResource findById(Long id) {
-        return baseResourceRepository.findById(id).get();
+    public BaseResourceBean findById(Long id) {
+        return copyProperties(baseResourceRepository.findById(id).get());
     }
 
-//    public List<BaseResourceBean> findByName(String name){
-//        List<BaseResourceBean> resource;
-//
-//        Iterable<BaseResource> iter = baseResourceRepository.findByName(name);
-//
-//        resource = StreamSupport.stream(iter.spliterator(), false)
-//                .map(this::copyProperties)
-//                .collect(Collectors.toList());
-//
-//        return resource;
-//    }
+    private static String buildMapUrl(String longitude, String latitude){
+        String API_KEY = "9j54O8UY_6UT-st43Eh3F29SblcKXDJf6ESr6Yz5J4U";
 
-//    public String availableResources(){
-//        return baseResourceRepository.countAvailable();
-//    }
+
+        return "https://image.maps.ls.hereapi.com/mia/1.6/mapview?apiKey=" + API_KEY + "&i&c="
+                + longitude + "," + latitude + "&h=300&w=400&r=10";
+    }
+
+    public List<BaseResourceBean> fetchAvailable() {
+        List<BaseResourceBean> resource;
+
+        Iterable<BaseResource> iter = baseResourceRepository.findAllByAvailableIsTrueOrderByName();
+
+        resource = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return resource;
+    }
+
+    public List<BaseResourceBean> findByName(String name) {
+        List<BaseResourceBean> resource;
+
+        Iterable<BaseResource> iter = baseResourceRepository.findAllByNameEquals(name);
+
+        resource = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return resource;
+    }
+
 
 }

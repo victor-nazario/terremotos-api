@@ -18,6 +18,7 @@ public class BaseResourceBean {
     private Double price;
     private Double longitude;
     private Double latitude;
+    private String mapURL;
 
     private Date expirationDate;
 
@@ -92,4 +93,8 @@ public class BaseResourceBean {
     public void setExpirationDate(Date expirationDate) {
         this.expirationDate = expirationDate;
     }
+
+    public String getMapURL() { return mapURL; }
+
+    public void setMapURL(String mapURL) { this.mapURL = mapURL; }
 }
