@@ -51,8 +51,11 @@ public class WaterController {
         return waterService.findByPriceUnder(price);
     }
 
-    @GetMapping(value = "/watertype/{type}")
+    @GetMapping(value = "/type/{type}")
     public List<WaterBean> findByWaterType(@PathVariable TypeOfWater type) {
         return waterService.findByWaterType(type);
     }
+
+    @GetMapping(value = "/available")
+    public List<WaterBean> findAvailable(){ return waterService.findAvailable(); }
 }

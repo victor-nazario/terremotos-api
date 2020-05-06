@@ -15,13 +15,13 @@ public class Payment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long payment_id;
+    private Long paymentId;
 
     private Double purchaseTotal;
 
-    public Long getPayment_id() { return payment_id; }
+    public Long getPaymentId() { return paymentId; }
 
-    public void setPayment_id(Long payment_id) { this.payment_id = payment_id; }
+    public void setPaymentId(Long paymentI) { this.paymentId = paymentId; }
 
     public Double getPurchaseTotal() { return purchaseTotal; }
 
