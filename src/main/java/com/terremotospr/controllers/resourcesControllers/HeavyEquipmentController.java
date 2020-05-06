@@ -1,14 +1,13 @@
 package com.terremotospr.controllers.resourcesControllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.terremotospr.beans.resourceBeans.HeavyEquipmentBean;
+import com.terremotospr.beans.resourceBeans.TypeofHeavyEquipment;
+import com.terremotospr.database.entities.resourceEntities.HeavyEquipment;
 import com.terremotospr.services.resourceServices.HeavyEquipmentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
+import java.util.List;
 
 /**
  * @author Kiara Rodriguez Rojas
@@ -27,16 +26,30 @@ public class HeavyEquipmentController {
         return heavyEquipmentService.addHeavyEquipment(bean);
     }
 
-//    @GetMapping(value = "/fetch")
-//    public List<HeavyEquipmentBean> fetchAll(){
-//       return heavyEquipmentService.fetchAllHeavyEquipment();
-//    }
+    @GetMapping(value = "/fetch") public List<HeavyEquipmentBean> fetchAll(){ return heavyEquipmentService.fetchAllHeavyEquipment(); }
 
-    @GetMapping(value = "/fetch")
-    public Object fetchAll() throws IOException {
-        //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/heavyEquipmentResponseJSON.json");
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(resource.getInputStream(), Object.class);
-    }
+    @GetMapping(value = "/{id}")
+    public HeavyEquipment findHeavyEquipmentById(@PathVariable int id){ return heavyEquipmentService.findById(id); }
+
+    @GetMapping(value = "/price_under/{price}")
+    public List<HeavyEquipmentBean> findByPriceUnder(@PathVariable Double price){ return heavyEquipmentService.findByPriceUnder(price); }
+
+    @GetMapping(value = "/price_over/{price}")
+    public List<HeavyEquipmentBean> findByPriceOver(@PathVariable Double price){ return heavyEquipmentService.findByPriceOver(price); }
+
+    @GetMapping(value = "/brand/{brand}")
+    public List<HeavyEquipmentBean> findByBrand(@PathVariable String brand){ return heavyEquipmentService.findByBrand(brand); }
+
+    @GetMapping(value = "/name/{name}")
+    public List<HeavyEquipmentBean> findByName(@PathVariable String name){ return heavyEquipmentService.findByName(name); }
+
+    @GetMapping(value = "/available")
+    public List<HeavyEquipmentBean> findAvailable(){ return heavyEquipmentService.findAvailable(); }
+
+    @GetMapping(value = "/size/{size}")
+    public List<HeavyEquipmentBean> findBySize(@PathVariable Double size){ return heavyEquipmentService.findBySize(size); }
+
+    @GetMapping(value = "/type/{type}")
+    public List<HeavyEquipmentBean> findByType(@PathVariable String type){ return heavyEquipmentService.findByType(type); }
+
 }

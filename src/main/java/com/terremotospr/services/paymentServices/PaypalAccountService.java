@@ -47,4 +47,20 @@ public class PaypalAccountService {
         BeanUtils.copyProperties(entity, bean);
         return bean;
     }
+
+    public List<PaypalAccountBean> findByPmId(Integer id){
+        List<PaypalAccountBean> paypalAccount;
+
+        Iterable<PaypalAccount> iter = paypalAccountRepository.findByPmId(id);
+
+        paypalAccount = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return paypalAccount;
+    }
+
+    public PaypalAccount findById(Integer id) { return paypalAccountRepository.findById(id); }
+
+
 }

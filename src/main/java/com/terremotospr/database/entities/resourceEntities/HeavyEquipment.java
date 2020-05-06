@@ -1,7 +1,5 @@
 package com.terremotospr.database.entities.resourceEntities;
 
-import com.terremotospr.beans.resourceBeans.TypeofHeavyEquipment;
-
 import javax.persistence.Entity;
 
 /**
@@ -10,12 +8,12 @@ import javax.persistence.Entity;
  */
 @Entity(name = "HeavyEquipment")
 public class HeavyEquipment extends BaseResource {
-    private TypeofHeavyEquipment type;
+    private String type;
     private Double size;
 
-    public TypeofHeavyEquipment getType() { return type; }
+    public String getType() { return type; }
 
-    public void setType(TypeofHeavyEquipment type) { this.type = type; }
+    public void setType(String type) { this.type = type; }
 
     public Double getSize() { return size; }
 

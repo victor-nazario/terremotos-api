@@ -54,7 +54,41 @@ public class SupplierService {
         return supplier;
     }
 
-    /*  private Long comp_id;
-    private String cName;
-    private String cLocation;*/
+    public Supplier findById(Long id){
+            return supplierRepository.findById(id).get();
+    }
+
+    public List<SupplierBean> findByPosition(String position){
+        List<SupplierBean> supplier;
+        Iterable<Supplier> iter = supplierRepository.findByPosition(position);
+
+        supplier = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return supplier;
+    }
+
+    public List<SupplierBean> findByCity(String city){
+        List<SupplierBean> supplier;
+        Iterable<Supplier> iter = supplierRepository.findByCity(city);
+
+        supplier = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return supplier;
+    }
+
+    public List<SupplierBean> findByRegion(String region){
+        List<SupplierBean> supplier;
+        Iterable<Supplier> iter = supplierRepository.findByRegion(region);
+
+        supplier = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return supplier;
+    }
+
 }

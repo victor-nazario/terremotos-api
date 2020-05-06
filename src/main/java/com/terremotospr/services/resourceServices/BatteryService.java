@@ -1,9 +1,7 @@
 package com.terremotospr.services.resourceServices;
 
 import com.terremotospr.beans.resourceBeans.BatteryBean;
-import com.terremotospr.beans.resourceBeans.WaterBean;
 import com.terremotospr.database.entities.resourceEntities.Battery;
-import com.terremotospr.database.entities.resourceEntities.Water;
 import com.terremotospr.database.repositories.resourceRepositories.BatteryRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,5 +47,44 @@ public class BatteryService {
         BeanUtils.copyProperties(bean, entity);
         batteryRepository.save(entity);
         return true;
+    }
+
+
+    public Battery findById(Long id){
+        return batteryRepository.findById(id).get();
+    }
+
+    public List<BatteryBean> findByPriceUnder(Double price){
+        List<BatteryBean> batterries;
+        Iterable<Battery> iter = batteryRepository.findByPriceUnder(price);
+
+        batterries = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return batterries;
+    }
+
+
+    public List<BatteryBean> findByName(String name){
+        List<BatteryBean> batteries;
+        Iterable<Battery> iter = batteryRepository.findByName(name);
+
+        batteries = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return batteries;
+    }
+
+    public List<BatteryBean> findAvailable(){
+        List<BatteryBean> batteries;
+        Iterable<Battery> iter = batteryRepository.findAvailable();
+
+        batteries = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return batteries;
     }
 }

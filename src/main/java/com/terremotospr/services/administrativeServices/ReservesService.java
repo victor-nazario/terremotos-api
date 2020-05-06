@@ -48,4 +48,48 @@ public class ReservesService {
         return reserves;
     }
 
+    public List<ReservesBean> findByReservationId(Integer reservationId){
+        List<ReservesBean> reserves;
+        List<Reserves> iter = reservesRepository.findByReservationId(reservationId);
+
+        reserves = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return reserves;
+    }
+
+    public List<ReservesBean> findByResourceId(Integer resourceId){
+        List<ReservesBean> reserves;
+        Iterable<Reserves> iter = reservesRepository.findByResourceId(resourceId);
+
+        reserves = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return reserves;
+    }
+
+    public List<ReservesBean> findByReservedQuantityOver(Integer quantity){
+        List<ReservesBean> reserves;
+        Iterable<Reserves> iter = reservesRepository.findByReservedQuantityOver(quantity);
+
+        reserves = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return reserves;
+    }
+
+    public List<ReservesBean> findByReservedQuantityUnder(Integer quantity){
+        List<ReservesBean> reserves;
+        Iterable<Reserves> iter = reservesRepository.findByReservedQuantityUnder(quantity);
+
+        reserves = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return reserves;
+    }
+
 }

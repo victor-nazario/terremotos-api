@@ -2,6 +2,7 @@ package com.terremotospr.controllers.administrativeControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.terremotospr.beans.administrativeBeans.BelongsBean;
+import com.terremotospr.beans.administrativeBeans.SuppliesBean;
 import com.terremotospr.services.administrativeServices.BelongsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
@@ -22,16 +23,15 @@ public class BelongsController {
         return belongsService.addBelongs(bean);
     }
 
-//    @GetMapping(value = "/fetch")
-//    public List<BelongsBean> fetchAll(){
-//        return belongsService.fetchAllBelongs();
-//    }
-
     @GetMapping(value = "/fetch")
-    public Object fetchAll() throws IOException {
-        //To obtain the path, in IDEA right click and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/belongsResponseJSON.json");
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(resource.getInputStream(), Object.class);
+    public List<BelongsBean> fetchAll(){
+        return belongsService.fetchAllBelongs();
     }
+
+    @GetMapping(value = "/order/{id}")
+    public List<BelongsBean> findByOrderId(@PathVariable Integer id) { return belongsService.findByOrderId(id); }
+
+    @GetMapping(value = "/resource/{id}")
+    public List<BelongsBean> findByResourceId(@PathVariable Integer id) { return belongsService.findByResourceId(id); }
+
 }

@@ -1,9 +1,7 @@
 package com.terremotospr.services.resourceServices;
 
 import com.terremotospr.beans.resourceBeans.DieselBean;
-import com.terremotospr.beans.resourceBeans.WaterBean;
 import com.terremotospr.database.entities.resourceEntities.Diesel;
-import com.terremotospr.database.entities.resourceEntities.Water;
 import com.terremotospr.database.repositories.resourceRepositories.DieselRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,5 +47,31 @@ public class DieselService {
         BeanUtils.copyProperties(bean, entity);
         dieselRepository.save(entity);
         return true;
+    }
+
+    public Diesel findById(Long id) {
+        return dieselRepository.findById(id).get();
+    }
+
+    public List<DieselBean> findByName(String name){
+        List<DieselBean> diesel;
+        Iterable<Diesel> iter = dieselRepository.findByName(name);
+
+        diesel = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return diesel;
+    }
+
+    public List<DieselBean> findAvailable(){
+        List<DieselBean> diesel;
+        Iterable<Diesel> iter = dieselRepository.findAvailable();
+
+        diesel = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return diesel;
     }
 }

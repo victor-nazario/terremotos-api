@@ -34,6 +34,8 @@ public class PaymentService {
     private PaymentBean copyProperties(Payment entity){
         PaymentBean bean = new PaymentBean();
         BeanUtils.copyProperties(entity, bean);
+        bean.setConsumerId(entity.getConsumer().getId());
+        bean.setPayment_id(entity.getPaymentId());
         return bean;
     }
 
@@ -48,6 +50,28 @@ public class PaymentService {
         return payments;
     }
 
+    public Payment findPaymentById(Integer id){ return paymentRepository.findByPaymentId(id).get(); }
 
+    public Payment findByConsumerId(Integer id){ return paymentRepository.findByConsumerId(id).get(); }
 
+    public List<PaymentBean> findByPurchaseTotalOver(Double purchaseTotal){
+        List<PaymentBean> payment;
+        Iterable<Payment> iter = paymentRepository.findByPurchaseTotalOver(purchaseTotal);
+
+        payment = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return payment;
+    }
+    public List<PaymentBean> findByPurchaseTotalUnder(Double purchaseTotal){
+        List<PaymentBean> payment;
+        Iterable<Payment> iter = paymentRepository.findByPurchaseTotalUnder(purchaseTotal);
+
+        payment = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return payment;
+    }
 }

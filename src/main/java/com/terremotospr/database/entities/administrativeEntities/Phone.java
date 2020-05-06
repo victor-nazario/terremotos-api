@@ -1,5 +1,7 @@
 package com.terremotospr.database.entities.administrativeEntities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 /**
@@ -24,11 +26,13 @@ public class Phone {
     public void setPhone(String phone) { this.phone = phone; }
 
     //Relationship
+    @JsonIgnore
     @ManyToOne(targetEntity = Consumer.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "id", insertable = false, updatable = false)
 
     private Consumer consumer;
 
+    @JsonIgnore
     @Column(name = "id")
     private Long consumerId;
 

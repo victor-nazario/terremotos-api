@@ -1,6 +1,8 @@
 package com.terremotospr.services.paymentServices;
 
+import com.terremotospr.beans.administrativeBeans.SuppliesBean;
 import com.terremotospr.beans.paymentBeans.PaysBean;
+import com.terremotospr.database.entities.administrativeEntities.Supplies;
 import com.terremotospr.database.entities.paymentEntities.Pays;
 import com.terremotospr.database.repositories.paymentRepositories.PaysRepository;
 import org.springframework.beans.BeanUtils;
@@ -40,6 +42,28 @@ public class PaysService {
     public List<PaysBean> fetchAllPays(){
         List<PaysBean> pays;
         Iterable<Pays> iter = paysRepository.findAll();
+
+        pays = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return pays;
+    }
+
+    public List<PaysBean> findByPaymentId(Integer paymentId){
+        List<PaysBean> pays;
+        Iterable<Pays> iter = paysRepository.findByPaymentId(paymentId);
+
+        pays = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return pays;
+    }
+
+    public List<PaysBean> findByPlacedOrderId(Integer orderId){
+        List<PaysBean> pays;
+        Iterable<Pays> iter = paysRepository.findByOrderId(orderId);
 
         pays = StreamSupport.stream(iter.spliterator(), false)
                 .map(this::copyProperties)

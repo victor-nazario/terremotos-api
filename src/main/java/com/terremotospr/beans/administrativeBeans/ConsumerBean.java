@@ -5,10 +5,10 @@ package com.terremotospr.beans.administrativeBeans;
  * @date 03/15/2020
  */
 public class ConsumerBean extends UserBean{
-    private ConsumerType type;
+    private String type;
 
-    public ConsumerType getType() { return type; }
+    public String getType() { return type; }
 
-    public void setType(ConsumerType type) { this.type = type; }
+    public void setType(String type) { this.type = type; }
 
 }

@@ -5,7 +5,7 @@ package com.terremotospr.beans.resourceBeans;
  */
 public class PowerGenBean extends BaseResourceBean {
     private Long id;
-    private generatorType type;
+    private PowerGeneratorType type;
     private String power;
     private FuelTypeGenerator fuelType;
 
@@ -13,9 +13,9 @@ public class PowerGenBean extends BaseResourceBean {
 
     public void setId(Long id) { this.id = id; }
 
-    public generatorType getType() { return type; }
+    public PowerGeneratorType getType() { return type; }
 
-    public void setType(generatorType type) { this.type = type;}
+    public void setType(PowerGeneratorType type) { this.type = type;}
 
     public String getPower() { return power;}
 

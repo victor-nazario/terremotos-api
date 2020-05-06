@@ -48,4 +48,30 @@ public class ToolService {
         toolRepository.save(entity);
         return true;
     }
+
+    public Tool findById(Long id) {
+        return toolRepository.findById(id).get();
+    }
+
+    public List<ToolBean> findByName(String name){
+        List<ToolBean> tools;
+        Iterable<Tool> iter = toolRepository.findByName(name);
+
+        tools = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return tools;
+    }
+
+    public List<ToolBean> findAvailable(){
+        List<ToolBean> tools;
+        Iterable<Tool> iter = toolRepository.findAvailable();
+
+        tools = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return tools;
+    }
 }

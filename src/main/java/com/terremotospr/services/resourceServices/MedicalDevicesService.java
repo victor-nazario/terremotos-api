@@ -1,6 +1,7 @@
 package com.terremotospr.services.resourceServices;
 
 import com.terremotospr.beans.resourceBeans.MedicalDevicesBean;
+import com.terremotospr.beans.resourceBeans.medicalDeviceType;
 import com.terremotospr.database.entities.resourceEntities.MedicalDevices;
 import com.terremotospr.database.repositories.resourceRepositories.MedicalDevicesRepository;
 import org.springframework.beans.BeanUtils;
@@ -44,6 +45,70 @@ public class MedicalDevicesService {
         MedicalDevicesBean bean = new MedicalDevicesBean();
         BeanUtils.copyProperties(entity, bean);
         return bean;
+    }
+
+    public List<MedicalDevicesBean> findAvailable(){
+        List<MedicalDevicesBean> medicalDevices;
+
+        Iterable<MedicalDevices> iter = medicalDevicesRepository.findAvailable();
+
+        medicalDevices = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return medicalDevices;
+    }
+
+    public List<MedicalDevicesBean> findByBrand(String brand){
+        List<MedicalDevicesBean> medicalDevices;
+
+        Iterable<MedicalDevices> iter = medicalDevicesRepository.findByBrand(brand);
+
+        medicalDevices = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return medicalDevices;
+    }
+
+    public List<MedicalDevicesBean> findByName(String name){
+        List<MedicalDevicesBean> medicalDevices;
+
+        Iterable<MedicalDevices> iter = medicalDevicesRepository.findByName(name);
+
+        medicalDevices = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return medicalDevices;
+    }
+
+    public List<MedicalDevicesBean> findByPriceUnder(Double price){
+        List<MedicalDevicesBean> medicalDevices;
+
+        Iterable<MedicalDevices> iter = medicalDevicesRepository.findByPriceUnder(price);
+
+        medicalDevices = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return medicalDevices;
+    }
+
+    public MedicalDevices findById(Integer id){
+        return medicalDevicesRepository.findById(id);
+    }
+
+    public List<MedicalDevicesBean> findByType(medicalDeviceType type){
+        List<MedicalDevicesBean> medicalDevices;
+
+        Iterable<MedicalDevices> iter = medicalDevicesRepository.findByType(type);
+
+        medicalDevices = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return medicalDevices;
     }
 
 }

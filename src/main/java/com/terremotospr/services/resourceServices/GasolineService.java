@@ -47,4 +47,95 @@ public class GasolineService {
 
         return gasoline;
     }
+
+    public Gasoline findById(Integer id){ return gasolineRepository.findById(id);}
+
+    public List<GasolineBean> findByPriceUnder(Double price){
+        List<GasolineBean> gasoline;
+        Iterable<Gasoline> iter = gasolineRepository.findByPriceUnder(price);
+
+        gasoline = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return gasoline;
+    }
+
+    public List<GasolineBean> findByPriceOver(Double price){
+        List<GasolineBean> gasoline;
+        Iterable<Gasoline> iter = gasolineRepository.findByPriceOver(price);
+
+        gasoline = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return gasoline;
+    }
+
+    public List<GasolineBean> findByBrand(String brand){
+        List<GasolineBean> gasoline;
+        Iterable<Gasoline> iter = gasolineRepository.findByBrand(brand);
+
+        gasoline = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return gasoline;
+    }
+
+    public List<GasolineBean> findByName(String name){
+        List<GasolineBean> gasoline;
+        Iterable<Gasoline> iter = gasolineRepository.findByName(name);
+
+        gasoline = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return gasoline;
+    }
+
+    public List<GasolineBean> findAvailable(){
+        List<GasolineBean> gasoline;
+        Iterable<Gasoline> iter = gasolineRepository.findAvailable();
+
+        gasoline = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return gasoline;
+    }
+
+    public List<GasolineBean> findBySize(Double size){
+        List<GasolineBean> gasoline;
+        Iterable<Gasoline> iter = gasolineRepository.findBySize(size);
+
+        gasoline = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return gasoline;
+    }
+
+    public List<GasolineBean> findByOctane(Double octane){
+        List<GasolineBean> gasoline;
+        Iterable<Gasoline> iter = gasolineRepository.findByOctane(octane);
+
+        gasoline = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return gasoline;
+    }
+
+    public List<GasolineBean> findByType(String type){
+        List<GasolineBean> gasoline;
+        Iterable<Gasoline> iter = gasolineRepository.findByType(type);
+
+        gasoline = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return gasoline;
+    }
+
 }

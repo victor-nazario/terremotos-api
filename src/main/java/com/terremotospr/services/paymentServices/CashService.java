@@ -2,6 +2,7 @@ package com.terremotospr.services.paymentServices;
 
 import com.terremotospr.beans.paymentBeans.CashBean;
 import com.terremotospr.database.entities.paymentEntities.Cash;
+import com.terremotospr.database.entities.paymentEntities.PaypalAccount;
 import com.terremotospr.database.repositories.paymentRepositories.CashRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,4 +47,6 @@ public class CashService {
         BeanUtils.copyProperties(entity, bean);
         return bean;
     }
+
+    public Cash findById(Integer id) { return cashRepository.findByPmId(id); }
 }

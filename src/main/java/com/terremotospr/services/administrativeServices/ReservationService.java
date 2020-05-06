@@ -48,4 +48,8 @@ public class ReservationService {
         reservationRepository.save(entity);
         return true;
     }
+
+    public Reservation findById(Long id) {
+        return reservationRepository.findById(id).get();
+    }
 }

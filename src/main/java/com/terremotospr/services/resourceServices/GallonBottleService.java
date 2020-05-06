@@ -1,7 +1,9 @@
 package com.terremotospr.services.resourceServices;
 
+import com.terremotospr.beans.resourceBeans.BatteryBean;
 import com.terremotospr.beans.resourceBeans.GallonBottleBean;
 import com.terremotospr.beans.resourceBeans.WaterBean;
+import com.terremotospr.database.entities.resourceEntities.Battery;
 import com.terremotospr.database.entities.resourceEntities.GallonBottle;
 import com.terremotospr.database.entities.resourceEntities.Water;
 import com.terremotospr.database.repositories.resourceRepositories.GallonBottleRepository;
@@ -48,5 +50,20 @@ public class GallonBottleService {
         BeanUtils.copyProperties(bean, entity);
         gallonBottleRepository.save(entity);
         return true;
+    }
+
+    public GallonBottle findById(Long id){
+        return gallonBottleRepository.findById(id).get();
+    }
+
+    public List<GallonBottleBean> findByPriceUnder(Double price){
+        List<GallonBottleBean> bottles;
+        Iterable<GallonBottle> iter = gallonBottleRepository.findByPriceUnder(price);
+
+        bottles = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return bottles;
     }
 }

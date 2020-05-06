@@ -48,4 +48,30 @@ public class FuelService {
         fuelRepository.save(entity);
         return true;
     }
+
+    public Fuel findById(Long id) {
+        return fuelRepository.findById(id).get();
+    }
+
+    public List<FuelBean> findByName(String name){
+        List<FuelBean> fuels;
+        Iterable<Fuel> iter = fuelRepository.findByName(name);
+
+        fuels = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return fuels;
+    }
+
+    public List<FuelBean> findAvailable() {
+        List<FuelBean> fuels;
+        Iterable<Fuel> iter = fuelRepository.findAvailable();
+
+        fuels = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return fuels;
+    }
 }

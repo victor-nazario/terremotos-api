@@ -3,6 +3,7 @@ package com.terremotospr.database.entities.administrativeEntities;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
+import java.util.Objects;
 
 //@Embeddable
 public class BelongsId implements Serializable {
@@ -25,5 +26,19 @@ public class BelongsId implements Serializable {
 
     public void setResourceId(Long resourceId) {
         this.resourceId = resourceId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BelongsId belongsId = (BelongsId) o;
+        return Objects.equals(orderId, belongsId.orderId) &&
+                Objects.equals(resourceId, belongsId.resourceId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(orderId, resourceId);
     }
 }

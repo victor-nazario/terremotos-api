@@ -1,15 +1,12 @@
 package com.terremotospr.controllers.resourcesControllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.terremotospr.beans.resourceBeans.DieselBean;
-import com.terremotospr.beans.resourceBeans.WaterBean;
+import com.terremotospr.database.entities.resourceEntities.Diesel;
 import com.terremotospr.services.resourceServices.DieselService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
+import java.util.List;
 
 /**
  * Created on  -
@@ -23,15 +20,23 @@ public class DieselController {
     DieselService dieselService;
 
     @GetMapping(value = "/fetch")
-    public Object fetchAvailableDiesel() throws IOException {
-        //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/dieselResponseJSON.json");
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(resource.getInputStream(), Object.class);
+    public List<DieselBean> fetchAvailableDiesel() {
+        return dieselService.fetchAllDiesel();
     }
 
     @PostMapping(value = "/add")
     public boolean addDiesel(@RequestBody DieselBean bean){
         return dieselService.addDiesel(bean);
     }
+
+    @GetMapping(value = "/{id}")
+    public Diesel findById(@PathVariable Long id) {
+        return dieselService.findById(id);
+    }
+
+    @GetMapping(value = "/name/{name}")
+    public List<DieselBean> findByName(@PathVariable String name){ return dieselService.findByName(name); }
+
+    @GetMapping(value = "/available")
+    public List<DieselBean> findAvailable(){ return dieselService.findAvailable(); }
 }

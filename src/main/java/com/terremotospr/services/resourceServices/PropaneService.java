@@ -1,9 +1,7 @@
 package com.terremotospr.services.resourceServices;
 
 import com.terremotospr.beans.resourceBeans.PropaneBean;
-import com.terremotospr.beans.resourceBeans.WaterBean;
 import com.terremotospr.database.entities.resourceEntities.Propane;
-import com.terremotospr.database.entities.resourceEntities.Water;
 import com.terremotospr.database.repositories.resourceRepositories.PropaneRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,5 +46,30 @@ public class PropaneService {
         BeanUtils.copyProperties(bean, entity);
         propaneRepository.save(entity);
         return true;
+    }
+
+    public Propane findById(Integer id){ return propaneRepository.findById(id);}
+
+
+    public List<PropaneBean> findByName(String name){
+        List<PropaneBean> propane;
+        Iterable<Propane> iter = propaneRepository.findByName(name);
+
+        propane = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return propane;
+    }
+
+    public List<PropaneBean> findAvailable(){
+        List<PropaneBean> propane;
+        Iterable<Propane> iter = propaneRepository.findAvailable();
+
+        propane = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return propane;
     }
 }

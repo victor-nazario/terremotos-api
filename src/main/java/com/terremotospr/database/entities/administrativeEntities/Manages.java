@@ -1,7 +1,5 @@
 package com.terremotospr.database.entities.administrativeEntities;
 
-import com.terremotospr.beans.administrativeBeans.AccountStatus;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -14,11 +12,11 @@ import java.io.Serializable;
 @IdClass(ManagesId.class)
 public class Manages implements Serializable {
 
-    private AccountStatus status;
+    private String status;
 
-    public AccountStatus getStatus() { return status; }
+    public String getStatus() { return status; }
 
-    public void setStatus(AccountStatus status) { this.status = status; }
+    public void setStatus(String status) { this.status = status; }
 
     //Relationships
     @Id
