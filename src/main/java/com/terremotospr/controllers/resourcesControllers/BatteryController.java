@@ -39,4 +39,10 @@ public class BatteryController {
     public List<BatteryBean> findByPriceUnder(@PathVariable Double price) {
         return batteryService.findByPriceUnder(price);
     }
+
+    @GetMapping(value = "/name/{name}")
+    public List<BatteryBean> findByName(@PathVariable String name){ return batteryService.findByName(name); }
+
+    @GetMapping(value = "/available")
+    public List<BatteryBean> findAvailable(){ return batteryService.findAvailable(); }
 }

@@ -25,8 +25,17 @@ public class BaseResourceController {
     }
 
     @GetMapping(value = "/{id}")
-    public BaseResource findById(@PathVariable Long id) {
+    public BaseResourceBean findById(@PathVariable Long id) {
         return baseResourceService.findById(id);
     }
 
+    @GetMapping(value = "/available")
+    public List<BaseResourceBean> fetchAvailable(){
+        return baseResourceService.fetchAvailable();
+    }
+
+    @GetMapping(value = "name/{name}")
+    public List<BaseResourceBean> findById(@PathVariable String name) {
+        return baseResourceService.findByName(name);
+    }
 }

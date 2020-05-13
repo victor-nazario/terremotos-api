@@ -19,4 +19,8 @@ public interface BaseResourceRepository extends CrudRepository<BaseResource, Lon
 
         @Query(value = "SELECT * FROM base_resource where id = :id", nativeQuery = true)
         Optional<BaseResource> findResourceById(Long id);
+
+        List<BaseResource> findAllByAvailableIsTrueOrderByName();
+
+        List<BaseResource> findAllByNameEquals(String name);
 }

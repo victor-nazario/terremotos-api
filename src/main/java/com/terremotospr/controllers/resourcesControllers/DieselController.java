@@ -1,16 +1,11 @@
 package com.terremotospr.controllers.resourcesControllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.terremotospr.beans.resourceBeans.DieselBean;
-import com.terremotospr.beans.resourceBeans.WaterBean;
 import com.terremotospr.database.entities.resourceEntities.Diesel;
 import com.terremotospr.services.resourceServices.DieselService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.List;
 
 /**
@@ -35,7 +30,13 @@ public class DieselController {
     }
 
     @GetMapping(value = "/{id}")
-    public Diesel findWaterById(@PathVariable Long id) {
+    public Diesel findById(@PathVariable Long id) {
         return dieselService.findById(id);
     }
+
+    @GetMapping(value = "/name/{name}")
+    public List<DieselBean> findByName(@PathVariable String name){ return dieselService.findByName(name); }
+
+    @GetMapping(value = "/available")
+    public List<DieselBean> findAvailable(){ return dieselService.findAvailable(); }
 }

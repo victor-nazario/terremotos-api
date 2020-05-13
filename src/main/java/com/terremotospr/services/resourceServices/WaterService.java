@@ -82,7 +82,18 @@ public class WaterService {
 
     public List<WaterBean> findByName(String name){
         List<WaterBean> waters;
-        Iterable<Water> iter = waterRepository.findAllByNameEquals(name);
+        Iterable<Water> iter = waterRepository.findByName(name);
+
+        waters = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return waters;
+    }
+
+    public List<WaterBean> findAvailable(){
+        List<WaterBean> waters;
+        Iterable<Water> iter = waterRepository.findAvailable();
 
         waters = StreamSupport.stream(iter.spliterator(), false)
                 .map(this::copyProperties)

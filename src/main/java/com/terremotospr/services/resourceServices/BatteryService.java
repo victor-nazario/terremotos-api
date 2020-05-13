@@ -1,12 +1,7 @@
 package com.terremotospr.services.resourceServices;
 
 import com.terremotospr.beans.resourceBeans.BatteryBean;
-import com.terremotospr.beans.resourceBeans.BatteryType;
-import com.terremotospr.beans.resourceBeans.PowerGenBean;
-import com.terremotospr.beans.resourceBeans.WaterBean;
 import com.terremotospr.database.entities.resourceEntities.Battery;
-import com.terremotospr.database.entities.resourceEntities.PowerGen;
-import com.terremotospr.database.entities.resourceEntities.Water;
 import com.terremotospr.database.repositories.resourceRepositories.BatteryRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,5 +63,28 @@ public class BatteryService {
                 .collect(Collectors.toList());
 
         return batterries;
+    }
+
+
+    public List<BatteryBean> findByName(String name){
+        List<BatteryBean> batteries;
+        Iterable<Battery> iter = batteryRepository.findByName(name);
+
+        batteries = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return batteries;
+    }
+
+    public List<BatteryBean> findAvailable(){
+        List<BatteryBean> batteries;
+        Iterable<Battery> iter = batteryRepository.findAvailable();
+
+        batteries = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return batteries;
     }
 }

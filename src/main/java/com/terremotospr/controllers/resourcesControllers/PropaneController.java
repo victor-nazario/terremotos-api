@@ -1,13 +1,12 @@
 package com.terremotospr.controllers.resourcesControllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.terremotospr.beans.resourceBeans.PropaneBean;
+import com.terremotospr.database.entities.resourceEntities.Propane;
+import com.terremotospr.services.resourceServices.PropaneService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
+import java.util.List;
 
 /**
  * Created on  -
@@ -19,18 +18,23 @@ import java.io.IOException;
 public class PropaneController {
 
     @Autowired
-    PropaneController propaneController;
-
-    @GetMapping(value = "/fetch")
-    public Object fetchAvailablePropane() throws IOException {
-        //To obtain the path, in IDEA rightclick and when the dialog shows up, select copy path -> path from source root
-        Resource resource = new ClassPathResource("responses/propaneResponseJSON.json");
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(resource.getInputStream(), Object.class);
-    }
+    PropaneService propaneService;
 
     @PostMapping(value = "/add")
     public boolean addPropane(@RequestBody PropaneBean bean){
-        return propaneController.addPropane(bean);
+        return propaneService.addPropane(bean);
     }
+
+    @GetMapping(value = "/fetch")
+    public List<PropaneBean> fetchAll(){ return propaneService.fetchAllPropane(); }
+
+    @GetMapping(value = "/{id}")
+    public Propane findById(@PathVariable int id){ return propaneService.findById(id); }
+
+    @GetMapping(value = "/name/{name}")
+    public List<PropaneBean> findByName(@PathVariable String name){ return propaneService.findByName(name); }
+
+    @GetMapping(value = "/available")
+    public List<PropaneBean> findAvailable(){ return propaneService.findAvailable(); }
+
 }
