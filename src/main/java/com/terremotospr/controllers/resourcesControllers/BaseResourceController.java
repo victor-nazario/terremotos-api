@@ -14,6 +14,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/resource")
+@CrossOrigin("*")
 public class BaseResourceController {
     @Autowired
     BaseResourceService baseResourceService;

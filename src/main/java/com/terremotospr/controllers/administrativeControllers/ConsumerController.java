@@ -16,9 +16,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/consumer")
+@CrossOrigin("*")
 public class ConsumerController {
 
-    @Autowired
     ConsumerService consumerService;
 
     @PostMapping(value = "/add")
