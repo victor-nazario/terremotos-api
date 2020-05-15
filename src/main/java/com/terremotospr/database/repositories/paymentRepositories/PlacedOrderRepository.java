@@ -21,7 +21,7 @@ public interface PlacedOrderRepository extends CrudRepository<PlacedOrder, Long>
     @Query(value = "select * from placed_order", nativeQuery = true)
     List<PlacedOrder> findAll();
 
-    @Query(value = "select * from placed_order po po.id = :id;"
+    @Query(value = "select * from placed_order po where po.id = :id;"
             , nativeQuery = true)
     Optional<PlacedOrder> findById(@Param("id") Long id);
 
@@ -30,7 +30,7 @@ public interface PlacedOrderRepository extends CrudRepository<PlacedOrder, Long>
             @Param("baseDateTime") Date baseDateTime,  @Param("finalDateTime") Date finalDateTime);
 
     @Modifying
-    @Query(value = "insert into placed_order (date, consumerId) values (:date, :consumerId)",
+    @Query(value = "insert into placed_order (date, consumer_id) values (:date, :consumerId)",
             nativeQuery = true)
     void insertPlacedOrder(@Param("date") Date date, @Param("consumerId") Long consumerId);
 }

@@ -29,7 +29,7 @@ public interface PaysRepository extends CrudRepository<Pays, Long> {
     List<Pays> findByOrderId(@Param("orderId") Integer orderId);
 
     @Modifying
-    @Query(value = "insert into pays (paymentDate, primary key(orderId, paymentId)) values (:paymentDate, (:orderId, :paymentId))",
+    @Query(value = "insert into pays (payment_date, order_id, payment_id) values (:paymentDate, :orderId, :paymentId)",
             nativeQuery = true)
     void insertPays(@Param("paymentDate") Date paymentDate, @Param("orderId") Long orderId,
                     @Param("paymentId") Long paymentId);
