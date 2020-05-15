@@ -23,7 +23,7 @@ public interface CardRepository extends CrudRepository<Card, Long> {
     Card findByPmId(@Param("pm_id") Integer pm_id);
 
     @Modifying
-    @Query(value = "insert into card (expirationDate, cardNumber, pm_id) values (:expirationDate, :cardNumber, :pm_id)",
+    @Query(value = "insert into card (expiration_date, card_number, pm_id) values (:expirationDate, :cardNumber, :pm_id)",
             nativeQuery = true)
     void insertCard(@Param("expirationDate") Date expirationDate, @Param("cardNumber") Long cardNumber,
                         @Param("pm_id") Long pm_id);

@@ -31,7 +31,7 @@ public interface PaymentRepository extends CrudRepository<Payment, Long> {
     List<Payment> findByPurchaseTotalUnder(@Param("purchaseTotal") Double purchaseTotal);
 
     @Modifying
-    @Query(value = "insert into payment (purchaseTotal, consumerId) values (:purchaseTotal, :consumerId)",
+    @Query(value = "insert into payment (purchase_total, consumer_id) values (:purchaseTotal, :consumerId)",
             nativeQuery = true)
     void insertPayment(@Param("purchaseTotal") Double purchaseTotal, @Param("consumerId") Long consumerId);
 

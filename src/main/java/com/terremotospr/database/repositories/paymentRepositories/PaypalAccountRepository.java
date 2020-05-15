@@ -25,7 +25,7 @@ public interface PaypalAccountRepository extends CrudRepository<PaypalAccount, L
     List<PaypalAccount> findByPmId(@Param("pm_id") Integer pm_id);
 
     @Modifying
-    @Query(value = "insert into paypal_account (acount, pm_id) values (:account, :pm_id)",
+    @Query(value = "insert into paypal_account (account, pm_id) values (:account, :pm_id)",
             nativeQuery = true)
     void insertPayPalAccount(@Param("account") String account, @Param("pm_id") Long pm_id);
 

@@ -27,10 +27,10 @@ public interface UserRepository extends CrudRepository<User, Long> {
     @Query(value="SELECT * FROM user u WHERE u.email = :email", nativeQuery = true)
     List<User> findByEmail(@Param("email") String email);
 
-    @Query(value="SELECT * FROM user u WHERE u.firstName = :firstName", nativeQuery = true)
+    @Query(value="SELECT * FROM user u WHERE u.first_name = :firstName", nativeQuery = true)
     List<User> findByFirstName(@Param("firstName") String firstName);
 
-    @Query(value="SELECT * FROM user u WHERE u.lastName = :lastName", nativeQuery = true)
+    @Query(value="SELECT * FROM user u WHERE u.last_name = :lastName", nativeQuery = true)
     List<User> findByLastName(@Param("lastName") String lastName);
 
     @Query(value="SELECT * FROM user u WHERE u.city = :city", nativeQuery = true)
@@ -43,7 +43,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
     List<User> findByRegion(@Param("region") String region);
 
     @Modifying
-    @Query(value = "insert into user (email, firstName, lastName, line1, line2, city, country, region, zipcode)" +
+    @Query(value = "insert into user (email, first_name, last_name, line1, line2, city, country, region, zip_code)" +
             " values (:email, :firstName, :lastName, :line1, :line2, :city, :country, :region, :zipcode)",
             nativeQuery = true)
     void insertUser(@Param("email") String email, @Param("firstName") String firstName,

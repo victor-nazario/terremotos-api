@@ -23,7 +23,7 @@ public interface CashRepository extends CrudRepository<Cash, Long> {
 
 
     @Modifying
-    @Query(value = "insert into cash (amountAvailable, pm_id) values (:amountAvailable, :pm_id)",
+    @Query(value = "insert into cash (amount_available, pm_id) values (:amountAvailable, :pm_id)",
             nativeQuery = true)
     void insertCash(@Param("amountAvailable") Long amountAvailable, @Param("pm_id") Long pm_id);
 }
