@@ -29,6 +29,8 @@ public interface BaseResourceRepository extends CrudRepository<BaseResource, Lon
 
         List<BaseResource> findAllByNameEquals(String name);
 
+        Long countAllByAvailable(boolean available);
+
         @Modifying
         @Query(value = "insert into base_resource (available, brand, category, description, expiration_date, " +
                 "latitude, longitude, name, price) values (:available, :brand, :category, :description, :expiration_date," +
