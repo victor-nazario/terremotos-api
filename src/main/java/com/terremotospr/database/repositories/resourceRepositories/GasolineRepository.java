@@ -1,6 +1,7 @@
 package com.terremotospr.database.repositories.resourceRepositories;
 
 import com.terremotospr.database.entities.resourceEntities.Gasoline;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -52,4 +53,10 @@ public interface GasolineRepository extends CrudRepository<Gasoline, Long> {
     @Query(value = "select * from gasoline g inner join base_resource br on g.id = br.id where g.type = :type"
             , nativeQuery = true)
     List<Gasoline> findByType(@Param("type") String type);
+
+    @Modifying
+    @Query(value = "insert into gasoline (type, octane, size, id) values (:type, :octane, :size, :id)",
+            nativeQuery = true)
+    void insertGasoline(@Param("type") String type, @Param("octane") Double octane,
+                        @Param("size") Double size, @Param("id") Long id);
 }

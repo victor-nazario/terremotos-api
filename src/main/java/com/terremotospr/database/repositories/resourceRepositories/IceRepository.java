@@ -1,6 +1,7 @@
 package com.terremotospr.database.repositories.resourceRepositories;
 
 import com.terremotospr.database.entities.resourceEntities.Ice;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -45,4 +46,9 @@ public interface IceRepository extends CrudRepository<Ice,Long> {
     @Query(value = "select * from ice ic inner join base_resource br on ic.id = br.id where ic.size = :size"
             , nativeQuery = true)
     List<Ice> findBySize(@Param("size") Double size);
+
+    @Modifying
+    @Query(value = "insert into ice (size, id) values (:size, :id)",
+            nativeQuery = true)
+    void insertIce(@Param("size") Double size, @Param("id") Long id);
 }

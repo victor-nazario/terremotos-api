@@ -1,6 +1,7 @@
 package com.terremotospr.database.repositories.administrativeRepositories;
 
 import com.terremotospr.database.entities.administrativeEntities.User;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -40,5 +41,15 @@ public interface UserRepository extends CrudRepository<User, Long> {
 
     @Query(value="SELECT * FROM user u WHERE u.region = :region", nativeQuery = true)
     List<User> findByRegion(@Param("region") String region);
+
+    @Modifying
+    @Query(value = "insert into user (email, firstName, lastName, line1, line2, city, country, region, zipcode)" +
+            " values (:email, :firstName, :lastName, :line1, :line2, :city, :country, :region, :zipcode)",
+            nativeQuery = true)
+    void insertUser(@Param("email") String email, @Param("firstName") String firstName,
+                        @Param("lastName") String lastName,
+                        @Param("line1") String line1, @Param("line2") String line2,
+                        @Param("city") String city, @Param("country") String country,
+                        @Param("region") String region, @Param("zipcode") String zipcode);
 
 }

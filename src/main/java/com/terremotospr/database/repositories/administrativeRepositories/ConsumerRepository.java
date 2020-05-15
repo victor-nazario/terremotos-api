@@ -1,7 +1,7 @@
 package com.terremotospr.database.repositories.administrativeRepositories;
 
-import com.terremotospr.beans.administrativeBeans.ConsumerType;
 import com.terremotospr.database.entities.administrativeEntities.Consumer;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -36,5 +36,10 @@ public interface ConsumerRepository extends CrudRepository<Consumer,Long> {
     @Query(value = "SELECT * FROM consumer c INNER JOIN  user u on c.id = u.id WHERE c.type = :type"
             , nativeQuery = true)
     List<Consumer> findByType(@Param("type") String type);
+
+    @Modifying
+    @Query(value = "insert into consumer (type, id) values (:type, :id)",
+            nativeQuery = true)
+    void insertConsumer(@Param("type") String type, @Param("id") Long id);
 
 }
