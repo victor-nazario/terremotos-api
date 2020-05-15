@@ -16,6 +16,7 @@ import java.io.IOException;
  */
 @RestController
 @RequestMapping("/paymentmethod")
+@CrossOrigin("*")
 public class PaymentMethodController {
 
     @Autowired

@@ -20,6 +20,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/phone")
+@CrossOrigin("*")
 public class PhoneController {
 
 

@@ -3,6 +3,7 @@ package com.terremotospr.services.resourceServices;
 import com.terremotospr.beans.resourceBeans.PowerGenBean;
 import com.terremotospr.beans.resourceBeans.PowerGeneratorType;
 import com.terremotospr.database.entities.resourceEntities.PowerGen;
+import com.terremotospr.database.repositories.resourceRepositories.BaseResourceRepository;
 import com.terremotospr.database.repositories.resourceRepositories.PowerGenRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +15,14 @@ import java.util.stream.StreamSupport;
 /*
  * @author Wilfredo Aponte Pomales
  */
+
 @Service
 public class PowerGenService {
     @Autowired
     PowerGenRepository powerGenRepository;
+
+    @Autowired
+    BaseResourceRepository baseResourceRepository;
 
     public Boolean addPowerGen(PowerGenBean bean){
         if(bean == null) return false;
@@ -105,5 +110,7 @@ public class PowerGenService {
 
         return powerGen;
     }
+
+
 
 }

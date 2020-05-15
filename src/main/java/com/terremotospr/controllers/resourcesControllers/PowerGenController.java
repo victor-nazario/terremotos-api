@@ -27,14 +27,6 @@ public class PowerGenController {
         return powerGenService.fetchAllPowerGen();
     }
 
-//    @GetMapping(value = "/fetch")
-//    public Object fetchAll() throws IOException {
-//        //To obtain the path, in IDEA right click and when the dialog shows up, select copy path -> path from source root
-//        Resource resource = new ClassPathResource("responses/powerGeneratorResponseJSON.json");
-//        ObjectMapper mapper = new ObjectMapper();
-//        return mapper.readValue(resource.getInputStream(), Object.class);
-//    }
-
     @GetMapping(value = "/{id}")
     public PowerGen findPowerGenById(@PathVariable int id) {
         return powerGenService.findById(id);
@@ -64,4 +56,6 @@ public class PowerGenController {
     public List<PowerGenBean> findByGeneratorType(@PathVariable PowerGeneratorType type) {
         return powerGenService.findByGeneratorType(type);
     }
+//insert into base_resource (available, brand, category, description, expiration_date, latitude, longitude, name, price) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
+//Hibernate: insert into power_gen (fuel_type, power, type, id) values (?, ?, ?, ?)
 }
