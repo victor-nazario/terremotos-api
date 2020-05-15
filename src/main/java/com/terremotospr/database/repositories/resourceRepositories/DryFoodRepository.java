@@ -1,7 +1,10 @@
 package com.terremotospr.database.repositories.resourceRepositories;
 
+import com.terremotospr.beans.resourceBeans.BabyFoodFlavor;
+import com.terremotospr.beans.resourceBeans.DFoodType;
 import com.terremotospr.database.entities.resourceEntities.BabyFood;
 import com.terremotospr.database.entities.resourceEntities.DryFood;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -44,4 +47,10 @@ public interface DryFoodRepository extends CrudRepository<DryFood, Long> {
     @Query(value = "select * from dry_food df inner join base_resource br on df.id = br.id where br.available = true"
             , nativeQuery = true)
     List<DryFood> findAvailable();
+
+    @Modifying
+    @Query(value = "insert into dry_food (size, type, id) values (:size, type, :id)",
+            nativeQuery = true)
+    void insertDryFood(@Param("size") String size, @Param("type") DFoodType type,
+                        @Param("id") Long id);
 }
