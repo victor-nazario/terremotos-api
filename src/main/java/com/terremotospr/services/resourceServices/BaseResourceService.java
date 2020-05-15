@@ -155,4 +155,8 @@ public class BaseResourceService {
 
         return  resourceBeans;
     }
+
+    public Long countAllResources(){ return baseResourceRepository.count();}
+
+    public Long countAllByAvailable(){ return baseResourceRepository.countAllByAvailable(true);}
 }

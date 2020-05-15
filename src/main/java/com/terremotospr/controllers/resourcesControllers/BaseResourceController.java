@@ -48,4 +48,15 @@ public class BaseResourceController {
     public List<BaseResourceBean> lastWeek() {
         return baseResourceService.fetchByDay(true);
     }
+
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return baseResourceService.countAllResources();
+    }
+
+    @GetMapping(value = "/count/available")
+    public Long countAvailable() {
+        return baseResourceService.countAllByAvailable();
+    }
+
 }
