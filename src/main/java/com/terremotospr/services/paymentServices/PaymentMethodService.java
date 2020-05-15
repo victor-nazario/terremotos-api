@@ -13,7 +13,7 @@ import java.util.stream.StreamSupport;
 
 /**
  * @author Kiara Rodriguez Rojas
- * @date 03/30/2020
+ * date 03/30/2020
  */
 @Service
 public class PaymentMethodService {
@@ -43,16 +43,10 @@ public class PaymentMethodService {
         return true;
     }
 
-
-
     private PaymentMethodBean copyProperties(PaymentMethod entity){
         PaymentMethodBean bean = new PaymentMethodBean();
         BeanUtils.copyProperties(entity, bean);
         return bean;
     }
-
-    public PaymentMethod findPaymentById(Integer id){ return paymentMethodRepository.findByPaymentMethodId(id).get(); }
-
-    public PaymentMethod findByConsumerId(Integer id){ return paymentMethodRepository.findByConsumerId(id).get(); }
 
 }

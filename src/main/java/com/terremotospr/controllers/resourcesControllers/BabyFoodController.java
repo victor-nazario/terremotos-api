@@ -16,6 +16,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/babyfood")
+@CrossOrigin("*")
 public class BabyFoodController {
 
     @Autowired

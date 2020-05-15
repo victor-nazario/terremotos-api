@@ -28,13 +28,4 @@ public class PaymentMethodController {
     @GetMapping(value = "/fetch")
     public List<PaymentMethodBean> fetchAll(){ return paymentMethodService.fetchAllPaymentMethod(); }
 
-    @GetMapping(value = "/{id}")
-    public PaymentMethod findById(@PathVariable Integer id) {
-        return paymentMethodService.findPaymentById(id);
-    }
-
-    @GetMapping(value = "/consumer/{id}")
-    public PaymentMethod findByConsumerId(@PathVariable Integer id) {
-        return paymentMethodService.findByConsumerId(id);
-    }
 }
