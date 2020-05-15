@@ -2,6 +2,7 @@ package com.terremotospr.database.repositories.resourceRepositories;
 
 import com.terremotospr.beans.resourceBeans.TypeOfWater;
 import com.terremotospr.database.entities.resourceEntities.Water;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -41,4 +42,10 @@ public interface WaterRepository extends CrudRepository<Water, Long> {
     List<Water> findAllByTypeEquals(TypeOfWater type);
 
     List<Water> findAllByAvailableIsTrue();
+
+    @Modifying
+    @Query(value = "insert into water (type, packaged_quantity, potable, id) values (:type, :packaged_quantity, :potable, :type, :id)",
+            nativeQuery = true)
+    void insertWater(@Param("type") TypeOfWater type, @Param("packaged_quantity") Integer packaged_quantity,
+                        @Param("potable") Boolean potable, @Param("id") Long id);
 }

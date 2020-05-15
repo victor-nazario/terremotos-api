@@ -1,6 +1,7 @@
 package com.terremotospr.database.repositories.resourceRepositories;
 
 import com.terremotospr.database.entities.resourceEntities.GallonBottle;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -21,6 +22,11 @@ public interface GallonBottleRepository extends CrudRepository<GallonBottle, Lon
             " b inner join base_resource br on b.id = br.id where br.price <= :price ;"
             , nativeQuery = true)
     List<GallonBottle> findByPriceUnder(@Param("price") Double price);
+
+    @Modifying
+    @Query(value = "insert into gallon_bottle (w_id, id) values (:wid, :id)",
+            nativeQuery = true)
+    void insertGallonBottle(@Param("wid") Long wid, @Param("id") Long id);
 
 
 
