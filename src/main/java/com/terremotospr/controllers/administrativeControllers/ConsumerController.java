@@ -19,6 +19,7 @@ import java.util.List;
 @CrossOrigin("*")
 public class ConsumerController {
 
+    @Autowired
     ConsumerService consumerService;
 
     @PostMapping(value = "/add")
