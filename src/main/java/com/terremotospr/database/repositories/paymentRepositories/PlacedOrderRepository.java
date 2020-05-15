@@ -1,6 +1,7 @@
 package com.terremotospr.database.repositories.paymentRepositories;
 
 import com.terremotospr.database.entities.paymentEntities.PlacedOrder;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -27,4 +28,9 @@ public interface PlacedOrderRepository extends CrudRepository<PlacedOrder, Long>
     @Query(value = "select * from placed_order a where a.date <= :finalDateTime AND a.date >= :baseDateTime", nativeQuery = true)
     List<PlacedOrder> findAllWithCreationDateTimeBefore(
             @Param("baseDateTime") Date baseDateTime,  @Param("finalDateTime") Date finalDateTime);
+
+    @Modifying
+    @Query(value = "insert into placed_order (date, consumerId) values (:date, :consumerId)",
+            nativeQuery = true)
+    void insertPlacedOrder(@Param("date") Date date, @Param("consumerId") Long consumerId);
 }

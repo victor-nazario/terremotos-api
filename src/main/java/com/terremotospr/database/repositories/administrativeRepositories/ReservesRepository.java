@@ -1,6 +1,7 @@
 package com.terremotospr.database.repositories.administrativeRepositories;
 
 import com.terremotospr.database.entities.administrativeEntities.Reserves;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -36,5 +37,11 @@ public interface ReservesRepository extends CrudRepository<Reserves, Long> {
             "inner join base_resource br on rs.resource_id = br.id where rs.rquantity <= :quantity"
             , nativeQuery = true)
     List<Reserves> findByReservedQuantityUnder(@Param("quantity") Integer quantity);
+
+    @Modifying
+    @Query(value = "insert into reserves (rquantity, primary key(reservationId, resourceId)) values (:rquantity, (:reservationId, :resourceId))",
+            nativeQuery = true)
+    void insertReserves(@Param("rquantity") Integer rquantity, @Param("reservationId") Long reservationId,
+                    @Param("resourceId") Long resourceId);
 
 }

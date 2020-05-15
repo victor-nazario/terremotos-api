@@ -1,6 +1,7 @@
 package com.terremotospr.database.repositories.paymentRepositories;
 
 import com.terremotospr.database.entities.paymentEntities.Payment;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -28,5 +29,10 @@ public interface PaymentRepository extends CrudRepository<Payment, Long> {
 
     @Query(value="SELECT * FROM payment p inner join consumer c on p.consumer_id = c.id WHERE p.purchase_total <= :purchaseTotal", nativeQuery = true)
     List<Payment> findByPurchaseTotalUnder(@Param("purchaseTotal") Double purchaseTotal);
+
+    @Modifying
+    @Query(value = "insert into payment (purchaseTotal, consumerId) values (:purchaseTotal, :consumerId)",
+            nativeQuery = true)
+    void insertPayment(@Param("purchaseTotal") Double purchaseTotal, @Param("consumerId") Long consumerId);
 
 }
