@@ -13,7 +13,8 @@ import javax.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public class PaymentMethod {
+public class
+PaymentMethod {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

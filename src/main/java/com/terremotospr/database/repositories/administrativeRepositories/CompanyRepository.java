@@ -33,9 +33,8 @@ public interface CompanyRepository extends CrudRepository<Company,Long> {
     List<Company> findByCompanyLocation(@Param("location") String location);
 
     @Modifying
-    @Query(value = "insert into company (cName, cLocation ,cid) values (:cName, :cLocation, :cid)",
+    @Query(value = "insert into company (cName, cLocation) values (:cName, :cLocation)",
             nativeQuery = true)
-    void insertCompany(@Param("cName") String cName, @Param("cLocation") String cLocation,
-                    @Param("cid") Long cid);
+    void insertCompany(@Param("cName") String cName, @Param("cLocation") String cLocation);
 
 }

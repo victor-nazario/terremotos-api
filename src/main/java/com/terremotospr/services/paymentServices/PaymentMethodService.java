@@ -51,4 +51,8 @@ public class PaymentMethodService {
         return bean;
     }
 
+    public PaymentMethod findPaymentById(Integer id){ return paymentMethodRepository.findByPaymentMethodId(id).get(); }
+
+    public PaymentMethod findByConsumerId(Integer id){ return paymentMethodRepository.findByConsumerId(id).get(); }
+
 }
