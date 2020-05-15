@@ -49,7 +49,7 @@ public interface DryFoodRepository extends CrudRepository<DryFood, Long> {
     List<DryFood> findAvailable();
 
     @Modifying
-    @Query(value = "insert into dry_food (size, type, id) values (:size, type, :id)",
+    @Query(value = "insert into dry_food (size, type, id) values (:size, :type, :id)",
             nativeQuery = true)
     void insertDryFood(@Param("size") String size, @Param("type") DFoodType type,
                         @Param("id") Long id);
