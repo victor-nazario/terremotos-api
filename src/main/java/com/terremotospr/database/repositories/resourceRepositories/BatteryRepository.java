@@ -17,7 +17,7 @@ import java.util.Optional;
 @Repository
 public interface BatteryRepository extends CrudRepository<Battery, Long> {
     @Query(value = "select * from battery b inner join base_resource br on b.id = br.id;", nativeQuery = true)
-    List<Battery> findAll();
+    List<Battery> fetchAll();
 
     @Query(value = "select * from battery b inner join base_resource br on b.id = br.id where b.id = :id"
             , nativeQuery = true)

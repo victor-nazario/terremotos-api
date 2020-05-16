@@ -19,7 +19,7 @@ import java.util.List;
 public interface WaterRepository extends CrudRepository<Water, Long> {
 
     @Query(value = "select * from water w inner join base_resource br on w.id = br.id", nativeQuery = true)
-    List<Water> findAll();
+    List<Water> fetchAll();
 
     @Query(value = "select * from water w inner join base_resource br on w.id = br.id where w.id = :id"
             , nativeQuery = true)

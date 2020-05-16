@@ -17,7 +17,7 @@ import java.util.List;
 @Repository
 public interface ToolRepository extends CrudRepository<Tool, Long> {
     @Query(value = "select * from tool t inner join base_resource br on t.id = br.id", nativeQuery = true)
-    List<Tool> findAll();
+    List<Tool> fetchAll();
 
     @Query(value = "select * from tool t inner join base_resource br on t.id = br.id where t.id = :id"
             , nativeQuery = true)
