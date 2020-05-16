@@ -40,4 +40,9 @@ public class DieselController {
 
     @GetMapping(value = "/available")
     public List<DieselBean> findAvailable(){ return dieselService.findAvailable(); }
+
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return dieselService.countAllResources();
+    }
 }
