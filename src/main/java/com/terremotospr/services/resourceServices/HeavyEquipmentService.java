@@ -121,4 +121,6 @@ public class HeavyEquipmentService {
         return heavyEquipments;
     }
 
+    public Long countAllResources(){ return heavyEquipmentRepository.count();}
+
 }

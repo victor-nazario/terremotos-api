@@ -15,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/ice")
+@CrossOrigin("*")
 public class IceController {
 
     @Autowired
@@ -47,5 +48,8 @@ public class IceController {
 
     @GetMapping(value = "/size/{size}")
     public List<IceBean> findBySize(@PathVariable Double size){ return iceService.findBySize(size); }
+
+    @GetMapping(value = "/count/all")
+    public Long countAll() { return iceService.countAllResources();}
 
 }

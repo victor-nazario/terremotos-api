@@ -115,4 +115,6 @@ public class IceService {
 
         return ice;
     }
+
+    public Long countAllResources(){ return iceRepository.count();}
 }

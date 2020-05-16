@@ -15,6 +15,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/battery")
+@CrossOrigin("*")
 public class BatteryController {
 
     @Autowired

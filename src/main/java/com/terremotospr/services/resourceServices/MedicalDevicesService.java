@@ -111,4 +111,5 @@ public class MedicalDevicesService {
         return medicalDevices;
     }
 
+    public Long countAllResources(){ return medicalDevicesRepository.count();}
 }

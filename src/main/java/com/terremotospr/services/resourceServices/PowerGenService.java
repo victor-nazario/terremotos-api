@@ -111,6 +111,6 @@ public class PowerGenService {
         return powerGen;
     }
 
-
+    public Long countAllResources(){ return powerGenRepository.count();}
 
 }
