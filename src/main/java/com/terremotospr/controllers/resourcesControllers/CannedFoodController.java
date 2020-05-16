@@ -16,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/cannedfood")
+@CrossOrigin("*")
 public class CannedFoodController {
 
     @Autowired

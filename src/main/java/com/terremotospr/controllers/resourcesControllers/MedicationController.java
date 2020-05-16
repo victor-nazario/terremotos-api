@@ -18,6 +18,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/medication")
+@CrossOrigin("*")
 public class MedicationController {
     @Autowired
     MedicationService medicationService;

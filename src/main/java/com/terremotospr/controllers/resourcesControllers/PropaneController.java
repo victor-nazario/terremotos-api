@@ -15,6 +15,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/propane")
+@CrossOrigin("*")
 public class PropaneController {
 
     @Autowired

@@ -16,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/smallbottle")
+@CrossOrigin("*")
 public class SmallBottleController {
 
     @Autowired

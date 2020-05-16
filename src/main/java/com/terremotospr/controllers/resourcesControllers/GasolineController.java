@@ -16,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/gasoline")
+@CrossOrigin("*")
 public class GasolineController {
 
     @Autowired

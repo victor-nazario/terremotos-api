@@ -15,6 +15,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/fuel")
+@CrossOrigin("*")
 public class FuelController{
     @Autowired
     FuelService fuelService;

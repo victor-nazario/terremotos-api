@@ -15,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/ice")
+@CrossOrigin("*")
 public class IceController {
 
     @Autowired

@@ -15,6 +15,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/dryfood")
+@CrossOrigin("*")
 public class DryFoodController {
 
     @Autowired
