@@ -50,13 +50,13 @@ public interface GasolineRepository extends CrudRepository<Gasoline, Long> {
             , nativeQuery = true)
     List<Gasoline> findByOctane(@Param("octane") Double octane);
 
-    @Query(value = "select * from gasoline g inner join base_resource br on g.id = br.id where g.type = :type"
+    @Query(value = "select * from gasoline g inner join base_resource br on g.id = br.id where g.gasolineType = :gasolineType"
             , nativeQuery = true)
-    List<Gasoline> findByType(@Param("type") String type);
+    List<Gasoline> findByType(@Param("gasolineType") String gasolineType);
 
     @Modifying
-    @Query(value = "insert into gasoline (type, octane, size, id) values (:type, :octane, :size, :id)",
+    @Query(value = "insert into gasoline (gasoline_type, octane, size, id) values (:gasolineType, :octane, :size, :id)",
             nativeQuery = true)
-    void insertGasoline(@Param("type") String type, @Param("octane") Double octane,
+    void insertGasoline(@Param("gasolineType") String gasolineType, @Param("octane") Double octane,
                         @Param("size") Double size, @Param("id") Long id);
 }

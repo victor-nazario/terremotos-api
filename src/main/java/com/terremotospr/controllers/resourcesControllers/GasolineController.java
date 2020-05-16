@@ -1,7 +1,6 @@
 package com.terremotospr.controllers.resourcesControllers;
 
 import com.terremotospr.beans.resourceBeans.GasolineBean;
-import com.terremotospr.beans.resourceBeans.TypeOfGasoline;
 import com.terremotospr.database.entities.resourceEntities.Gasoline;
 import com.terremotospr.services.resourceServices.GasolineService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +53,6 @@ public class GasolineController {
     public List<GasolineBean> findByOctane(@PathVariable Double octane){ return gasolineService.findByOctane(octane); }
 
     @GetMapping(value = "/type/{type}")
-    public List<GasolineBean> findByType(@PathVariable String type){ return gasolineService.findByType(type); }
+    public List<GasolineBean> findByType(@PathVariable String type){ return gasolineService.findByGasolineType(type); }
 
 }

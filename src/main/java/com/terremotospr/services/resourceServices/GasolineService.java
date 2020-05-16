@@ -127,9 +127,9 @@ public class GasolineService {
         return gasoline;
     }
 
-    public List<GasolineBean> findByType(String type){
+    public List<GasolineBean> findByGasolineType(String gasolineType){
         List<GasolineBean> gasoline;
-        Iterable<Gasoline> iter = gasolineRepository.findByType(type);
+        Iterable<Gasoline> iter = gasolineRepository.findByType(gasolineType);
 
         gasoline = StreamSupport.stream(iter.spliterator(), false)
                 .map(this::copyProperties)
