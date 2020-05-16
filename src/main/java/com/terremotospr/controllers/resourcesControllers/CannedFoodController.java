@@ -16,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/cannedfood")
+@CrossOrigin("*")
 public class CannedFoodController {
 
     @Autowired
@@ -52,5 +53,10 @@ public class CannedFoodController {
 
     @GetMapping(value = "/type/{type}")
     public List<CannedFoodBean> findByType(@PathVariable String type){ return cannedFoodService.findByType(type); }
+
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return cannedFoodService.countAllResources();
+    }
 
 }

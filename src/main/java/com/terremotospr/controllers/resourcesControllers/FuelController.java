@@ -15,6 +15,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/fuel")
+@CrossOrigin("*")
 public class FuelController{
     @Autowired
     FuelService fuelService;
@@ -39,4 +40,9 @@ public class FuelController{
 
     @GetMapping(value = "/available")
     public List<FuelBean> findAvailable() { return fuelService.findAvailable(); }
+
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return fuelService.countAllResources();
+    }
 }

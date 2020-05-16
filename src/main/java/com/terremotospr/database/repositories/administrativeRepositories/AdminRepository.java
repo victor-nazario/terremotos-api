@@ -1,6 +1,7 @@
 package com.terremotospr.database.repositories.administrativeRepositories;
 
 import com.terremotospr.database.entities.administrativeEntities.Admin;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -22,4 +23,9 @@ public interface AdminRepository extends CrudRepository<Admin, Long> {
     @Query(value = "select * from admin a INNER JOIN  user u on a.id = u.id where a.id = :id ;"
             , nativeQuery = true)
     Optional<Admin> findTheAdminId(@Param("id") Long id);
+
+    @Modifying
+    @Query(value = "insert into admin (id) values (id)",
+            nativeQuery = true)
+    void insertAdmin( @Param("id") Long id);
 }

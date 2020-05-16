@@ -107,4 +107,6 @@ public class MedicationService {
 
         return medication;
     }
+
+    public Long countAllResources(){ return medicationRepository.count();}
 }

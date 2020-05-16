@@ -13,7 +13,7 @@ import java.util.stream.StreamSupport;
 
 /**
  * @author Kiara Rodriguez Rojas
- * @date 03/30/2020
+ * date 03/30/2020
  */
 @Service
 public class PaymentMethodService {
@@ -42,8 +42,6 @@ public class PaymentMethodService {
         paymentMethodRepository.save(entity);
         return true;
     }
-
-
 
     private PaymentMethodBean copyProperties(PaymentMethod entity){
         PaymentMethodBean bean = new PaymentMethodBean();

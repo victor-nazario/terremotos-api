@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/belongs")
+@CrossOrigin("*")
 public class BelongsController {
     @Autowired
     BelongsService belongsService;

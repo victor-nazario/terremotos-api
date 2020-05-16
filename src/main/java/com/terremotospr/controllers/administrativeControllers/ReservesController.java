@@ -13,6 +13,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/reserves")
+@CrossOrigin("*")
 public class ReservesController {
     @Autowired
     ReservesService reservesService;

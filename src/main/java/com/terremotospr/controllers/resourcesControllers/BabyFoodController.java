@@ -16,6 +16,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/babyfood")
+@CrossOrigin("*")
 public class BabyFoodController {
 
     @Autowired
@@ -68,4 +69,14 @@ public class BabyFoodController {
     public List<BabyFoodBean> findAvailable(){
         return babyFoodService.findAvailable();
     }
+
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return babyFoodService.countAllResources();
+    }
+
+//    @GetMapping(value = "/count/available")
+//    public Long countAvailable() {
+//        return babyFoodService.countAllByAvailable();
+//    }
 }

@@ -2,6 +2,7 @@ package com.terremotospr.database.repositories.resourceRepositories;
 
 import com.terremotospr.beans.resourceBeans.TypeOfWater;
 import com.terremotospr.database.entities.resourceEntities.SmallBottle;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -58,4 +59,10 @@ public interface SmallBottleRepository extends CrudRepository<SmallBottle,Long> 
     @Query(value = "select * from small_bottle sb inner join water w on sb.id = w.id where w.packagedQuantity = :packagedQuantity"
             , nativeQuery = true)
     List<SmallBottle> findByPackagedQuantity(@Param("packagedQuantity") int packagedQuantity);
+
+    @Modifying
+    @Query(value = "insert into small_bottle (size, id) values (:size, :id)",
+            nativeQuery = true)
+    void insertSmallBottle(@Param("size") Double size, @Param("id") Long id);
 }
+

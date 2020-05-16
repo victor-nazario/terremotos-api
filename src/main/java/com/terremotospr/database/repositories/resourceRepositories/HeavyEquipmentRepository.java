@@ -1,6 +1,7 @@
 package com.terremotospr.database.repositories.resourceRepositories;
 
 import com.terremotospr.database.entities.resourceEntities.HeavyEquipment;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -49,4 +50,11 @@ public interface HeavyEquipmentRepository extends CrudRepository<HeavyEquipment,
     @Query(value = "select * from heavy_equipment he inner join base_resource br on he.id = br.id where he.type = :type"
             , nativeQuery = true)
     List<HeavyEquipment> findByType(@Param("type") String type);
+
+    @Modifying
+    @Query(value = "insert into heavy_equipment (size, type, id) values (:size, :type, :id)",
+            nativeQuery = true)
+    void insertHeavyEquip(@Param("size") Double size,
+                        @Param("type") String type, @Param("id") Long id);
+
 }

@@ -14,6 +14,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/resource")
+@CrossOrigin("*")
 public class BaseResourceController {
     @Autowired
     BaseResourceService baseResourceService;
@@ -37,4 +38,25 @@ public class BaseResourceController {
     public List<BaseResourceBean> findById(@PathVariable String name) {
         return baseResourceService.findByName(name);
     }
+
+    @GetMapping(value = "/lastDay")
+    public List<BaseResourceBean> lastDay() {
+        return baseResourceService.fetchByDay(false);
+    }
+
+    @GetMapping(value = "/lastWeek")
+    public List<BaseResourceBean> lastWeek() {
+        return baseResourceService.fetchByDay(true);
+    }
+
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return baseResourceService.countAllResources();
+    }
+
+    @GetMapping(value = "/count/available")
+    public Long countAvailable() {
+        return baseResourceService.countAllByAvailable();
+    }
+
 }

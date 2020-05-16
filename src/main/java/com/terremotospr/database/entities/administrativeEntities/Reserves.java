@@ -13,7 +13,7 @@ import java.io.Serializable;
 @IdClass(ReservesId.class)
 public class Reserves implements Serializable {
 
-    private int rquantity;
+    private Integer rquantity;
 
     public int getRquantity() { return rquantity; }
 

@@ -35,7 +35,10 @@ public interface BatteryRepository extends CrudRepository<Battery, Long> {
             , nativeQuery = true)
     List<Battery> findAvailable();
 
-
+    @Query(value = "insert into battery (type, r_id, size, id) values (:type, :r_id, :size, :id)",
+            nativeQuery = true)
+    void insertBattery(@Param("type") String type, @Param("r_id") Long r_id,
+                        @Param("size") Double size, @Param("id") Long id);
 
 
 

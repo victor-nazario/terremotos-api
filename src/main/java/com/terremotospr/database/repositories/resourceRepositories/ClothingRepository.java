@@ -1,9 +1,11 @@
 package com.terremotospr.database.repositories.resourceRepositories;
 
+import com.terremotospr.beans.resourceBeans.BabyFoodFlavor;
 import com.terremotospr.beans.resourceBeans.ClothesGender;
 import com.terremotospr.beans.resourceBeans.ClothingType;
 import com.terremotospr.database.entities.resourceEntities.Clothing;
 import com.terremotospr.database.entities.resourceEntities.DryFood;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -52,4 +54,11 @@ public interface ClothingRepository extends CrudRepository<Clothing, Long> {
     @Query(value = "select * from clothing c inner join base_resource br on c.id = br.id where c.gender = :gender"
             , nativeQuery = true)
     List<Clothing> findByGender(@Param("gender") ClothesGender gender);
+
+    @Modifying
+    @Query(value = "insert into clothing (size, type, gender, material, id) values (:size, :type, :gender, :material, :id)",
+            nativeQuery = true)
+    void insertClothing(@Param("size") String size, @Param("type") ClothingType type,
+                        @Param("gender") ClothesGender gender, @Param("material") String material,
+                        @Param("id") Long id);
 }

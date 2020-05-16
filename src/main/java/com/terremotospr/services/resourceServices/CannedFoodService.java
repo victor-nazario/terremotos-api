@@ -126,4 +126,6 @@ public class CannedFoodService {
 
         return cannedFoods;
     }
+
+    public Long countAllResources(){ return cannedFoodRepository.count();}
 }

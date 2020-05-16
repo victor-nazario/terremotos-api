@@ -31,4 +31,9 @@ public interface DieselRepository extends CrudRepository<Diesel, Long> {
             , nativeQuery = true)
     List<Diesel> findAvailable();
 
+    @Query(value = "insert into diesel (f_id, size, id) values (:f_id, :size, :id)",
+            nativeQuery = true)
+    void insertDiesel(@Param("f_id") Long f_id,
+                        @Param("size") Double size, @Param("id") Long id);
+
 }

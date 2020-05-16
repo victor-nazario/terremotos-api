@@ -20,6 +20,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/phone")
+@CrossOrigin("*")
 public class PhoneController {
 
 
@@ -37,7 +38,7 @@ public class PhoneController {
     }
 
     @GetMapping(value = "/{id}")
-    public PhoneBean findAdminById(@PathVariable Long id) {
+    public PhoneBean findPhoneById(@PathVariable Long id) {
         return phoneService.findById(id);
     }
 }

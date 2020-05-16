@@ -1,6 +1,10 @@
 package com.terremotospr.database.repositories.resourceRepositories;
 
+import com.terremotospr.beans.resourceBeans.BabyFoodFlavor;
+import com.terremotospr.beans.resourceBeans.FuelTypeGenerator;
+import com.terremotospr.beans.resourceBeans.PowerGeneratorType;
 import com.terremotospr.database.entities.resourceEntities.BabyFood;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -11,6 +15,7 @@ import java.util.List;
 /*
  * @author Wilfredo Aponte Pomales
  */
+
 @Repository
 public interface BabyFoodRepository extends CrudRepository<BabyFood, Long> {
     @Query(value = "select * from baby_food bf inner join base_resource br on bf.id = br.id", nativeQuery = true)
@@ -43,4 +48,10 @@ public interface BabyFoodRepository extends CrudRepository<BabyFood, Long> {
     @Query(value = "select * from baby_food bf inner join base_resource br on bf.id = br.id where br.available = true"
             , nativeQuery = true)
     List<BabyFood> findAvailable();
+
+    @Modifying
+    @Query(value = "insert into baby_food (size, flavor, id) values (:size, :flavor, :id)",
+            nativeQuery = true)
+    void insertBabyFood(@Param("size") String size, @Param("flavor") BabyFoodFlavor flavor,
+                        @Param("id") Long id);
 }

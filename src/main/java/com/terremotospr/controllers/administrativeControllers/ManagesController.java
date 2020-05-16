@@ -14,6 +14,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/manages")
+@CrossOrigin("*")
 public class ManagesController {
     @Autowired
     ManagesService managesService;

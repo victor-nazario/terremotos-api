@@ -66,4 +66,8 @@ public class GallonBottleService {
 
         return bottles;
     }
+
+    public Long countAllResources() {
+        return gallonBottleRepository.count();
+    }
 }

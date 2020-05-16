@@ -1,7 +1,9 @@
 package com.terremotospr.database.repositories.resourceRepositories;
 
+import com.terremotospr.beans.resourceBeans.FuelTypeGenerator;
 import com.terremotospr.beans.resourceBeans.PowerGeneratorType;
 import com.terremotospr.database.entities.resourceEntities.PowerGen;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -44,4 +46,10 @@ public interface PowerGenRepository extends CrudRepository<PowerGen, Long> {
     @Query(value = "select * from power_gen pg inner join base_resource br on pg.id = br.id where br.available = true"
             , nativeQuery = true)
     List<PowerGen> findAvailable();
+
+    @Modifying
+    @Query(value = "insert into power_gen (fuel_type, power, type, id) values (:fuel_type, :power, :type, :id)",
+            nativeQuery = true)
+    void insertPowerGen(@Param("fuel_type") FuelTypeGenerator fuel_type, @Param("power") String power,
+                        @Param("type") PowerGeneratorType type, @Param("id") Long id);
 }

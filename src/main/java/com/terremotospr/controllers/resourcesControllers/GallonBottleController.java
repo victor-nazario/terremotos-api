@@ -22,6 +22,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/gallon")
+@CrossOrigin("*")
 public class GallonBottleController {
     @Autowired
     GallonBottleService gallonBottleService;
@@ -44,5 +45,10 @@ public class GallonBottleController {
     @GetMapping(value = "/price_under/{price}")
     public List<GallonBottleBean> findByPriceUnder(@PathVariable Double price) {
         return gallonBottleService.findByPriceUnder(price);
+    }
+
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return gallonBottleService.countAllResources();
     }
 }

@@ -1,10 +1,9 @@
 package com.terremotospr.database.repositories.resourceRepositories;
 
-import com.terremotospr.beans.resourceBeans.ClothingBean;
-import com.terremotospr.beans.resourceBeans.MedicalDevicesBean;
-import com.terremotospr.beans.resourceBeans.medicalDeviceType;
+import com.terremotospr.beans.resourceBeans.*;
 import com.terremotospr.database.entities.resourceEntities.Clothing;
 import com.terremotospr.database.entities.resourceEntities.MedicalDevices;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -45,4 +44,9 @@ public interface MedicalDevicesRepository extends CrudRepository<MedicalDevices,
     @Query(value = "select * from medical_devices md inner join base_resource br on md.id = br.id where md.type = :type"
             , nativeQuery = true)
     List<MedicalDevices> findByType(@Param("type") medicalDeviceType type);
+
+    @Modifying
+    @Query(value = "insert into medical_devices (type, id) values (:type, :id)",
+            nativeQuery = true)
+    void insertMedicalDevices(@Param("type") medicalDeviceType type, @Param("id") Long id);
 }

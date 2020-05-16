@@ -16,6 +16,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/tool")
+@CrossOrigin("*")
 public class ToolController {
 
     @Autowired
@@ -41,4 +42,9 @@ public class ToolController {
 
     @GetMapping(value = "/available")
     public List<ToolBean> findAvailable(){ return toolService.findAvailable();}
+
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return toolService.countAllResources();
+    }
 }

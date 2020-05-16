@@ -14,6 +14,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/powergenerator")
+@CrossOrigin("*")
 public class PowerGenController {
 
     @Autowired
@@ -26,14 +27,6 @@ public class PowerGenController {
     public List<PowerGenBean> fetchAll(){
         return powerGenService.fetchAllPowerGen();
     }
-
-//    @GetMapping(value = "/fetch")
-//    public Object fetchAll() throws IOException {
-//        //To obtain the path, in IDEA right click and when the dialog shows up, select copy path -> path from source root
-//        Resource resource = new ClassPathResource("responses/powerGeneratorResponseJSON.json");
-//        ObjectMapper mapper = new ObjectMapper();
-//        return mapper.readValue(resource.getInputStream(), Object.class);
-//    }
 
     @GetMapping(value = "/{id}")
     public PowerGen findPowerGenById(@PathVariable int id) {
@@ -63,5 +56,10 @@ public class PowerGenController {
     @GetMapping(value = "/generatortype/{type}")
     public List<PowerGenBean> findByGeneratorType(@PathVariable PowerGeneratorType type) {
         return powerGenService.findByGeneratorType(type);
+    }
+
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return powerGenService.countAllResources();
     }
 }

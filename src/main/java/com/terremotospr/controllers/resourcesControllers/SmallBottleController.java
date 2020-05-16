@@ -16,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/smallbottle")
+@CrossOrigin("*")
 public class SmallBottleController {
 
     @Autowired
@@ -58,5 +59,8 @@ public class SmallBottleController {
 
     @GetMapping(value = "/packagedQuantity/{packagedQuantity}")
     public List<SmallBottleBean> findByPackagedQuantity(@PathVariable int packagedQuantity){return smallBottleService.findByPackagedQuantity(packagedQuantity); }
+
+    @GetMapping(value = "/count/all")
+    public Long countAll() { return smallBottleService.countAllResources();}
 
 }

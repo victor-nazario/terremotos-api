@@ -18,6 +18,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/medication")
+@CrossOrigin("*")
 public class MedicationController {
     @Autowired
     MedicationService medicationService;
@@ -59,4 +60,9 @@ public class MedicationController {
 
     @GetMapping(value = "/{id}")
     public Medication findById(@PathVariable Integer id){return medicationService.findById(id);}
+
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return medicationService.countAllResources();
+    }
 }
