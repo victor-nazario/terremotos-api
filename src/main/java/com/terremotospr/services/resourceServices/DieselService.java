@@ -74,4 +74,8 @@ public class DieselService {
 
         return diesel;
     }
+
+    public Long countAllResources() {
+        return dieselRepository.count();
+    }
 }

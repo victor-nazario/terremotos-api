@@ -74,4 +74,8 @@ public class FuelService {
 
         return fuels;
     }
+
+    public Long countAllResources() {
+        return fuelRepository.count();
+    }
 }
