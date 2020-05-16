@@ -10,13 +10,13 @@ import javax.persistence.Entity;
 @Entity(name = "Gasoline")
 public class Gasoline extends Fuel {
 
-    private String  gasolinetType;
+    private String  gasolineType;
     private Double octane;
     private Double size;
 
-    public String  getType() { return gasolinetType; }
+    public String  getType() { return gasolineType; }
 
-    public void setType(String gasolineType) { this.gasolinetType = gasolineType; }
+    public void setType(String gasolineType) { this.gasolineType = gasolineType; }
 
     public Double getOctane() { return octane; }
 
