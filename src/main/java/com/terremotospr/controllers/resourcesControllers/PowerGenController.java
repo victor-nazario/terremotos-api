@@ -57,6 +57,9 @@ public class PowerGenController {
     public List<PowerGenBean> findByGeneratorType(@PathVariable PowerGeneratorType type) {
         return powerGenService.findByGeneratorType(type);
     }
-//insert into base_resource (available, brand, category, description, expiration_date, latitude, longitude, name, price) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
-//Hibernate: insert into power_gen (fuel_type, power, type, id) values (?, ?, ?, ?)
+
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return powerGenService.countAllResources();
+    }
 }

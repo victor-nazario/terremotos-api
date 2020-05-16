@@ -62,5 +62,8 @@ public class MedicalDevicesController {
     @GetMapping(value = "/available")
     public List<MedicalDevicesBean> findAvailable(){ return medicalDevicesService.findAvailable();}
 
-
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return medicalDevicesService.countAllResources();
+    }
 }

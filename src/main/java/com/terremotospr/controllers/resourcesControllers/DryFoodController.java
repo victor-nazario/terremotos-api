@@ -61,4 +61,9 @@ public class DryFoodController {
         return dryFoodService.findAvailable();
     }
 
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return dryFoodService.countAllResources();
+    }
+
 }

@@ -60,4 +60,9 @@ public class MedicationController {
 
     @GetMapping(value = "/{id}")
     public Medication findById(@PathVariable Integer id){return medicationService.findById(id);}
+
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return medicationService.countAllResources();
+    }
 }

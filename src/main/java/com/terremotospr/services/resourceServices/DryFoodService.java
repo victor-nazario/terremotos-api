@@ -107,4 +107,6 @@ public class DryFoodService {
 
         return dryFood;
     }
+
+    public Long countAllResources(){ return dryFoodRepository.count();}
 }
