@@ -57,4 +57,7 @@ public class GasolineController {
     @GetMapping(value = "/type/{type}")
     public List<GasolineBean> findByType(@PathVariable String type){ return gasolineService.findByType(type); }
 
+    @GetMapping(value = "/count/all")
+    public Long countAll() { return gasolineService.countAllResources();}
+
 }

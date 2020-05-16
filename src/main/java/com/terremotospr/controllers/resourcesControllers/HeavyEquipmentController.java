@@ -53,4 +53,7 @@ public class HeavyEquipmentController {
     @GetMapping(value = "/type/{type}")
     public List<HeavyEquipmentBean> findByType(@PathVariable String type){ return heavyEquipmentService.findByType(type); }
 
+    @GetMapping(value = "/count/all")
+    public Long countAll() { return heavyEquipmentService.countAllResources();}
+
 }
