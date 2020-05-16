@@ -1,7 +1,6 @@
 package com.terremotospr.services.administrativeServices;
 
 import com.terremotospr.beans.administrativeBeans.ConsumerBean;
-import com.terremotospr.beans.administrativeBeans.ConsumerType;
 import com.terremotospr.database.entities.administrativeEntities.Consumer;
 import com.terremotospr.database.repositories.administrativeRepositories.ConsumerRepository;
 import org.springframework.beans.BeanUtils;
