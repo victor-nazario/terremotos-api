@@ -38,4 +38,7 @@ public class PropaneController {
     @GetMapping(value = "/available")
     public List<PropaneBean> findAvailable(){ return propaneService.findAvailable(); }
 
+    @GetMapping(value = "/count/all")
+    public Long countAll() { return propaneService.countAllResources();}
+
 }
