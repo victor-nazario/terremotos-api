@@ -30,7 +30,7 @@ public class PlacedOrderController {
     }
 
     @GetMapping(value = "/{id}")
-    public PlacedOrder findOrderById(@PathVariable Long id) {
+    public PlacedOrderBean findOrderById(@PathVariable Long id) {
         return placedOrderService.findById(id);
     }
 }
