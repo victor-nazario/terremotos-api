@@ -52,7 +52,7 @@ public class WaterController {
     }
 
     @GetMapping(value = "/type/{type}")
-    public List<WaterBean> findByWaterType(@PathVariable TypeOfWater type) {
+    public List<WaterBean> findByWaterType(@PathVariable String type) {
         return waterService.findByWaterType(type);
     }
 

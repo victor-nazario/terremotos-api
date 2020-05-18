@@ -102,7 +102,7 @@ public class WaterService {
         return waters;
     }
 
-    public List<WaterBean> findByWaterType(TypeOfWater type){
+    public List<WaterBean> findByWaterType(String type){
         List<WaterBean> waters;
         Iterable<Water> iter = waterRepository.findAllByTypeEquals(type);
 

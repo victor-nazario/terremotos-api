@@ -9,7 +9,7 @@ public class WaterBean extends BaseResourceBean {
 
     private boolean potable;
     private int packagedQuantity;
-    private TypeOfWater type;
+    private String type;
 
     public boolean isPotable() {
         return potable;
@@ -23,7 +23,7 @@ public class WaterBean extends BaseResourceBean {
 
     public void setPackagedQuantity(int packagedQuantity) { this.packagedQuantity = packagedQuantity; }
 
-    public TypeOfWater getType() { return type; }
+    public String getType() { return type; }
 
-    public void setType(TypeOfWater type) { this.type = type; }
+    public void setType(String type) { this.type = type; }
 }

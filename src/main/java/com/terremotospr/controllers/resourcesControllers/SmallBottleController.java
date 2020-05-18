@@ -1,7 +1,6 @@
 package com.terremotospr.controllers.resourcesControllers;
 
 import com.terremotospr.beans.resourceBeans.SmallBottleBean;
-import com.terremotospr.beans.resourceBeans.TypeOfWater;
 import com.terremotospr.database.entities.resourceEntities.SmallBottle;
 import com.terremotospr.services.resourceServices.SmallBottleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,12 +50,12 @@ public class SmallBottleController {
     public List<SmallBottleBean> findBySize(@PathVariable Double size){ return smallBottleService.findBySize(size); }
 
     @GetMapping(value = "/type/{type}")
-    public List<SmallBottleBean> findByType(@PathVariable TypeOfWater type){ return smallBottleService.findByType(type); }
+    public List<SmallBottleBean> findByType(@PathVariable String type){ return smallBottleService.findByType(type); }
 
     @GetMapping(value = "/potable")
     public List<SmallBottleBean> findPotable(){ return smallBottleService.findPotable(); }
 
-    @GetMapping(value = "/packagedQuantity/{packagedQuantity}")
+    @GetMapping(value = "/packaged_quantity/{packagedQuantity}")
     public List<SmallBottleBean> findByPackagedQuantity(@PathVariable int packagedQuantity){return smallBottleService.findByPackagedQuantity(packagedQuantity); }
 
 }

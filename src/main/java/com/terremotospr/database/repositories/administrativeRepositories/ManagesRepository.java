@@ -1,6 +1,5 @@
 package com.terremotospr.database.repositories.administrativeRepositories;
 
-import com.terremotospr.beans.administrativeBeans.AccountStatus;
 import com.terremotospr.database.entities.administrativeEntities.Admin;
 import com.terremotospr.database.entities.administrativeEntities.Manages;
 import org.springframework.data.jpa.repository.Modifying;
@@ -33,7 +32,7 @@ public interface ManagesRepository extends CrudRepository<Manages, Long> {
 
     @Query(value = "select * from manages ma inner join user u on ma.user_id = u.id " +
             "inner join admin a on ma.admin_id = a.id where ma.status = :status", nativeQuery = true)
-    List<Manages> findByAccountStatus(@Param("status") AccountStatus status);
+    List<Manages> findByAccountStatus(@Param("status") String status);
 
     @Modifying
     @Query(value = "insert into manages (status, primary key(adminId, userId)) values (:status, (:adminId, :userId))",

@@ -72,7 +72,7 @@ public class ManagesService {
         return manages;
     }
 
-    public List<ManagesBean> findByAccountStatus(AccountStatus status){
+    public List<ManagesBean> findByAccountStatus(String status){
         List<ManagesBean> manages;
         Iterable<Manages> iter = managesRepository.findByAccountStatus(status);
 

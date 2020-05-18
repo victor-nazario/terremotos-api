@@ -1,7 +1,6 @@
 package com.terremotospr.services.resourceServices;
 
 import com.terremotospr.beans.resourceBeans.SmallBottleBean;
-import com.terremotospr.beans.resourceBeans.TypeOfWater;
 import com.terremotospr.database.entities.resourceEntities.SmallBottle;
 import com.terremotospr.database.repositories.resourceRepositories.SmallBottleRepository;
 import org.springframework.beans.BeanUtils;
@@ -116,7 +115,7 @@ public class SmallBottleService {
         return smallBottles;
     }
 
-    public List<SmallBottleBean> findByType(TypeOfWater type){
+    public List<SmallBottleBean> findByType(String type){
         List<SmallBottleBean> smallBottles;
         Iterable<SmallBottle> iter = smallBottleRepository.findByType(type);
 

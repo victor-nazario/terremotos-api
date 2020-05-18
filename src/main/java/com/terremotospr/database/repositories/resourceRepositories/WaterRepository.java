@@ -39,7 +39,7 @@ public interface WaterRepository extends CrudRepository<Water, Long> {
 
     List<Water> findAllByNameEquals(String name);
 
-    List<Water> findAllByTypeEquals(TypeOfWater type);
+    List<Water> findAllByTypeEquals(String type);
 
     List<Water> findAllByAvailableIsTrue();
 

@@ -1,6 +1,5 @@
 package com.terremotospr.database.repositories.resourceRepositories;
 
-import com.terremotospr.beans.resourceBeans.TypeOfWater;
 import com.terremotospr.database.entities.resourceEntities.SmallBottle;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -17,46 +16,57 @@ import java.util.List;
 
 @Repository
 public interface SmallBottleRepository extends CrudRepository<SmallBottle,Long> {
-    @Query(value = "select * from small_bottle sb inner join base_resource br on sb.id = br.id", nativeQuery = true)
+    @Query(value = "select * from small_bottle sb inner join base_resource br inner join water w " +
+            "where sb.id = br.id and sb.id = w.id", nativeQuery = true)
     List<SmallBottle> findAll();
 
-    @Query(value = "select * from small_bottle sb inner join base_resource br on sb.id = br.id where sb.id = :id"
+    @Query(value ="select * from small_bottle sb inner join base_resource br inner join water w " +
+            "where sb.id = br.id and sb.id = w.id and sb.id = :id "
             , nativeQuery = true)
     SmallBottle findById(@Param("id") Integer id);
 
-    @Query(value = "select * from small_bottle sb inner join base_resource br on sb.id = br.id where br.price <= :price"
+    @Query(value = "select * from small_bottle sb inner join base_resource br inner join water w " +
+            "where sb.id = br.id and sb.id = w.id and br.price <= :price"
             , nativeQuery = true)
     List<SmallBottle> findByPriceUnder(@Param("price") Double price);
 
-    @Query(value = "select * from small_bottle sb inner join base_resource br on sb.id = br.id where br.price >= :price"
+    @Query(value = "select * from small_bottle sb inner join base_resource br inner join water w " +
+            "where sb.id = br.id and sb.id = w.id and br.price >= :price"
             , nativeQuery = true)
     List<SmallBottle> findByPriceOver(@Param("price") Double price);
 
-    @Query(value = "select * from small_bottle sb inner join base_resource br on sb.id = br.id where br.brand = :brand"
+    @Query(value = "select * from small_bottle sb inner join base_resource br inner join water w " +
+            "where sb.id = br.id and sb.id = w.id and br.brand = :brand"
             , nativeQuery = true)
     List<SmallBottle> findByBrand(@Param("brand") String brand);
 
-    @Query(value = "select * from small_bottle sb inner join base_resource br on sb.id = br.id where br.name = :name"
+    @Query(value = "select * from small_bottle sb inner join base_resource br inner join water w " +
+            "where sb.id = br.id and sb.id = w.id and br.name = :name"
             , nativeQuery = true)
     List<SmallBottle> findByName(@Param("name") String name);
 
-    @Query(value = "select * from small_bottle sb inner join base_resource br on sb.id = br.id where br.available = true"
+    @Query(value = "select * from small_bottle sb inner join base_resource br inner join water w " +
+            "where sb.id = br.id and sb.id = w.id and br.available = true"
             , nativeQuery = true)
     List<SmallBottle> findAvailable();
 
-    @Query(value = "select * from small_bottle sb inner join base_resource br on sb.id = br.id where sb.size = :size"
+    @Query(value = "select * from small_bottle sb inner join base_resource br inner join water w " +
+            "where sb.id = br.id and sb.id = w.id and sb.size = :size"
             , nativeQuery = true)
     List<SmallBottle> findBySize(@Param("size") Double size);
 
-    @Query(value = "select * from small_bottle sb inner join water w on sb.id = w.id  where w.type = :type"
+    @Query(value = "select * from small_bottle sb inner join base_resource br inner join water w " +
+            "where sb.id = br.id and sb.id = w.id and w.type = :type"
             , nativeQuery = true)
-    List<SmallBottle> findByType(@Param("type") TypeOfWater type);
+    List<SmallBottle> findByType(@Param("type") String type);
 
-    @Query(value = "select * from small_bottle sb inner join water w on sb.id = w.id  where w.potable = :potable"
+    @Query(value = "select * from small_bottle sb inner join base_resource br inner join water w " +
+            "where sb.id = br.id and sb.id = w.id and w.potable = true"
             , nativeQuery = true)
     List<SmallBottle> findPotable();
 
-    @Query(value = "select * from small_bottle sb inner join water w on sb.id = w.id where w.packagedQuantity = :packagedQuantity"
+    @Query(value = "select * from small_bottle sb inner join base_resource br inner join water w " +
+            "where sb.id = br.id and sb.id = w.id and w.packaged_quantity = :packagedQuantity"
             , nativeQuery = true)
     List<SmallBottle> findByPackagedQuantity(@Param("packagedQuantity") int packagedQuantity);
 

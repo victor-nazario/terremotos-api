@@ -20,8 +20,6 @@ public interface ConsumerRepository extends CrudRepository<Consumer,Long> {
     @Query(value = "SELECT * FROM consumer c INNER JOIN user u on c.id = u.id;", nativeQuery = true)
     List<Consumer> findAll();
 
-    Optional<Consumer> findConsumerById(Long id);
-
     @Query(value="SELECT * FROM consumer c INNER JOIN user u on c.id = u.id WHERE c.id = :id", nativeQuery = true)
     Optional<Consumer> findById(@Param("id") Integer id);
 
@@ -41,5 +39,8 @@ public interface ConsumerRepository extends CrudRepository<Consumer,Long> {
     @Query(value = "insert into consumer (type, id) values (:type, :id)",
             nativeQuery = true)
     void insertConsumer(@Param("type") String type, @Param("id") Long id);
+
+
+    Optional<Consumer> findConsumerById(Long id);
 
 }

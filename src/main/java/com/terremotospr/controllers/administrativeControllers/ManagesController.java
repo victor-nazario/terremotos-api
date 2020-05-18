@@ -1,6 +1,5 @@
 package com.terremotospr.controllers.administrativeControllers;
 
-import com.terremotospr.beans.administrativeBeans.AccountStatus;
 import com.terremotospr.beans.administrativeBeans.ManagesBean;
 import com.terremotospr.services.administrativeServices.ManagesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +35,5 @@ public class ManagesController {
     public List<ManagesBean> findByAdminId(@PathVariable Integer id) { return managesService.findByAdminId(id); }
 
     @GetMapping(value = "/account_status/{status}")
-    public List<ManagesBean> findByAccountStatus(@PathVariable AccountStatus status) { return managesService.findByAccountStatus(status); }
+    public List<ManagesBean> findByAccountStatus(@PathVariable String status) { return managesService.findByAccountStatus(status); }
 }
