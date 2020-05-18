@@ -30,7 +30,12 @@ public class PlacedOrderController {
     }
 
     @GetMapping(value = "/{id}")
-    public PlacedOrder findOrderById(@PathVariable Long id) {
+    public PlacedOrderBean findOrderById(@PathVariable Long id) {
         return placedOrderService.findById(id);
+    }
+
+    @GetMapping(value = "/dailycount")
+    public Integer findOrderById() {
+        return placedOrderService.WeeklyCount();
     }
 }

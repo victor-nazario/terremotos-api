@@ -59,4 +59,9 @@ public class WaterController {
 
     @GetMapping(value = "/available")
     public List<WaterBean> findAvailable(){ return waterService.findAvailable(); }
+
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return waterService.countAllResources();
+    }
 }

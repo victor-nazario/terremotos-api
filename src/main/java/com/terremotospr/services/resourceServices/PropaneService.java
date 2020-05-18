@@ -72,4 +72,6 @@ public class PropaneService {
 
         return propane;
     }
+
+    public Long countAllResources(){ return propaneRepository.count();}
 }

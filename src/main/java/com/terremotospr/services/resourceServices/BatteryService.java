@@ -87,4 +87,8 @@ public class BatteryService {
 
         return batteries;
     }
+
+    public Long countAllResources() {
+        return batteryRepository.count();
+    }
 }

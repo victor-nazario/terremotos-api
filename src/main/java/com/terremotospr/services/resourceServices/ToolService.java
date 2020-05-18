@@ -74,4 +74,8 @@ public class ToolService {
 
         return tools;
     }
+
+    public Long countAllResources() {
+        return toolRepository.count();
+    }
 }

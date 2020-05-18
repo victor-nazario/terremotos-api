@@ -36,4 +36,9 @@ public class AdminController {
     public AdminBean findAdminById(@PathVariable Long id) {
         return adminService.findById(id);
     }
+
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return adminService.countAllUsers();
+    }
 }
