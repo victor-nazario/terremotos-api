@@ -13,9 +13,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -99,5 +97,40 @@ public class PlacedOrderService {
 
     public PlacedOrderBean findById(Long id){
         return copyProperties(placedOrderRepository.findById(id).get());
+    }
+
+
+    /* public List<BaseResourceBean> fetchByDay(boolean isWeekly){
+        Calendar calendar = Calendar.getInstance();
+        if(isWeekly){
+            calendar.add(Calendar.HOUR_OF_DAY, -168);
+        }
+        else
+            calendar.add(Calendar.HOUR_OF_DAY, -24);
+
+        Date date = calendar.getTime();
+
+        List<BaseResourceBean> resourceBeans = new ArrayList<>();
+
+        List<PlacedOrder> placedOrders = placedOrderRepository.findAllWithCreationDateTimeBefore(date, new Date());
+        List<Belongs> belongsTimeFrame = new ArrayList<>();
+
+        for(PlacedOrder placedOrder : placedOrders){
+            belongsTimeFrame.addAll(placedOrder.getBelongs());
+        }
+
+        for (Belongs belongs : belongsTimeFrame){
+            BaseResource baseR = baseResourceRepository.findById(belongs.getResourceId()).get();
+            resourceBeans.add(copyProperties(baseR));
+        }
+
+        return  resourceBeans;
+    }*/
+    public Integer WeeklyCount() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.HOUR_OF_DAY, -168);
+        Date date = calendar.getTime();
+
+        return placedOrderRepository.findAllWithCreationDateTimeBefore(date, new Date()).size();
     }
 }
