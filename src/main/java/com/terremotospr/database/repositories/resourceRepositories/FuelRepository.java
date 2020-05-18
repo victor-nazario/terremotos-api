@@ -18,7 +18,7 @@ import java.util.List;
 public interface FuelRepository extends CrudRepository<Fuel, Long> {
 
     @Query(value = "select * from fuel f inner join base_resource br on f.id = br.id", nativeQuery = true)
-    List<Fuel> findAll();
+    List<Fuel> fetchAll();
 
     @Query(value = "select * from fuel f inner join base_resource br on f.id = br.id where f.id = :id"
             , nativeQuery = true)

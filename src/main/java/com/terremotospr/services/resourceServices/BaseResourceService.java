@@ -80,8 +80,6 @@ public class BaseResourceService {
 
     private static String buildMapUrl(String longitude, String latitude){
         String API_KEY = "9j54O8UY_6UT-st43Eh3F29SblcKXDJf6ESr6Yz5J4U";
-
-
         return "https://image.maps.ls.hereapi.com/mia/1.6/mapview?apiKey=" + API_KEY + "&i&c="
                 + longitude + "," + latitude + "&h=300&w=400&r=10";
     }
