@@ -15,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/gasoline")
+@CrossOrigin("*")
 public class GasolineController {
 
     @Autowired
@@ -54,5 +55,8 @@ public class GasolineController {
 
     @GetMapping(value = "/type/{type}")
     public List<GasolineBean> findByType(@PathVariable String type){ return gasolineService.findByGasolineType(type); }
+
+    @GetMapping(value = "/count/all")
+    public Long countAll() { return gasolineService.countAllResources();}
 
 }

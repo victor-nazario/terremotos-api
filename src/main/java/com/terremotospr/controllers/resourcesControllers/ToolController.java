@@ -16,6 +16,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/tool")
+@CrossOrigin("*")
 public class ToolController {
 
     @Autowired

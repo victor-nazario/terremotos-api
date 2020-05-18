@@ -15,6 +15,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/dryfood")
+@CrossOrigin("*")
 public class DryFoodController {
 
     @Autowired
@@ -58,6 +59,11 @@ public class DryFoodController {
     @GetMapping(value = "/available")
     public List<DryFoodBean> findAvailable(){
         return dryFoodService.findAvailable();
+    }
+
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return dryFoodService.countAllResources();
     }
 
 }

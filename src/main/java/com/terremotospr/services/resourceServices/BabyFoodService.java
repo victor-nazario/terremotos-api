@@ -106,4 +106,6 @@ public class BabyFoodService {
 
         return babyFood;
     }
+
+    public Long countAllResources(){ return babyFoodRepository.count();}
 }

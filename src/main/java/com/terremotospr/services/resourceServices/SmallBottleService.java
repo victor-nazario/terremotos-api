@@ -147,4 +147,6 @@ public class SmallBottleService {
         return smallBottles;
     }
 
+    public Long countAllResources(){ return smallBottleRepository.count();}
+
 }

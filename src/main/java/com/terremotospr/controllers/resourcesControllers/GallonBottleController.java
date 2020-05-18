@@ -22,6 +22,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/gallon")
+@CrossOrigin("*")
 public class GallonBottleController {
     @Autowired
     GallonBottleService gallonBottleService;

@@ -137,4 +137,6 @@ public class ClothingService {
 
         return clothing;
     }
+
+    public Long countAllResources(){ return clothingRepository.count();}
 }

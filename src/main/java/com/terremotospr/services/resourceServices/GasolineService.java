@@ -138,4 +138,6 @@ public class GasolineService {
         return gasoline;
     }
 
+    public Long countAllResources(){ return gasolineRepository.count();}
+
 }
