@@ -91,4 +91,6 @@ public class SupplierService {
         return supplier;
     }
 
+    public Long countAllUsers(){ return supplierRepository.count();}
+
 }

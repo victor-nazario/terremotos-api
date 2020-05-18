@@ -84,4 +84,6 @@ public class ConsumerService {
 
         return consumer;
     }
+
+    public Long countAllUsers(){ return consumerRepository.count();}
 }
