@@ -1,6 +1,5 @@
 package com.terremotospr.controllers.resourcesControllers;
 
-import com.terremotospr.beans.resourceBeans.TypeOfWater;
 import com.terremotospr.beans.resourceBeans.WaterBean;
 import com.terremotospr.services.resourceServices.WaterService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,4 +58,8 @@ public class WaterController {
 
     @GetMapping(value = "/available")
     public List<WaterBean> findAvailable(){ return waterService.findAvailable(); }
+
+    @GetMapping(value = "/potable")
+    public List<WaterBean> findPotable(){ return waterService.findPotable(); }
 }
+

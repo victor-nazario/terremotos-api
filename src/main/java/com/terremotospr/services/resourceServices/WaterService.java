@@ -1,6 +1,5 @@
 package com.terremotospr.services.resourceServices;
 
-import com.terremotospr.beans.resourceBeans.TypeOfWater;
 import com.terremotospr.beans.resourceBeans.WaterBean;
 import com.terremotospr.database.entities.resourceEntities.Water;
 import com.terremotospr.database.repositories.resourceRepositories.WaterRepository;
@@ -82,7 +81,7 @@ public class WaterService {
 
     public List<WaterBean> findByName(String name){
         List<WaterBean> waters;
-        Iterable<Water> iter = waterRepository.findByName(name);
+        Iterable<Water> iter = waterRepository.findAllByNameEquals(name);
 
         waters = StreamSupport.stream(iter.spliterator(), false)
                 .map(this::copyProperties)
@@ -93,7 +92,18 @@ public class WaterService {
 
     public List<WaterBean> findAvailable(){
         List<WaterBean> waters;
-        Iterable<Water> iter = waterRepository.findAvailable();
+        Iterable<Water> iter = waterRepository.findAllByAvailableIsTrue();
+
+        waters = StreamSupport.stream(iter.spliterator(), false)
+                .map(this::copyProperties)
+                .collect(Collectors.toList());
+
+        return waters;
+    }
+
+    public List<WaterBean> findPotable(){
+        List<WaterBean> waters;
+        Iterable<Water> iter = waterRepository.findAllByPotableIsTrue();
 
         waters = StreamSupport.stream(iter.spliterator(), false)
                 .map(this::copyProperties)

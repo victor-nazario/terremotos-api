@@ -19,7 +19,7 @@ import java.util.List;
 public interface WaterRepository extends CrudRepository<Water, Long> {
 
     @Query(value = "select * from water w inner join base_resource br on w.id = br.id", nativeQuery = true)
-    List<Water> findAll();
+    List<Water> findAllWater();
 
     @Query(value = "select * from water w inner join base_resource br on w.id = br.id where w.id = :id"
             , nativeQuery = true)
@@ -33,6 +33,17 @@ public interface WaterRepository extends CrudRepository<Water, Long> {
             , nativeQuery = true)
     List<Water> findAvailable();
 
+    @Query(value = "select * from water w left outer join base_resource br on w.id = br.id where w.potable = true"
+            , nativeQuery = true)
+    List<Water> findPotable();
+
+    @Modifying
+    @Query(value = "insert into water (type, packaged_quantity, potable, id) values (:type, :packaged_quantity, :potable, :type, :id)",
+            nativeQuery = true)
+    void insertWater(@Param("type") TypeOfWater type, @Param("packaged_quantity") Integer packaged_quantity,
+                     @Param("potable") Boolean potable, @Param("id") Long id);
+
+
     List<Water>  findAllByPriceIsLessThan(Double price);
 
     List<Water> findAllByBrandEquals(String brand);
@@ -43,9 +54,5 @@ public interface WaterRepository extends CrudRepository<Water, Long> {
 
     List<Water> findAllByAvailableIsTrue();
 
-    @Modifying
-    @Query(value = "insert into water (type, packaged_quantity, potable, id) values (:type, :packaged_quantity, :potable, :type, :id)",
-            nativeQuery = true)
-    void insertWater(@Param("type") TypeOfWater type, @Param("packaged_quantity") Integer packaged_quantity,
-                        @Param("potable") Boolean potable, @Param("id") Long id);
+    List<Water> findAllByPotableIsTrue();
 }
