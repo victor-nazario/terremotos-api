@@ -52,4 +52,8 @@ public class ConsumerController {
         return consumerService.findByType(type);
     }
 
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return consumerService.countAllUsers();
+    }
 }

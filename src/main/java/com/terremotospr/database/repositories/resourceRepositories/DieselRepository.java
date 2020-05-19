@@ -17,7 +17,7 @@ import java.util.List;
 public interface DieselRepository extends CrudRepository<Diesel, Long> {
 
     @Query(value = "select * from diesel d inner join base_resource br on d.id = br.id", nativeQuery = true)
-    List<Diesel> findAll();
+    List<Diesel> fetchAll();
 
     @Query(value = "select * from diesel d inner join base_resource br on d.id = br.id where d.id = :id"
             , nativeQuery = true)

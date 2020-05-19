@@ -122,4 +122,8 @@ public class WaterService {
 
         return waters;
     }
+
+    public Long countAllResources() {
+        return waterRepository.count();
+    }
 }

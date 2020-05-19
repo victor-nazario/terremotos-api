@@ -50,4 +50,9 @@ public class SupplierController {
         return supplierService.findByRegion(region);
     }
 
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return supplierService.countAllUsers();
+    }
+
 }

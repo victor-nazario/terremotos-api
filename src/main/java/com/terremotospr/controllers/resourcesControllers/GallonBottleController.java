@@ -46,4 +46,9 @@ public class GallonBottleController {
     public List<GallonBottleBean> findByPriceUnder(@PathVariable Double price) {
         return gallonBottleService.findByPriceUnder(price);
     }
+
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return gallonBottleService.countAllResources();
+    }
 }

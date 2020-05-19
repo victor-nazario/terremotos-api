@@ -87,4 +87,6 @@ public class AdminService {
         admin.setManagedUsers(userRepository.findAllByIdEquals(id));
         return copyProperties(admin);
     }
+
+    public Long countAllUsers(){ return adminRepository.count();}
 }

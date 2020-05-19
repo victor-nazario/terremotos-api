@@ -46,4 +46,9 @@ public class BatteryController {
 
     @GetMapping(value = "/available")
     public List<BatteryBean> findAvailable(){ return batteryService.findAvailable(); }
+
+    @GetMapping(value = "/count/all")
+    public Long countAll() {
+        return batteryService.countAllResources();
+    }
 }
