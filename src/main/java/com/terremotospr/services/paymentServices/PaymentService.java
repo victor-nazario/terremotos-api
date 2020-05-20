@@ -54,9 +54,9 @@ public class PaymentService {
 
     public Payment findByConsumerId(Integer id){ return paymentRepository.findByConsumerId(id).get(); }
 
-    public List<PaymentBean> findByPurchaseTotalOver(Double purchaseTotal){
+    public List<PaymentBean> findByAmountPaidOver(Double amountPaid){
         List<PaymentBean> payment;
-        Iterable<Payment> iter = paymentRepository.findByPurchaseTotalOver(purchaseTotal);
+        Iterable<Payment> iter = paymentRepository.findByAmountPaidOver(amountPaid);
 
         payment = StreamSupport.stream(iter.spliterator(), false)
                 .map(this::copyProperties)
@@ -64,9 +64,9 @@ public class PaymentService {
 
         return payment;
     }
-    public List<PaymentBean> findByPurchaseTotalUnder(Double purchaseTotal){
+    public List<PaymentBean> findByAmountPaidUnder(Double amountPaid){
         List<PaymentBean> payment;
-        Iterable<Payment> iter = paymentRepository.findByPurchaseTotalUnder(purchaseTotal);
+        Iterable<Payment> iter = paymentRepository.findByAmountPaidUnder(amountPaid);
 
         payment = StreamSupport.stream(iter.spliterator(), false)
                 .map(this::copyProperties)

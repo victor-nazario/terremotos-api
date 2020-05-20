@@ -37,9 +37,9 @@ public class PaymentController {
         return paymentService.findByConsumerId(id);
     }
 
-    @GetMapping(value = "/total_under/{total}")
-    public List<PaymentBean> findByPurchaseTotalUnder(@PathVariable Double total){ return paymentService.findByPurchaseTotalUnder(total); }
+    @GetMapping(value = "/paid_under/{paid}")
+    public List<PaymentBean> findByAmountPaidUnder(@PathVariable Double paid){ return paymentService.findByAmountPaidUnder(paid); }
 
-    @GetMapping(value = "/total_over/{total}")
-    public List<PaymentBean> findByPurchaseTotalOver(@PathVariable Double total){ return paymentService.findByPurchaseTotalOver(total);}
+    @GetMapping(value = "/paid_over/{paid}")
+    public List<PaymentBean> findByAmountPaidOver(@PathVariable Double paid){ return paymentService.findByAmountPaidOver(paid);}
 }

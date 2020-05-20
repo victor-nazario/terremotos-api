@@ -24,11 +24,11 @@ public interface PaymentRepository extends CrudRepository<Payment, Long> {
     @Query(value="SELECT * FROM payment p inner join consumer c on p.consumer_id = c.id WHERE c.id = :id", nativeQuery = true)
     Optional<Payment> findByConsumerId(@Param("id") Integer id);
 
-    @Query(value="SELECT * FROM payment p inner join consumer c on p.consumer_id = c.id WHERE p.purchase_total >= :purchaseTotal", nativeQuery = true)
-    List<Payment> findByPurchaseTotalOver(@Param("purchaseTotal") Double purchaseTotal);
+    @Query(value="SELECT * FROM payment p inner join consumer c on p.consumer_id = c.id WHERE p.amount_paid >= :amountPaid", nativeQuery = true)
+    List<Payment> findByAmountPaidOver(@Param("amountPaid") Double amountPaid);
 
-    @Query(value="SELECT * FROM payment p inner join consumer c on p.consumer_id = c.id WHERE p.purchase_total <= :purchaseTotal", nativeQuery = true)
-    List<Payment> findByPurchaseTotalUnder(@Param("purchaseTotal") Double purchaseTotal);
+    @Query(value="SELECT * FROM payment p inner join consumer c on p.consumer_id = c.id WHERE p.amount_paid <= :amountPaid", nativeQuery = true)
+    List<Payment> findByAmountPaidUnder(@Param("amountPaid") Double amountPaid);
 
     @Modifying
     @Query(value = "insert into payment (purchase_total, consumer_id) values (:purchaseTotal, :consumerId)",

@@ -8,15 +8,15 @@ public class PaymentBean {
 
     private Long paymentId;
     private Long consumerId;
-    private Double purchaseTotal;
+    private Double amountPaid;
 
     public Long getPayment_id() { return paymentId; }
 
     public void setPayment_id(Long payment_id) { this.paymentId = payment_id; }
 
-    public Double getPurchaseTotal() { return purchaseTotal; }
+    public Double getPurchaseTotal() { return amountPaid; }
 
-    public void setPurchaseTotal(Double purchaseTotal) { this.purchaseTotal = purchaseTotal; }
+    public void setPurchaseTotal(Double amountPaid) { this.amountPaid = amountPaid; }
 
     public Long getConsumerId() { return consumerId; }
 

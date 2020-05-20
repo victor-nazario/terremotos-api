@@ -17,15 +17,15 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long paymentId;
 
-    private Double purchaseTotal;
+    private Double amountPaid;
 
     public Long getPaymentId() { return paymentId; }
 
     public void setPaymentId(Long paymentI) { this.paymentId = paymentId; }
 
-    public Double getPurchaseTotal() { return purchaseTotal; }
+    public Double getAmountPaid() { return amountPaid; }
 
-    public void setPurchaseTotal(Double purchaseTotal) { this.purchaseTotal = purchaseTotal; }
+    public void setAmountPaid(Double amountPaid) { this.amountPaid = amountPaid; }
 
 
     //Relationship
