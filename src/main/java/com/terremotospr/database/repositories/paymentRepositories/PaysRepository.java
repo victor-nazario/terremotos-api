@@ -22,11 +22,11 @@ public interface PaysRepository extends CrudRepository<Pays, Long> {
 
     @Query(value = "select * from pays ps inner join payment p on ps.payment_id = p.payment_id " +
             "inner join placed_order po on ps.order_id = po.id where ps.payment_id = :paymentId", nativeQuery = true)
-    List<Pays> findByPaymentId(@Param("paymentId") Integer paymentId);
+    List<Pays> findByPaymentId(@Param("paymentId") Long paymentId);
 
     @Query(value = "select * from pays ps inner join payment p on ps.payment_id = p.payment_id " +
             "inner join placed_order po on ps.order_id = po.id where ps.order_id = :orderId", nativeQuery = true)
-    List<Pays> findByOrderId(@Param("orderId") Integer orderId);
+    List<Pays> findByOrderId(@Param("orderId") Long orderId);
 
     @Modifying
     @Query(value = "insert into pays (payment_date, order_id, payment_id) values (:paymentDate, :orderId, :paymentId)",

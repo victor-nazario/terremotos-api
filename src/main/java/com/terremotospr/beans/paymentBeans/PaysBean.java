@@ -7,6 +7,7 @@ import java.util.Date;
  * @date 03/20/2020
  */
 public class PaysBean {
+    private Double changeAmount;
     private Date paymentDate;
     private Long paymentId;
     private Long orderId;
@@ -22,5 +23,9 @@ public class PaysBean {
     public Long getOrderId() { return orderId; }
 
     public void setOrderId(Long orderId) { this.orderId = orderId; }
+
+    public Double getChangeAmount() { return changeAmount; }
+
+    public void setChangeAmount(Double changeAmount) { this.changeAmount = changeAmount; }
 }
 

@@ -28,8 +28,8 @@ public class PaysController {
     }
 
     @GetMapping(value = "/payment/{id}")
-    public List<PaysBean> findByPaymentId(@PathVariable Integer id) { return paysService.findByPaymentId(id); }
+    public List<PaysBean> findByPaymentId(@PathVariable Long id) { return paysService.findByPaymentId(id); }
 
     @GetMapping(value = "/order/{id}")
-    public List<PaysBean> findByPlacedOrderId(@PathVariable Integer id) { return paysService.findByPlacedOrderId(id); }
+    public List<PaysBean> findByPlacedOrderId(@PathVariable Long id) { return paysService.findByPlacedOrderId(id); }
 }

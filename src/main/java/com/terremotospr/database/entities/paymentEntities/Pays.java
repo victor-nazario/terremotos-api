@@ -17,9 +17,15 @@ public class Pays implements Serializable {
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date paymentDate;
 
+    private Double changeAmount;
+
     public Date getPaymentDate() { return paymentDate; }
 
     public void setPaymentDate(Date paymentDate) { this.paymentDate = paymentDate; }
+
+    public Double getChangeAmount() { return changeAmount; }
+
+    public void setChangeAmount(Double changeAmount) { this.changeAmount = changeAmount; }
 
     //Relationships
     @Id
