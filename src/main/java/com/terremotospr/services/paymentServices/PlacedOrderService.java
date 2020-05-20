@@ -4,7 +4,6 @@ import com.terremotospr.beans.administrativeBeans.BelongsBean;
 import com.terremotospr.beans.paymentBeans.PlacedOrderBean;
 import com.terremotospr.database.entities.administrativeEntities.Belongs;
 import com.terremotospr.database.entities.paymentEntities.PlacedOrder;
-import com.terremotospr.database.entities.resourceEntities.BaseResource;
 import com.terremotospr.database.repositories.administrativeRepositories.ConsumerRepository;
 import com.terremotospr.database.repositories.paymentRepositories.PlacedOrderRepository;
 import com.terremotospr.database.repositories.resourceRepositories.BaseResourceRepository;
@@ -32,6 +31,7 @@ public class PlacedOrderService {
 
     @Autowired
     BaseResourceRepository baseResourceRepository;
+
 
 
     public List<PlacedOrderBean> fetchAllOrder(){
@@ -66,16 +66,19 @@ public class PlacedOrderService {
 
         bean.setBelongsBeans(belongsSet);
 
+
         Double finalResourcePriceSum = 0.0;
-        Set<BaseResource> resourcesOrdered = new HashSet<>();
+
         for(BelongsBean belongsBean: belongsSet) {
             finalResourcePriceSum = finalResourcePriceSum + belongsBean.getFinalPrice();
         }
         entity.setFinalOrderPrice(finalResourcePriceSum);
         bean.setFinalOrderPrice(finalResourcePriceSum);
-
+        placedOrderRepository.updateFinalOrderPrice(finalResourcePriceSum, entity.getId());
         return bean;
     }
+
+
 
     public boolean addOrder(PlacedOrderBean bean) {
         if(bean == null) return false;
@@ -83,8 +86,6 @@ public class PlacedOrderService {
         PlacedOrder entity = new PlacedOrder();
         BeanUtils.copyProperties(bean, entity);
         entity.setConsumer(consumerRepository.findConsumerById(bean.getCustomerId()).get());
-
-
         placedOrderRepository.save(entity);
         return true;
     }

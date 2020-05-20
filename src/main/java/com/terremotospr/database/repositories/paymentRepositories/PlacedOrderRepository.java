@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
@@ -27,6 +28,12 @@ public interface PlacedOrderRepository extends CrudRepository<PlacedOrder, Long>
     @Query(value = "select * from placed_order a where a.date <= :finalDateTime AND a.date >= :baseDateTime", nativeQuery = true)
     List<PlacedOrder> findAllWithCreationDateTimeBefore(
             @Param("baseDateTime") Date baseDateTime,  @Param("finalDateTime") Date finalDateTime);
+
+    @Modifying
+    @Transactional
+    @Query(value = "update placed_order po set po.final_order_price = :finalOrderPrice where po.id = :id",
+            nativeQuery = true)
+    void updateFinalOrderPrice(@Param("finalOrderPrice") Double finalOrderPrice, @Param("id") Long id);
 
     @Modifying
     @Query(value = "insert into placed_order (date, consumer_id) values (:date, :consumerId)",

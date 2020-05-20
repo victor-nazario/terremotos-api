@@ -3,6 +3,7 @@ package com.terremotospr.database.entities.paymentEntities;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.terremotospr.database.entities.administrativeEntities.Belongs;
 import com.terremotospr.database.entities.administrativeEntities.Consumer;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -15,6 +16,7 @@ import java.util.Set;
  * @author Victor Nazario
  */
 @Entity
+@DynamicUpdate
 public class PlacedOrder {
 
     @Id
@@ -23,6 +25,8 @@ public class PlacedOrder {
 
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date date;
+
+    private Double finalOrderPrice;
 
     @OneToOne
     private Consumer consumer;
@@ -64,4 +68,8 @@ public class PlacedOrder {
     public Set<Pays> getPays() { return pays; }
 
     public void setPays(Set<Pays> pays) { this.pays = pays; }
+
+    public Double getFinalOrderPrice() { return finalOrderPrice; }
+
+    public void setFinalOrderPrice(Double finalOrderPrice) { this.finalOrderPrice = finalOrderPrice; }
 }
