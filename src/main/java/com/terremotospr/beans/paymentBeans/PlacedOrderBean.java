@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.terremotospr.beans.administrativeBeans.BelongsBean;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -21,6 +20,8 @@ public class PlacedOrderBean {
     private Long customerId;
 
     private Set<BelongsBean> belongsBeans;
+
+    private Double finalOrderPrice;
 
     public Long getId() {
         return id;
@@ -49,4 +50,8 @@ public class PlacedOrderBean {
     public Set<BelongsBean> getBelongsBeans() { return belongsBeans; }
 
     public void setBelongsBeans(Set<BelongsBean> belongsBeans) { this.belongsBeans = belongsBeans; }
+
+    public Double getFinalOrderPrice() { return finalOrderPrice; }
+
+    public void setFinalOrderPrice(Double finalOrderPrice) { this.finalOrderPrice = finalOrderPrice; }
 }
