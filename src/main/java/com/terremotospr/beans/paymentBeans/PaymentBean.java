@@ -10,13 +10,13 @@ public class PaymentBean {
     private Long consumerId;
     private Double amountPaid;
 
-    public Long getPayment_id() { return paymentId; }
+    public Long getPaymentId() { return paymentId; }
 
-    public void setPayment_id(Long payment_id) { this.paymentId = payment_id; }
+    public void setPaymentId(Long payment_id) { this.paymentId = payment_id; }
 
-    public Double getPurchaseTotal() { return amountPaid; }
+    public Double getAmountPaid() { return amountPaid; }
 
-    public void setPurchaseTotal(Double amountPaid) { this.amountPaid = amountPaid; }
+    public void setAmountPaid(Double amountPaid) { this.amountPaid = amountPaid; }
 
     public Long getConsumerId() { return consumerId; }
 

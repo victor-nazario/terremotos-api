@@ -18,11 +18,11 @@ public interface PaymentRepository extends CrudRepository<Payment, Long> {
     @Query(value = "select * from payment ", nativeQuery = true)
     List<Payment> findAll();
 
-    @Query(value="SELECT * FROM payment p inner join consumer c on p.consumer_id = c.id WHERE p.payment_id = :id", nativeQuery = true)
-    Optional<Payment> findByPaymentId(@Param("id") Integer id);
+    @Query(value="SELECT * FROM payment p WHERE p.payment_id = :id", nativeQuery = true)
+    Optional<Payment> findByPaymentId(@Param("id") Long id);
 
     @Query(value="SELECT * FROM payment p inner join consumer c on p.consumer_id = c.id WHERE c.id = :id", nativeQuery = true)
-    Optional<Payment> findByConsumerId(@Param("id") Integer id);
+    Optional<Payment> findByConsumerId(@Param("id") Long id);
 
     @Query(value="SELECT * FROM payment p inner join consumer c on p.consumer_id = c.id WHERE p.amount_paid >= :amountPaid", nativeQuery = true)
     List<Payment> findByAmountPaidOver(@Param("amountPaid") Double amountPaid);
@@ -31,8 +31,8 @@ public interface PaymentRepository extends CrudRepository<Payment, Long> {
     List<Payment> findByAmountPaidUnder(@Param("amountPaid") Double amountPaid);
 
     @Modifying
-    @Query(value = "insert into payment (purchase_total, consumer_id) values (:purchaseTotal, :consumerId)",
+    @Query(value = "insert into payment (amount_paid, consumer_id) values (:amountPaid, :consumerId)",
             nativeQuery = true)
-    void insertPayment(@Param("purchaseTotal") Double purchaseTotal, @Param("consumerId") Long consumerId);
+    void insertPayment(@Param("amountPaid") Double amountPaid, @Param("consumerId") Long consumerId);
 
 }

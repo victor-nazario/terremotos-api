@@ -28,12 +28,12 @@ public class PaymentController {
     public List<PaymentBean> fetchAll(){ return paymentService.fetchAllPayment(); }
 
     @GetMapping(value = "/{id}")
-    public Payment findById(@PathVariable Integer id) {
+    public Payment findById(@PathVariable Long id) {
         return paymentService.findPaymentById(id);
     }
 
     @GetMapping(value = "/consumer/{id}")
-    public Payment findByConsumerId(@PathVariable Integer id) {
+    public Payment findByConsumerId(@PathVariable Long id) {
         return paymentService.findByConsumerId(id);
     }
 

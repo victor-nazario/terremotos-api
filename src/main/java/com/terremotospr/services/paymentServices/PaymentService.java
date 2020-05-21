@@ -27,6 +27,7 @@ public class PaymentService {
         Payment entity = new Payment();
         BeanUtils.copyProperties(bean, entity, "consumer");
         entity.setConsumerId(bean.getConsumerId());
+        entity.setAmountPaid(bean.getAmountPaid());
         paymentRepository.save(entity);
         return true;
     }
@@ -35,7 +36,7 @@ public class PaymentService {
         PaymentBean bean = new PaymentBean();
         BeanUtils.copyProperties(entity, bean);
         bean.setConsumerId(entity.getConsumer().getId());
-        bean.setPayment_id(entity.getPaymentId());
+        bean.setPaymentId(entity.getPaymentId());
         return bean;
     }
 
@@ -50,9 +51,9 @@ public class PaymentService {
         return payments;
     }
 
-    public Payment findPaymentById(Integer id){ return paymentRepository.findByPaymentId(id).get(); }
+    public Payment findPaymentById(Long id){ return paymentRepository.findByPaymentId(id).get(); }
 
-    public Payment findByConsumerId(Integer id){ return paymentRepository.findByConsumerId(id).get(); }
+    public Payment findByConsumerId(Long id){ return paymentRepository.findByConsumerId(id).get(); }
 
     public List<PaymentBean> findByAmountPaidOver(Double amountPaid){
         List<PaymentBean> payment;
