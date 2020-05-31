@@ -17,7 +17,7 @@ import java.util.List;
 @Repository
 public interface PropaneRepository extends CrudRepository<Propane, Long> {
     @Query(value = "select * from propane pr inner join base_resource br on pr.id = br.id", nativeQuery = true)
-    List<Propane> findAll();
+    List<Propane> fetchAll();
 
     @Query(value = "select * from propane pr inner join base_resource br on pr.id = br.id where pr.id = :id"
             , nativeQuery = true)
