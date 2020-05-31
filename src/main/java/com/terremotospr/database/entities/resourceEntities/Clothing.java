@@ -17,17 +17,17 @@ public class Clothing extends BaseResource {
     private ClothingType type;
     private ClothesGender gender;
 
-    public ClothingType getMedType() { return type; }
+    public ClothingType getClothingType() { return type; }
 
-    public void setMedType(ClothingType type) { this.type = type; }
+    public void setClothingType(ClothingType type) { this.type = type; }
 
     public String getSize() { return size; }
 
     public void setSize(String size) { this.size = size; }
 
-    public String getDosageForm() { return material; }
+    public String getMaterial() { return material; }
 
-    public void setDosageForm(String material) { this.material = material; }
+    public void setMaterial(String material) { this.material = material; }
 
     public ClothesGender getGender() { return gender; }
 
